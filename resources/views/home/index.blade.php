@@ -165,7 +165,7 @@
                 <div class="form-row">
                   <div class="form-group col-md">
                     <label for="namaDepan">Nama Depan</label>
-                    <input type="text" class="form-control" id="namaDepan" placeholder="Nama Depan" required>
+                    <input name="namaDepan" type="text" class="form-control" id="namaDepan" placeholder="Nama Depan" required>
                   </div>
                   <div class="form-group col-md">
                     <label for="namaBelakang">Nama Belakang</label>
