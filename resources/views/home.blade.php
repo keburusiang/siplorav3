@@ -32,7 +32,7 @@
         <div class="row h-100">
           <div class="col-lg-7 my-auto">
             <div class="header-content mx-auto">
-              <h1 class="mb-5">Laporkan Lokasi Yang Berpotensi Akan Terjadi Bencana!</h1>
+              <h1 class="mb-5">Lokasi Yang Berpotensi Akan Terjadi Bencana!</h1>
               <a href="laporkan.html" class="btn btn-outline btn-xl js-scroll-trigger">LAPORKAN</a>
             </div>
           </div>
