@@ -7,7 +7,7 @@
         <div class="row h-100">
           <div class="col-lg-7 my-auto">
             <div  class="header-content mx-auto">
-              <h1 data-scroll="toggle(.fromTopIn, .fromTopOut)" class="mb-5">Laporkan Lokasi Yang Berpotensi Akan Terjadi Bencana!</h1>
+              <h1 data-scroll="toggle(.fromTopIn, .fromTopOut)" class="mb-5"> Lokasi Yang Berpotensi Akan Terjadi Bencana!</h1>
               <a data-scroll="toggle(.fromBottomIn, .fromBottomOut)" href="laporkan.html"  class="btn btn-outline btn-xl js-scroll-trigger">LAPORKAN</a>
             </div>
           </div>
