@@ -1,40 +1,14 @@
 @extends('siploralayouts.app')
 @section('title', 'SIPLORA')
 @section('content')
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
-      <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="#page-top"><strong>SIPLORA</strong></a>
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          Menu
-          <i class="fas fa-bars"></i>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#login">Login/Register</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#about">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#map">Map</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-
+    <!-- Di bawah NavBar -->
     <header class="masthead">
       <div class="container h-100">
         <div class="row h-100">
           <div class="col-lg-7 my-auto">
-            <div class="header-content mx-auto">
-              <h1 class="mb-5">Laporkan Lokasi Yang Berpotensi Akan Terjadi Bencana!</h1>
-              <a href="laporkan.html" class="btn btn-outline btn-xl js-scroll-trigger">LAPORKAN</a>
+            <div  class="header-content mx-auto">
+              <h1 data-scroll="toggle(.fromTopIn, .fromTopOut)" class="mb-5">Laporkan Lokasi Yang Berpotensi Akan Terjadi Bencana!</h1>
+              <a data-scroll="toggle(.fromBottomIn, .fromBottomOut)" href="laporkan.html"  class="btn btn-outline btn-xl js-scroll-trigger">LAPORKAN</a>
             </div>
           </div>
           <div class="col-lg-5 my-auto">
@@ -47,8 +21,8 @@
     <section class="about" id="about">
       <div class="container">
         <div class="section-heading text-center">
-          <h2>Tentang SIPLORA</h2>
-          <p class="text-muted">Sistem Pelaporan Lokasi Rawan Bencana</p>
+          <h2 data-scroll="toggle(.fromLeftIn, .fromLeftOut)" >Tentang SIPLORA</h2>
+          <p data-scroll="toggle(.fromRightIn, .fromRightOut)" class="text-muted">Sistem Pelaporan Lokasi Rawan Bencana</p>
           <hr>
         </div>
         <div class="row">
@@ -56,7 +30,7 @@
 
           </div>
           <div class="col-lg-8 my-auto">
-            <div class="container-fluid">
+            <div data-scroll="toggle(.fromBottomIn, .fromBottomOut)" class="container-fluid">
               <div class="row">
                 <div class="col-lg-6">
                   <div class="about-item">
@@ -98,8 +72,8 @@
     <section class="cta" id="map">
       <div class="cta-content">
         <div class="container">
-          <h2>Stop waiting.<br>Start building.</h2>
-          <a href="#contact" class="btn btn-outline btn-xl js-scroll-trigger">Let's Get Started!</a>
+          <h2 data-scroll="toggle(.scaleDownIn, .scaleDownOut)" >Stop waiting.<br>Start building.</h2>
+          <a data-scroll="toggle(.fromBottomIn, .fromBottomOut)" href="#contact" class="btn btn-outline btn-xl js-scroll-trigger">Let's Get Started!</a>
         </div>
       </div>
       <div class="overlay"></div>
@@ -108,7 +82,7 @@
     <section class="login bg-danger" id="login">
       <div class="container">
         <div class="section-heading text-white text-center p-3">
-          <h2>Login atau Registrasi</h2>
+          <h2 data-scroll="toggle(.fromTopIn, .fromTopOut)" >Login atau Registrasi</h2>
         </div>
         <div class="row">
           <div class="col-md-5 mx-auto p-3">
@@ -130,7 +104,8 @@
             </form>
           </div>
           <div class="col-md-5 mx-auto p-3">
-                <form class="bg-light rounded p-3">
+                <form method="POST" action="{{ route('register') }}" class="bg-light rounded p-3">
+                @csrf
                 <h3 class="text-center">REGISTRASI</h3>
                 <div class="form-row">
                   <div class="form-group col-md">
