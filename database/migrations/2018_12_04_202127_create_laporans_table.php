@@ -17,7 +17,8 @@ class CreateLaporansTable extends Migration
             $table->increments('id');
             $table->string('jenis_laporan');
             $table->string('deskripsi');
-            $table->Integer('koordinat_id');
+            $table->Integer('latitude');
+            $table->Integer('longitude');
             $table->Integer('alamat_id');
             $table->Integer('status_id');
             $table->Integer('user_id');
