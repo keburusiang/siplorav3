@@ -18,7 +18,7 @@ class CreateUsersTable extends Migration
             $table->string('namaDepan');
             $table->string('namaBelakang');
             $table->string('email')->unique();
-            $table->Integer('role_id')->default('1');
+            $table->Integer('role_id');
             $table->date('tanggalLahir');
             $table->Integer('notelp',20);
             // $table->foreign('role_id')
