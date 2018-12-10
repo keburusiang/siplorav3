@@ -19,8 +19,8 @@ class CreateLaporansTable extends Migration
             $table->string('deskripsi');
             $table->Integer('latitude');
             $table->Integer('longitude');
-            $table->Integer('alamat_id');
-            $table->Integer('status_id');
+            $table->string('alamat');
+            $table->Integer('status_id')->default('1');;
             $table->Integer('user_id');
             // $table->foreign('status_id')->references('id')->on('statuslaporans')->onDelete('CASCADE');
             // $table->foreign('user_id')->references('id')->on('users')->onDelete('CASCADE');

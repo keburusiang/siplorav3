@@ -63,7 +63,7 @@ class RegisterController extends Controller
             'namaDepan' => ['required', 'string', 'max:255'],
             'namaBelakang' => ['required', 'string', 'max:255'],
             'date' => ['required'],
-            'telp' => ['required', 'max:14' , 'min:8'],
+            'telp' => ['required', 'max:15' , 'min:5'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:6'],
         ]);
