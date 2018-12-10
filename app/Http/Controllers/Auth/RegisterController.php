@@ -3,9 +3,11 @@
 namespace App\Http\Controllers\Auth;
 
 use App\User;
+use Validator;
+use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Validator;
+// use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 
 class RegisterController extends Controller
@@ -28,7 +30,11 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/';
+
+    public function showRegistrationForm(){
+        return view('Auth/res');
+    }
 
     /**
      * Create a new controller instance.
@@ -46,9 +52,14 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \Illuminate\Contracts\Validation\Validator
      */
+
+    
+
     protected function validator(array $data)
     {
-        return Validator::make($data, [
+
+
+        return Validator::make($data,[
             'namaDepan' => ['required', 'string', 'max:255'],
             'namaBelakang' => ['required', 'string', 'max:255'],
             'date' => ['required'],
@@ -58,6 +69,42 @@ class RegisterController extends Controller
         ]);
     }
 
+    // public function store(Request $request){
+    //     $messages = [
+    //         'required' => 'Harus Di isi.',
+    //         'email.required' => 'We need to know your e-mail address!',
+    //         'same'    => 'The :attribute and :other must match.',
+    //     ];
+        
+    //     $validator = Validator::make($request->all(),$messages, [
+    //         'namaDepan' => ['required', 'string', 'max:255'],
+    //         'namaBelakang' => ['required', 'string', 'max:255'],
+    //         'date' => ['required'],
+    //         'telp' => ['required', 'max:14' , 'min:8'],
+    //         'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+    //         'password' => ['required', 'string', 'min:6'],
+    //     ]);
+
+        
+
+    //     if ($validator->fails()) {
+    //         return redirect('/register')
+    //                     ->withErrors($validator)
+    //                     ->withInput();
+    //     } else{
+    //         $users = new User();
+    //         $users -> namaDepan = $request->namaDepan;
+    //         $users -> namaBelakang = $request->namaBelakang;
+    //         $users -> notelp = $request->telp;
+    //         $users -> tanggalLahir = $request->date;
+    //         $users -> email = $request->email;
+    //         $users -> password = bcrypt($request->password);
+    //         $users->save();
+    //     }
+
+        
+    // }
+
     /**
      * Create a new user instance after a valid registration.
      *
@@ -66,6 +113,7 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+
         return User::create([
             'namaDepan' => $data['namaDepan'],
             'namaBelakang' => $data['namaBelakang'],

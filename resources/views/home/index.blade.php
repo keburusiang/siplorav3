@@ -1,4 +1,4 @@
-@extends('siploralayouts.app')
+@extends('layouts.siplora')
 @section('title', 'SIPLORA')
 @section('content')
     <!-- Di bawah NavBar -->
@@ -8,7 +8,7 @@
           <div class="col-lg-7 my-auto">
             <div  class="header-content mx-auto">
               <h1 data-scroll="toggle(.fromTopIn, .fromTopOut)" class="mb-5"> Lokasi Yang Berpotensi Akan Terjadi Bencana!</h1>
-              <a data-scroll="toggle(.fromBottomIn, .fromBottomOut)" href="laporkan.html"  class="btn btn-outline btn-xl js-scroll-trigger">LAPORKAN</a>
+              <a data-scroll="toggle(.fromBottomIn, .fromBottomOut)" href="{{URL::to('/lapor')}}"  class="btn btn-outline btn-xl js-scroll-trigger">LAPORKAN</a>
             </div>
           </div>
           <div class="col-lg-5 my-auto">

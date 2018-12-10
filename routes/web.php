@@ -11,10 +11,24 @@
 |
 */
 
-Route::get('/', function () {
-    return view('/home/index');
-});
+// Auth::routes();
 
-Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+// Route::get('/', function () {
+//     return view('/home/index');
+// });
+
+Route::get('/','HomeController@index');
+Route::get('/lapor', 'LaporController@index');
+
+
+// Route::get('/home', 'HomeController@index')->name('home');
+
+$this->get('/register', 'Auth\RegisterController@showRegistrationForm')->name('register');
+$this->post('/register', 'Auth\RegisterController@register');
+
+$this->get('/login', 'Auth\LoginController@showLoginForm')->name('login');
+$this->post('/login', 'Auth\LoginController@login');
+
+$this->post('/logout', 'Auth\LoginController@logout')->name('logout');
+

@@ -1,4 +1,4 @@
-@extends('siploralayouts.app')
+@extends('layouts.siplora')
 @section('title', 'SIPLORA')
 @section('content')
     <!-- Di bawah NavBar -->
