@@ -20,7 +20,7 @@ class CreateLaporansTable extends Migration
             $table->Integer('latitude');
             $table->Integer('longitude');
             $table->string('alamat');
-            $table->Integer('status_id')->default('1');;
+            $table->Integer('status_id')->default('1');
             $table->Integer('user_id');
             // $table->foreign('status_id')->references('id')->on('statuslaporans')->onDelete('CASCADE');
             // $table->foreign('user_id')->references('id')->on('users')->onDelete('CASCADE');
