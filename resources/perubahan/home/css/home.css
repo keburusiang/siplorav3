@@ -1,0 +1,189 @@
+/*IKI BAGIAN NAVBAR*/
+.navbar{
+	position: relative;
+	z-index: 1;
+}
+
+.navbar-brand{
+	font-family: viga;
+	font-size: 32px;
+}
+
+
+/*jumbotron*/ 
+.jumbotron{
+ 	/*background-image: url(../img/jumbotron-bg.jpg);*/
+ 	background-image: url(../img/j.jpg);
+	background-size: cover;
+	height: 440px;
+	text-align: center;
+	position: relative;
+}
+
+.jumbotron .container{
+	z-index: 1;
+	position: relative;
+}
+
+.jumbotron::after{
+	content: '';
+	display: block;
+	height: 100%;
+	width: 100%;
+	background-image: linear-gradient(to top, rgba(0,0,0,1), rgba(0,0,0,0));
+	position:absolute;
+	bottom: 0;
+}
+
+.jumbotron .display-4{
+	color: white;
+	margin-top: 50px;
+	font-weight: 300;
+	font-size: 42px;
+	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.7);
+	margin-bottom: 30px;
+}
+
+/*info panel*/
+.info-panel{
+	box-shadow: 0 3px 20px rgba(0, 0, 0, 0.5);
+	border-radius: 12px;
+	background-color: white;
+	margin-top: -100px;
+	padding: 30px;
+}
+
+.info-panel img{
+	width: 80px;
+	height: 80px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+.info-panel h4{
+	font-size: 16px;
+	font-weight: bold;
+	text-transform: uppercase;
+	margin-top: 5px;
+}
+
+.info-panel p{
+	font-size: 14px;
+	color: #ACACAC;
+	margin-top: -5px;
+}
+
+
+/*About*/
+.about{
+	margin-top: 120px;
+	text-align: center;
+}
+
+.about h3{
+	font-size: 50px;
+	font-weight: 300px;
+	text-transform: uppercase;
+	margin-top: 30px;
+}
+
+.about p{
+	font-size: 18px;
+	color: #ACACAC;
+	margin-top: 30px;
+}
+
+
+/*MAP*/
+.map{
+	text-align: center;
+	height:300px;	
+}
+
+
+.map h4{	
+	font-size: 30px;
+	font-weight: 300px;
+	text-transform: uppercase;
+	margin-top: 70px;
+}
+
+.gmap iframe{
+	overflow:hidden;
+	background:none!important;
+	height:300px;	
+	width: 80%;
+	margin: 30px;
+}
+
+
+/*footer*/
+.footer{
+	margin-top: 200px;
+}
+
+.footer p{
+	font-size: 18px;
+	color: #ACACAC;
+}
+
+/*utility*/
+.tombol{
+	text-transform: uppercase;
+	border-radius: 40px;
+}
+
+/*VERSI DESKTOP*/
+@media (min-width: 992px) {
+	/*.navbar{
+		background-color: #c62828;
+	}
+*/
+	.navbar-brand, .nav-link{
+		color: white !important;
+		text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.7);
+	}
+
+	.nav-link{
+		text-transform: uppercase;
+		margin-right: 20px;
+	}
+
+	.nav-link:hover::after {
+		content: '';
+		display: block;
+		border-bottom: 3px solid #0B63DC;
+		width: 50%;
+		margin: auto;
+		padding-bottom: 5px; 
+		margin-bottom: -8px;
+	}
+
+	.jumbotron{
+		margin-top: -75px;
+		height: 640px;
+	}
+
+	.jumbotron .display-4{
+		font-size: 62px;
+		margin-top: 150px;
+	}
+
+	.about{
+		text-align: left;
+	}
+
+	.map{
+	text-align: center;
+	height:300px;	
+	margin-bottom: 250px;
+	}
+
+	.gmap iframe{
+	overflow:hidden;
+	background:none!important;
+	height:400px;	
+	width: 100%;
+	margin: auto;	
+}
+}
