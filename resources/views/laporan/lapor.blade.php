@@ -88,7 +88,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
 </script>
 
 
-    <title>SIPLORA</title>
+  <title>SIPLORA</title>
   </head>
   <body>
 
@@ -126,8 +126,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
               <label for="deskripsi">Deskripsi Lokasi</label>
               <textarea class="form-control" id="deskripsi" name="deskripsi" rows="5" required></textarea>
             </div>
-            <!-- ini alamat -->
-            
+            <!-- ini alamat -->      
 
             <div class="form-row">
                 <div class="form-group col-md-10">
