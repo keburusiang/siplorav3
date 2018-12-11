@@ -117,8 +117,8 @@ google.maps.event.addDomListener(window, 'load', initialize);
     <div class="container lapor mx-auto" id="lapor">
       <div class="row mx-auto tet">        
         <div class="col-lg-6 pt-5">
-          <form action="POST" method="">
-
+          <form action="/lapor" method="POSt">
+            @csrf
             <div class="form-group col-md-12">
               <label for="jenisBencana">Jenis Bencana</label>
               <input type="text" class="form-control" id="jenisBencana"  name="jenisBencana" required>
@@ -133,16 +133,16 @@ google.maps.event.addDomListener(window, 'load', initialize);
 
                 <div class="form-group col-lg-12">
                   <label for="alamat">Alamat</label>
-                  <input type="text" class="form-control" name="alamat" id="alamat" disabled>
+                  <input type="text" class="form-control" name="alamat" id="alamat" >
                 </div>
               <div class="form-row col-md-12 ml-2">
                 <div class="form-group col-md-6 m-0">
                   <label for="latitude">Latitude</label>
-                  <input type="text" class="form-control" name="latitude" id="lat" disabled>
+                  <input type="text" class="form-control" name="latitude" id="lat" >
                 </div>
                 <div class="form-group col-md-6 m-0">
                   <label for="longitude">Longitude</label>
-                  <input type="text" class="form-control" name="longitude" id="lng" disabled>
+                  <input type="text" class="form-control" name="longitude" id="lng" >
                 </div>
               </div>
               

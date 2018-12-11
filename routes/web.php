@@ -19,8 +19,9 @@ Route::get('/asd', function () {
 });
 
 Route::get('/','HomeController@index');
-Route::get('/lapor', 'LaporController@index');
-
+// Route::get('/lapor', 'LaporController@index');
+// Route::get('/lapor', 'LaporController@store')->name('lapor');
+Route::resource('/lapor','LaporController');
 
 
 // Route::get('/home', 'HomeController@index')->name('home');

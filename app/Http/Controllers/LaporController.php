@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\laporan;
+use App\User;
+use Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
@@ -12,6 +15,7 @@ class LaporController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
     public function __construct()
     {
         $this->middleware('auth');
@@ -41,14 +45,15 @@ class LaporController extends Controller
      */
     public function store(Request $request)
     {
+        $id = Auth::user()->id;
         $laporan = new Laporan();
         $laporan-> kode_laporan = Str::random(5);        
         $laporan-> jenis_laporan = $request-> jenisBencana;
         $laporan-> deskripsi = $request-> deskripsi;
-        $laporan-> latitude = $request-> latitute;
+        $laporan-> latitude = $request-> latitude;
         $laporan-> longitude = $request-> longitude;
         $laporan-> alamat = $request-> alamat;
-        $laporan-> user_id = user();
+        $laporan-> user_id = $id;
         $laporan->save();
     }
 
