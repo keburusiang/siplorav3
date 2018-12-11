@@ -46,7 +46,7 @@
           <a class="nav-item nav-link" href="#map">Map</a>
           <a class="nav-item nav-link" href="#contact">Contact</a>
           <a class="nav-item btn btn-primary tombol" href="{{URL::to('/login')}}">Login</a>
-          <a class="nav-item btn btn-primary tombol" href="#">Login</a>
+          <a class="nav-item btn btn-primary tombol" href="{{URL::to('/register')}}">Login</a>
         </div>
       </div>
       </div>
