@@ -35,7 +35,7 @@
     <!-- iki Navbar -->
     <nav class="navbar navbar-expand-lg fixed-top navbar-light" id="mainNav">
       <div class="container">
-      <a class="navbar-brand" href="#">SIPLORA</a>
+      <a class="navbar-brand" href="{{URL::to('/')}}">SIPLORA</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -46,7 +46,7 @@
           <a class="nav-item nav-link" href="#map">Map</a>
           <a class="nav-item nav-link" href="#contact">Contact</a>
           <a class="nav-item btn btn-primary tombol" href="{{URL::to('/login')}}">Login</a>
-          <a class="nav-item btn btn-primary tombol" href="{{URL::to('/register')}}">Login</a>
+          <a class="nav-item btn btn-primary tombol" href="{{URL::to('/register')}}">Register</a>
         </div>
       </div>
       </div>
