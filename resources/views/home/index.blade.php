@@ -1,194 +1,147 @@
-@extends('layouts.siplora')
-@section('title', 'SIPLORA')
-@section('content')
-    <!-- Di bawah NavBar -->
-    <header class="masthead">
-      <div class="container h-100">
-        <div class="row h-100">
-          <div class="col-lg-7 my-auto">
-            <div  class="header-content mx-auto">
-              <h1 data-scroll="toggle(.fromTopIn, .fromTopOut)" class="mb-5"> Lokasi Yang Berpotensi Akan Terjadi Bencana!</h1>
-              <a data-scroll="toggle(.fromBottomIn, .fromBottomOut)" href="{{URL::to('/lapor')}}"  class="btn btn-outline btn-xl js-scroll-trigger">LAPORKAN</a>
+<!doctype html>
+<html lang="en">
+  <head>
+
+    <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    }
+</style>
+
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- iki Bootstrap CSS -->
+    <link href="{{asset('perubahan/home/vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous"> -->
+
+    <!-- iki icon -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+
+    <!-- iki font -->
+    <link href="https://fonts.googleapis.com/css?family=Viga" rel="stylesheet">
+
+    <!-- iki CSS -->
+    <link rel="stylesheet" type="text/css" href="{{asset('perubahan/home/css/home.css')}}">
+
+    <title>SIPLORA</title>
+  </head>
+  <body>
+
+    <!-- iki Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top navbar-light" id="mainNav">
+      <div class="container">
+      <a class="navbar-brand" href="#">SIPLORA</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav ml-auto">
+          <a class="nav-item nav-link active js-scroll-trigger" href="#">Home<span class="sr-only">(current)</span></a>
+          <a class="nav-item nav-link js-scroll-trigger" href="#about">About</a>
+          <a class="nav-item nav-link" href="#map">Map</a>
+          <a class="nav-item nav-link" href="#contact">Contact</a>
+          <a class="nav-item btn btn-primary tombol" href="#">Login</a>
+        </div>
+      </div>
+      </div>
+    </nav>
+    <!-- Navbar entek -->
+
+    <!-- iki Jumbotron -->
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container">
+        <h1 class="display-4">Laporkan Lokasi Rawan Bencana</h1>
+        <a href="{{URL::to('/lapor')}}" class="btn btn-danger tombol">LAPORKAN</a> 
+        <a href="{{URL::to('/lacak')}}" class="btn btn-secondary tombol">LACAK LAPORAN</a> 
+      </div>
+    </div>
+    <!-- jumbotron entek -->
+
+    <!-- ISINE -->
+    <div class="container">
+      
+    <!-- info -->
+      <div class="row justify-content-center">
+        <div class="col-10 info-panel">
+          <div class="row">
+            <div class="col-lg">
+              <img src="{{asset('perubahan/home/img/employee.png')}}" class="float-left">
+              <h4>Melayani</h4>
+              <p>lorem5</p>          
+            </div>
+            <div class="col-lg">
+              <img src="{{asset('perubahan/home/img/employee.png')}}" class="float-left">
+              <h4>Melayani</h4>
+              <p>lorem5</p>          
+            </div>
+            <div class="col-lg">
+              <img src="{{asset('perubahan/home/img/employee.png')}}" class="float-left">
+              <h4>Melayani</h4>
+              <p>lorem5</p>          
             </div>
           </div>
-          <div class="col-lg-5 my-auto">
-                    <!-- isi cuy -->
-          </div>
         </div>
       </div>
-    </header>
+    <!-- Akhir info -->
 
-    <section class="about" id="about">
-      <div class="container">
-        <div class="section-heading text-center">
-          <h2 data-scroll="toggle(.fromLeftIn, .fromLeftOut)" >Tentang SIPLORA</h2>
-          <p data-scroll="toggle(.fromRightIn, .fromRightOut)" class="text-muted">Sistem Pelaporan Lokasi Rawan Bencana</p>
-          <hr>
+    <!-- about Siplora -->
+      <div class="row about" id="about">
+        <div class="col-lg-6">
+          <img src="{{asset('perubahan/home/img/workingspace.png')}}" alt="about" class="img-fluid">
         </div>
-        <div class="row">
-          <div class="col-lg-4 my-auto">
-
-          </div>
-          <div class="col-lg-8 my-auto">
-            <div data-scroll="toggle(.fromBottomIn, .fromBottomOut)" class="container-fluid">
-              <div class="row">
-                <div class="col-lg-6">
-                  <div class="about-item">
-                    <i class="icon-screen-smartphone text-primary"></i>
-                    <h3>Device Mockups</h3>
-                    <p class="text-muted">Ready to use HTML/CSS device mockups, no Photoshop required!</p>
-                  </div>
-                </div>
-                <div class="col-lg-6">
-                  <div class="about-item">
-                    <i class="icon-camera text-primary"></i>
-                    <h3>Flexible Use</h3>
-                    <p class="text-muted">Put an image, video, animation, or anything else in the screen!</p>
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-lg-6">
-                  <div class="about-item">
-                    <i class="icon-present text-primary"></i>
-                    <h3>Free to Use</h3>
-                    <p class="text-muted">As always, this theme is free to login and use for any purpose!</p>
-                  </div>
-                </div>
-                <div class="col-lg-6">
-                  <div class="about-item">
-                    <i class="icon-lock-open text-primary"></i>
-                    <h3>Open Source</h3>
-                    <p class="text-muted">Since this theme is MIT licensed, you can use it commercially!</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        <div class="col-lg-5">
+          <h3>About us</h3>
+          <p>SIPLORA adalah sistem pelayanan masyarakat guna meningkatkan aksi preventif bencana dengan cara melaporkan lokasi yang rawan terjadi bencana</p>
+        </div>    
       </div>
-    </section>
+    <!-- Akhir about Siplora -->
 
-    <section class="cta" id="map">
-      <div class="cta-content">
-        <div class="container">
-          <h2 data-scroll="toggle(.scaleDownIn, .scaleDownOut)" >Stop waiting.<br>Start building.</h2>
-          <a data-scroll="toggle(.fromBottomIn, .fromBottomOut)" href="#contact" class="btn btn-outline btn-xl js-scroll-trigger">Let's Get Started!</a>
-        </div>
+    <!-- MAP -->
+      <div class="row map" id="map">
+        <div class="col-lg-10 mx-auto">
+         <h4>PETA SEBARAN LOKASI RAWAN BENCANA</h4>
+        </div>        
+         <div class="gmap col-lg-12 mx-auto">
+                  <iframe id="gmap" src="https://maps.google.com/maps?q=universitas%20islam%20indonesia&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+         </div>
       </div>
-      <div class="overlay"></div>
-    </section>
+      <!-- akhir Map -->     
 
-    <section class="login bg-danger" id="login">
-      <div class="container">
-        <div class="section-heading text-white text-center p-3">
-          <h2 data-scroll="toggle(.fromTopIn, .fromTopOut)" >Login atau Registrasi</h2>
-        </div>
-        <div class="row">
-          <div class="col-md-5 mx-auto p-3">
-            <form class="bg-light rounded p-3">
-            <h3 class="text-center">LOGIN</h3>
-            <div class="form-row">
-              <div class="form-group col-md">
-                <label for="email">Email</label>
-                <input type="email" class="form-control" id="email" placeholder="Email" required>
-              </div>
-            </div>
-            <div class="form-row">
-              <div class="form-group col-md">
-                <label for="password">Password</label>
-                <input type="password" class="form-control" id="password" placeholder="Password" required>
-              </div>
-            </div>
-            <button type="submit" class="btn btn-outline btn-xl">Login</button>
-            </form>
-          </div>
-          <div class="col-md-5 mx-auto p-3">
-                <form method="POST" action="{{ route('register') }}" class="bg-light rounded p-3">
-                @csrf
-                <h3 class="text-center">REGISTRASI</h3>
-                <div class="form-row">
-                  <div class="form-group col-md">
-                    <label for="namaDepan">Nama Depan</label>
-                    <input type="text" class="form-control" id="namaDepan" placeholder="Nama Depan" required>
-                  </div>
-                  <div class="form-group col-md">
-                    <label for="namaBelakang">Nama Belakang</label>
-                    <input type="text" class="form-control" id="namaBelakang" placeholder="Nama Belakang" required>
-                  </div>
-                </div>
-                <div class="form-row">
-                  <div class="form-group col-md">
-                    <label for="email">Email</label>
-                    <input type="email" class="form-control" id="email" placeholder="example@mail.com" required>
-                  </div>
-                </div>
-                <div class="form-row">
-                  <div class="form-group col-md">
-                    <label for="date">Tanggal Lahir</label>
-                    <input type="date" class="form-control" id="date" placeholder="" required>
-                  </div>
-                </div>
-                <div class="form-row">
-                  <div class="form-group col-md">
-                    <label for="telp">Telephone</label>
-                    <input type="telp" class="form-control" id="telp" placeholder="Telephone" required>
-                  </div>
-                </div>
-                <div class="form-row">
-                  <div class="form-group col-md">
-                    <label for="password">Password</label>
-                    <input type="password" class="form-control" id="password" placeholder="Password" required>
-                  </div>
-                </div>
-                <button type="submit" class="btn btn-outline btn-xl">Register</button>
-                </form>
+    </div>
+    <!-- Akhir isine -->
 
-          </div>
-        </div>
-      </div>
-    </section>
+    <!-- footer -->
+    <div class="row footer contact">
+       <div class="col text-center">
+         <p>2018. Sistem Pelaporan Lokasi Rawan Bencana By Shabaka</p>
+       </div>        
+    </div>
+      <!-- akhir footer -->
 
-    <section class="contact bg-primary" id="contact">
-      <div class="container">
-        <h2>We
-          <i class="fas fa-heart"></i>
-          new friends!</h2>
-        <ul class="list-inline list-social">
-          <li class="list-inline-item social-twitter">
-            <a href="#">
-              <i class="fab fa-twitter"></i>
-            </a>
-          </li>
-          <li class="list-inline-item social-facebook">
-            <a href="#">
-              <i class="fab fa-facebook-f"></i>
-            </a>
-          </li>
-          <li class="list-inline-item social-google-plus">
-            <a href="#">
-              <i class="fab fa-google-plus-g"></i>
-            </a>
-          </li>
-        </ul>
-      </div>
-    </section>
 
-    <footer>
-      <div class="container">
-        <p>&copy; Your Website 2018. All Rights Reserved.</p>
-        <ul class="list-inline">
-          <li class="list-inline-item">
-            <a href="#">Privacy</a>
-          </li>
-          <li class="list-inline-item">
-            <a href="#">Terms</a>
-          </li>
-          <li class="list-inline-item">
-            <a href="#">FAQ</a>
-          </li>
-        </ul>
-      </div>
-    </footer>
 
-@endsection
+
+
+
+
+
+
+
+
+
+
+    <!-- Optional JavaScript -->     
+    <!-- <script type="text/javascript" src="{{asset('js/new-age.min.js')}}"></script> -->
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+  </body>
+
+</html>
