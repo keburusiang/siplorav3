@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class LaporController extends Controller
 {
@@ -41,11 +42,12 @@ class LaporController extends Controller
     public function store(Request $request)
     {
         $laporan = new Laporan();
+        $laporan-> kode_laporan = Str::random(5);        
         $laporan-> jenis_laporan = $request-> jenisBencana;
         $laporan-> deskripsi = $request-> deskripsi;
         $laporan-> latitude = $request-> latitute;
         $laporan-> longitude = $request-> longitude;
-        $laporan-> alamat_id = 1;
+        $laporan-> alamat = $request-> alamat;
         $laporan-> user_id = user();
         $laporan->save();
     }
