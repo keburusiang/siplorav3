@@ -13,7 +13,7 @@
 /*jumbotron*/ 
 .jumbotron{
  	/*background-image: url(../img/jumbotron-bg.jpg);*/
- 	background-image: url(../img/j.jpg);
+ 	background-image: url(../img/bg.jpg);
 	background-size: cover;
 	height: 440px;
 	text-align: center;
@@ -118,14 +118,45 @@
 
 
 /*footer*/
-.footer{
+footer .contact{	
 	margin-top: 200px;
+	color: white;
+	text-align: center;	
+	background-color: black;
+	font-family: viga;
 }
 
-.footer p{
-	font-size: 18px;
-	color: #ACACAC;
+footer .contact .footer-links a{
+	color: white;
 }
+
+footer .contact .footer-icons a{
+	display: inline-block;
+	width: 35px;
+	height: 35px;
+	cursor: pointer;
+	background-color: black;
+	border-radius: 2px;
+
+	font-size: 20px;
+	color: #ffffff;
+	text-align: center;
+	line-height: 35px;
+
+	margin-right: 3px;
+	margin-bottom: 5px;
+}
+
+/*footer*/
+footer .copyright {
+	color: #ACACAC;
+	text-align: center;
+	background-color: black;	
+}
+
+
+
+
 
 /*utility*/
 .tombol{
@@ -174,16 +205,40 @@
 	}
 
 	.map{
-	text-align: center;
-	height:300px;	
-	margin-bottom: 250px;
+		text-align: center;
+		height:300px;	
+		margin-bottom: 250px;
+	
+	}
+
+	.map h4{	
+		font-size: 30px;
+		font-weight: 300px;
+		text-transform: uppercase;
 	}
 
 	.gmap iframe{
-	overflow:hidden;
-	background:none!important;
-	height:400px;	
-	width: 100%;
-	margin: auto;	
-}
+		overflow:hidden;
+		background:none!important;
+		height:400px;	
+		width: 100%;
+		margin: auto;	
+	}
+
+	/*contact*/
+	
+	footer .contact{
+		height: 100px;
+		color: white;
+		background-color: black;
+		text-align: left;
+		font-family: viga;	
+	}
+	
+
+	.contact .footer-icons a{
+		text-align: left;
+	}
+
+	
 }
