@@ -19,27 +19,7 @@
 }
 
 
-/*MAP*/
-.map{
-	text-align: center;
-	height:300px;	
-}
-
-
-.map h4{	
-	font-size: 30px;
-	font-weight: 300px;
-	text-transform: uppercase;
-	margin-top: 70px;
-}
-
-.gmap iframe{
-	overflow:hidden;
-	background:none!important;
-	height:300px;	
-	width: 80%;
-	margin: 30px;
-}
+/**/
 
 
 
@@ -119,23 +99,7 @@ footer .copyright{
 	}
 	
 
-	.map{
-		text-align: center;
-		height:300px;		
-	}
 
-	.map h4{	
-		font-size: 30px;
-		font-weight: 300px;
-		text-transform: uppercase;
-	}
-
-	.gmap iframe{
-		overflow:hidden;
-		background:none!important;
-		height:300px;			
-		margin: auto;	
-	}
 
 	/*contact*/
 	.contact{

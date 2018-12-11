@@ -22,7 +22,7 @@
         <script src="{{asset('vendor/jquery/jquery.min.js')}}"></script>
         <script src="{{asset('vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
         <!-- Menyisipkan library Google Maps -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBOYROYFc-XcfFCMmw5MVlOZc1Tuh_HC2U&callback=initMap"
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBOYROYFc-XcfFCMmw5MVlOZc1Tuh_HC2U&callbac"
     type="text/javascript"></script>
 
 </head>
@@ -104,66 +104,66 @@
         </script>
 
         <script>
-// variabel global marker
-var marker;
-  
-function taruhMarker(peta, posisiTitik){
-    
-    if( marker ){
-      // pindahkan marker
-      marker.setPosition(posisiTitik);
-    } else {
-      // buat marker baru
-      marker = new google.maps.Marker({
-        position: posisiTitik,
-        map: peta
-      });
-    }
-  
-     // isi nilai koordinat ke form
-    document.getElementById("lat").value = posisiTitik.lat();
-    document.getElementById("lng").value = posisiTitik.lng();
+          // variabel global marker
+          var marker;
+            
+          function taruhMarker(peta, posisiTitik){
+              
+              if( marker ){
+                // pindahkan marker
+                marker.setPosition(posisiTitik);
+              } else {
+                // buat marker baru
+                marker = new google.maps.Marker({
+                  position: posisiTitik,
+                  map: peta
+                });
+              }
+            
+               // isi nilai koordinat ke form
+              document.getElementById("lat").value = posisiTitik.lat();
+              document.getElementById("lng").value = posisiTitik.lng();
 
-    convert_latlng(posisiTitik);
-    
-}
-  
-// merubah geotag menjadi alamat
-function convert_latlng(pos) {
+              convert_latlng(posisiTitik);
+              
+          }
+            
+          // merubah geotag menjadi alamat
+          function convert_latlng(pos) {
 
- // membuat geocoder
- var geocoder = new google.maps.Geocoder();
- geocoder.geocode({'latLng': pos}, function(r) {
+           // membuat geocoder
+           var geocoder = new google.maps.Geocoder();
+           geocoder.geocode({'latLng': pos}, function(r) {
 
-  if (r && r.length > 0) {
-   document.getElementById('info-alamat').innerHTML = r[0].formatted_address;
-  } else {
-   document.getElementById('info-alamat').innerHTML = 'Alamat tidak di temukan di lokasi !!';
-  }
+            if (r && r.length > 0) {
+             document.getElementById('alamat').innerHTML = r[0].formatted_address;
+            } else {
+             document.getElementById('alamat').innerHTML = 'Alamat tidak di temukan di lokasi !!';
+            }
 
- });
-}
+           });
+          }
 
-function initialize() {
-  var propertiPeta = {
-    center:new google.maps.LatLng(-8.5830695,116.3202515),
-    zoom:9,
-    mapTypeId:google.maps.MapTypeId.ROADMAP
-  };
-  
-  var peta = new google.maps.Map(document.getElementById("googleMap"), propertiPeta);
-  
-  // even listner ketika peta diklik
-  google.maps.event.addListener(peta, 'click', function(event) {
-    taruhMarker(this, event.latLng);
-  });
+          function initialize() {
+            var propertiPeta = {
+              center:new google.maps.LatLng(-8.5830695,116.3202515),
+              zoom:9,
+              mapTypeId:google.maps.MapTypeId.ROADMAP
+            };
+            
+            var peta = new google.maps.Map(document.getElementById("googleMap"), propertiPeta);
+            
+            // even listner ketika peta diklik
+            google.maps.event.addListener(peta, 'click', function(event) {
+              taruhMarker(this, event.latLng);
+            });
 
-}
+          }
 
 
-// event jendela di-load  
-google.maps.event.addDomListener(window, 'load', initialize);
-  
+          // event jendela di-load  
+          google.maps.event.addDomListener(window, 'load', initialize);
+            
 
 </script>
 

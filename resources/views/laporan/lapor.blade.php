@@ -18,6 +18,76 @@
     <!-- iki CSS -->
     <link rel="stylesheet" type="text/css" href="{{asset('perubahan/laporan/css/laporan.css')}}">
 
+    <!-- MAPS -->
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBOYROYFc-XcfFCMmw5MVlOZc1Tuh_HC2U"
+    type="text/javascript"></script>
+        <script>
+// variabel global marker
+var marker;
+  
+function taruhMarker(peta, posisiTitik){
+    
+    if( marker ){
+      // pindahkan marker
+      marker.setPosition(posisiTitik);
+    } else {
+      // buat marker baru
+      marker = new google.maps.Marker({
+        position: posisiTitik,
+        map: peta
+      });
+    }
+        convert_latlng(posisiTitik);
+
+     // isi nilai koordinat ke form
+    document.getElementById("lat").value = posisiTitik.lat();
+    // document.getElementById("lng").value = posisiTitik.lng();
+
+    // convert_latlng(posisiTitik);
+    
+}
+  
+// merubah geotag menjadi alamat
+function convert_latlng(pos) {
+
+ // membuat geocoder
+ var geocoder = new google.maps.Geocoder();
+ geocoder.geocode({'latLng': pos}, function(r) {
+
+  if (r && r.length > 0) {
+   document.getElementById('alamat').value = r[0].formatted_address;
+  } else {
+   document.getElementById('alamat').value = 'Alamat tidak di temukan di lokasi !!';
+  }
+
+ });
+}
+
+function initialize() {
+  var propertiPeta = {
+    center:new google.maps.LatLng(-7.687739,110.413222),
+    zoom:9,
+    mapTypeId:google.maps.MapTypeId.ROADMAP
+  };
+  
+  var peta = new google.maps.Map(document.getElementById("googleMap"), propertiPeta);
+  
+  // even listner ketika peta diklik
+  google.maps.event.addListener(peta, 'click', function(event) {
+    taruhMarker(this, event.latLng);
+  });
+
+}
+
+
+// event jendela di-load  
+google.maps.event.addDomListener(window, 'load', initialize);
+  
+
+</script>
+
+
     <title>SIPLORA</title>
   </head>
   <body>
@@ -51,25 +121,31 @@
             <div class="form-group">
               <label for="jenisBencana">Jenis Bencana</label>
               <input type="text" class="form-control" id="jenisBencana" placeholder="contoh: Banjir" name="jenisBencana">
-                <option>Banjir</option>
-                <option>Tanah Longsor</option>
-                <option>Kebakaran</option>                
-              </select>
             </div>                     
             <div class="form-group">
               <label for="deskripsi">Deskripsi Lokasi</label>
               <textarea class="form-control" id="deskripsi" name="deskripsi" rows="5" required></textarea>
             </div>
-            <div class="form-group">
-              <label for="alamat">Alamat</label>
-              <input type="text" class="form-control" name="alamat" id="alamat" placeholder="Pilih Pada Peta">
-            </div>
-            <!-- MAP -->
-             <div class="row map" id="map">                    
-                <div class="gmap col-lg">
-                  <iframe id="gmap" src="https://maps.google.com/maps?q=universitas%20islam%20indonesia&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="5" marginwidth="5"></iframe>
+            <!-- ini alamat -->
+            
+
+            <div class="form-row">
+                <div class="form-group col-md-10">
+                  <label for="info-alamat">Alamat</label>
+                  <input type="text" class="form-control" name="alamat" id="alamat" placeholder="Pilih pada peta"></input>
+
                 </div>
-            </div> 
+            </div>
+            
+            <!-- MAP -->
+             <div class="form-row">
+                <div class="form-group col-md-10">
+                  <label for="googleMap">Pilih Maps</label>
+                    <div class="form-control" id="googleMap" style="width:100%;height:550px;"></div>
+                </div>
+              </div>
+
+
             <!-- akhir Map -->                       
             <div class="file-field">              
               <div class="custom-file">
@@ -127,27 +203,19 @@
         </div>        
       </div>
     </footer>
+
     <!-- akhir footer -->
 
 
+    <!-- JS MAPS -->
 
-
-
-
-
-
-
-
-
-
-
-    <!-- Optional JavaScript -->
-    <!-- <script type="text/javascript" src="js/laporkan.js"></script>  -->   
    
 
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+  
+    
   </body>
 </html>

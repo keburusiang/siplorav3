@@ -14,12 +14,13 @@
 // Auth::routes();
 
 
-// Route::get('/', function () {
-//     return view('/home/index');
-// });
+Route::get('/asd', function () {
+    return view('lama/laporan/lapor');
+});
 
 Route::get('/','HomeController@index');
 Route::get('/lapor', 'LaporController@index');
+
 
 
 // Route::get('/home', 'HomeController@index')->name('home');
