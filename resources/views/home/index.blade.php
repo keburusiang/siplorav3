@@ -45,6 +45,7 @@
           <a class="nav-item nav-link js-scroll-trigger" href="#about">About</a>
           <a class="nav-item nav-link" href="#map">Map</a>
           <a class="nav-item nav-link" href="#contact">Contact</a>
+          <a class="nav-item btn btn-primary tombol" href="{{URL::to('/login')}}">Login</a>
           <a class="nav-item btn btn-primary tombol" href="#">Login</a>
         </div>
       </div>
@@ -115,13 +116,45 @@
     </div>
     <!-- Akhir isine -->
 
-    <!-- footer -->
-    <div class="row footer contact">
-       <div class="col text-center">
-         <p>2018. Sistem Pelaporan Lokasi Rawan Bencana By Shabaka</p>
-       </div>        
+    <footer>
+    <!-- contact -->
+    <div class="contact" id="contact">
+      <div class="container">
+        <div class="row contact">         
+            <div class="col-lg-4 pt-3">
+              <h4>SIPLORA</h4>
+                <p class="footer-links">
+                  <a class="" href="#mainNav">Home</a>
+                  ·
+                  <a href="#about">About</a>
+                  ·
+                  <a href="#map">Map</a>
+                  ·                  
+                  <a href="#contact">Contact</a>
+                </p>
+            </div>
+            <div class="col-lg-4 pt-3">
+              
+            </div>
+            <div class="col-lg-4 pt-3">
+              <h4>Contact Us</h4>
+              <div class="footer-icons">
+                <a href="https://facebook.com/amiinmnugroho"><i class="fa fa-facebook"></i></a>
+                <a href="https://twitter.com/amiinmn"><i class="fa fa-twitter"></i></a>
+                <a href="https://linkedin.com/in/amiinmn"><i class="fa fa-linkedin"></i></a> 
+                <a href="https://instagram.com/amiinmn"><i class="fa fa-instagram"></i></a>         
+              </div>              
+            </div>                    
+        </div>
+        <div class="row copyright pt-3">
+          <div class="col text-center">
+           <p>2018. Sistem Pelaporan Lokasi Rawan Bencana By Shabaka</p>
+          </div>        
+      </div>
+      </div>
     </div>
-      <!-- akhir footer -->
+  </footer>     
+    
 
 
 
@@ -136,9 +169,10 @@
 
 
     <!-- Optional JavaScript -->     
-    <!-- <script type="text/javascript" src="{{asset('js/new-age.min.js')}}"></script> -->
-
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<!--     <script type="text/javascript" src="{{asset('js/new-age.min.js')}}"></script>
+ -->
+<!--  <script type="text/javascript" src="{{asset('css/')}}"></script>
+ -->    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
