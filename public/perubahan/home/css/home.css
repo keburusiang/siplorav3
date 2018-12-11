@@ -9,11 +9,15 @@
 	font-size: 32px;
 }
 
+.nav-item .dropdown-menu-right{
+	background-color: blue;
+	width: 50px;
+}
+
 
 /*jumbotron*/ 
 .jumbotron{
- 	/*background-image: url(../img/jumbotron-bg.jpg);*/
- 	background-image: url(../img/bg.jpg);
+ 	background-image:url(../../../perubahan/home/img/j.jpg);
 	background-size: cover;
 	height: 440px;
 	text-align: center;
@@ -179,6 +183,7 @@ footer .copyright {
 		text-transform: uppercase;
 		margin-right: 20px;
 	}
+	
 
 	.nav-link:hover::after {
 		content: '';
