@@ -18,9 +18,8 @@
     <link href="{{asset('perubahan/home/vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
     <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous"> -->
 
-    <!-- iki icon -->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet">
+    <!-- iki icon -->    
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">    
 
     <!-- iki font -->
     <link href="https://fonts.googleapis.com/css?family=Viga" rel="stylesheet">
@@ -116,7 +115,7 @@
     </div>
     <!-- Akhir isine -->
 
-    <footer>
+     <footer>
     <!-- contact -->
     <div class="contact" id="contact">
       <div class="container">
