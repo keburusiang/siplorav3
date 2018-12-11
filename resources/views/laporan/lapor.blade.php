@@ -1,6 +1,11 @@
 <!doctype html>
 <html lang="en">
   <head>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>    
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -93,19 +98,39 @@ google.maps.event.addDomListener(window, 'load', initialize);
   <body>
 
     <!-- iki Navbar -->
-    <nav class="navbar navbar-expand-lg fixed-top navbar-light" id="mainNav">
+    <nav class="navbar navbar-expand-lg navbar-dark" id="mainNav">
       <div class="container">
-      <a class="navbar-brand" href="../home/index.blade.php">SIPLORA</a>
+      <a class="navbar-brand" href="{{URL::to('/')}}">SIPLORA</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+      <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav ml-auto">
-          <a class="nav-item nav-link active js-scroll-trigger" href="../home/index.blade.php">Home<span class="sr-only">(current)</span></a>
-          <a class="nav-item nav-link js-scroll-trigger" href="#about">About</a>
-          <a class="nav-item nav-link js-scroll-trigger" href="#map">Map</a>
+          <a class="nav-item nav-link" href="{{URL::to('/')}}">Home<span class="sr-only">(current)</span></a>          
           <a class="nav-item nav-link" href="#contact">Contact</a>
-          <a class="nav-item btn btn-primary tombol" href="#">Login</a>
+          @guest
+          <a class="nav-item btn btn-primary" href="{{URL::to('/login')}}">Login</a>
+          @if (Route::has('register'))
+         <!--  <a class="nav-item btn btn-primary" href="{{URL::to('/register')}}">Register</a> -->
+          @endif
+          @else
+
+          <li class="nav-item dropdown">
+                <a id="navbarDropdown" class="btn btn-primary dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>{{ Auth::user()->namaDepan }} 
+                    <span class="caret"></span>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="{{ route('logout') }}"
+                        onclick="event.preventDefault();
+                        document.getElementById('logout-form').submit();">
+                        {{ ('Logout') }}
+                    </a>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    @csrf
+                    </form>
+                </div>
+            </li>
+        @endguest
         </div>
       </div>
       </div>
@@ -114,17 +139,17 @@ google.maps.event.addDomListener(window, 'load', initialize);
     
 
     <!-- ISINE -->
-    <div class="container lapor mx-auto" id="lapor">
-      <div class="row mx-auto tet">        
-        <div class="col-lg-6 pt-5">
+    <div class="container lapor" id="lapor">
+      <div class="row">        
+        <div class="col-md-8 pt-5 mx-auto">
           <form action="/lapor" method="POSt">
             @csrf
-            <div class="form-group col-md-12">
+            <div class="form-group col-lg-12">
               <label for="jenisBencana">Jenis Bencana</label>
               <input type="text" class="form-control" id="jenisBencana"  name="jenisBencana" required>
               <span> <b>Contoh:</b> Banjir </span>
             </div>                     
-              <div class="form-group col-md-12">
+              <div class="form-group col-lg-12">
                 <label for="deskripsi">Deskripsi Lokasi</label>
                 <textarea class="form-control" id="deskripsi" name="deskripsi" rows="5" required></textarea>
                 <span> <b>Contoh:</b> Tanggul jebol dikhawatirkan terjadi banjir. </span>
@@ -135,35 +160,38 @@ google.maps.event.addDomListener(window, 'load', initialize);
                   <label for="alamat">Alamat</label>
                   <input type="text" class="form-control" name="alamat" id="alamat" >
                 </div>
-              <div class="form-row col-md-12 ml-2">
-                <div class="form-group col-md-6 m-0">
+
+                <div class="form-row-fluid">
+                 <div class="form-group col-lg">
                   <label for="latitude">Latitude</label>
                   <input type="text" class="form-control" name="latitude" id="lat" >
-                </div>
-                <div class="form-group col-md-6 m-0">
-                  <label for="longitude">Longitude</label>
-                  <input type="text" class="form-control" name="longitude" id="lng" >
-                </div>
-              </div>
-              
+                 </div>
+                 <div class="form-group col-lg">
+                   <label for="longitude">Longitude</label>
+                   <input type="text" class="form-control" name="longitude" id="lng" >
+                 </div>
+               </div>          
+                
+                 
             
             <!-- MAP -->
-                <div class="form-group col-md-12">
-                  <label for="googleMap">Pilih Maps</label>
-                    <div class="form-control" id="googleMap" style="width:100%;height:450px;"></div>
-                </div>
-
-
+              <div class="form-group col-lg-12">
+                <label for="googleMap">Pilih Maps</label>
+                  <div class="form-control" id="googleMap" style="width:100%;height:450px;"></div>
+              </div>
             <!-- akhir Map -->  
-            <div class="form-group col-md-12">
+            <div class="form-group col-lg-12">
               <div class="file-field">              
                 <div class="custom-file">
                   <input type="file" class="custom-file-input" data-multiple-target="{target} files selected" multiple="">
                   <label class="custom-file-label" for="customFile">Pilih Gambar</label>
                 </div>
               </div>
-              </div>
-            <button type="submit" class="btn btn-primary tombol">Laporkan</button>
+            </div>
+            <div class="form-group col-lg-12">
+              <button type="submit" class="btn btn-primary">Laporkan</button>
+              <button type="reset" class="btn btn-danger">Reset</button>
+            </div>
           </form>
         </div>        
       </div>
@@ -174,7 +202,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
     <div class="contact" id="contact">
       <div class="container">
         <div class="row contact">         
-            <div class="col-lg-4 pt-3">
+            <div class="col-lg-3 pt-3">
               <h4>SIPLORA</h4>
                 <p class="footer-links">
                   <a class="" href="#mainNav">Home</a>
@@ -185,31 +213,35 @@ google.maps.event.addDomListener(window, 'load', initialize);
                   ·                  
                   <a href="#contact">Contact</a>
                 </p>
-            </div>
-            <div class="col-lg-4 pt-3">
-              
-            </div>
-            <div class="col-lg-4 pt-3">
+            </div>    
+            <div class="col-lg-3 pt-3">
+             
+            </div>  
+            <div class="col-lg-3 pt-3">
+             
+            </div>           
+            <div class="col-lg-3 pt-3">
               <h4>Contact Us</h4>
               <div class="footer-icons">
                 <a href="https://facebook.com/amiinmnugroho"><i class="fa fa-facebook"></i></a>
                 <a href="https://twitter.com/amiinmn"><i class="fa fa-twitter"></i></a>
                 <a href="https://linkedin.com/in/amiinmn"><i class="fa fa-linkedin"></i></a> 
                 <a href="https://instagram.com/amiinmn"><i class="fa fa-instagram"></i></a>         
-              </div>
-              
+              </div>              
             </div>       
         </div>
       </div>
-    </div>     
-    
+    </div>   
     <!-- akhir contact -->
 
     <!-- footer -->
     <footer>
+      <div class="container-fluid">
       <div class="row copyright pt-3">
+        
         <div class="col text-center">
          <p>2018. Sistem Pelaporan Lokasi Rawan Bencana By Shabaka</p>
+        </div>
         </div>        
       </div>
     </footer>
