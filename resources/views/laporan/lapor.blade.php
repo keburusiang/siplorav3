@@ -42,7 +42,7 @@ function taruhMarker(peta, posisiTitik){
 
      // isi nilai koordinat ke form
     document.getElementById("lat").value = posisiTitik.lat();
-    // document.getElementById("lng").value = posisiTitik.lng();
+    document.getElementById("lng").value = posisiTitik.lng();
 
     // convert_latlng(posisiTitik);
     
@@ -117,41 +117,52 @@ google.maps.event.addDomListener(window, 'load', initialize);
     <div class="container lapor mx-auto" id="lapor">
       <div class="row mx-auto tet">        
         <div class="col-lg-6 pt-5">
-          <form>
-            <div class="form-group">
+          <form action="POST" method="">
+
+            <div class="form-group col-md-12">
               <label for="jenisBencana">Jenis Bencana</label>
-              <input type="text" class="form-control" id="jenisBencana" placeholder="contoh: Banjir" name="jenisBencana">
+              <input type="text" class="form-control" id="jenisBencana"  name="jenisBencana" required>
+              <span> <b>Contoh:</b> Banjir </span>
             </div>                     
-            <div class="form-group">
-              <label for="deskripsi">Deskripsi Lokasi</label>
-              <textarea class="form-control" id="deskripsi" name="deskripsi" rows="5" required></textarea>
-            </div>
+              <div class="form-group col-md-12">
+                <label for="deskripsi">Deskripsi Lokasi</label>
+                <textarea class="form-control" id="deskripsi" name="deskripsi" rows="5" required></textarea>
+                <span> <b>Contoh:</b> Tanggul jebol dikhawatirkan terjadi banjir. </span>
+              </div>
             <!-- ini alamat -->      
 
-            <div class="form-row">
-                <div class="form-group col-md-10">
-                  <label for="info-alamat">Alamat</label>
-                  <input type="text" class="form-control" name="alamat" id="alamat" placeholder="Pilih pada peta"></input>
-
+                <div class="form-group col-lg-12">
+                  <label for="alamat">Alamat</label>
+                  <input type="text" class="form-control" name="alamat" id="alamat" disabled>
                 </div>
-            </div>
+              <div class="form-row col-md-12 ml-2">
+                <div class="form-group col-md-6 m-0">
+                  <label for="latitude">Latitude</label>
+                  <input type="text" class="form-control" name="latitude" id="lat" disabled>
+                </div>
+                <div class="form-group col-md-6 m-0">
+                  <label for="longitude">Longitude</label>
+                  <input type="text" class="form-control" name="longitude" id="lng" disabled>
+                </div>
+              </div>
+              
             
             <!-- MAP -->
-             <div class="form-row">
-                <div class="form-group col-md-10">
+                <div class="form-group col-md-12">
                   <label for="googleMap">Pilih Maps</label>
-                    <div class="form-control" id="googleMap" style="width:100%;height:550px;"></div>
+                    <div class="form-control" id="googleMap" style="width:100%;height:450px;"></div>
+                </div>
+
+
+            <!-- akhir Map -->  
+            <div class="form-group col-md-12">
+              <div class="file-field">              
+                <div class="custom-file">
+                  <input type="file" class="custom-file-input" data-multiple-target="{target} files selected" multiple="">
+                  <label class="custom-file-label" for="customFile">Pilih Gambar</label>
                 </div>
               </div>
-
-
-            <!-- akhir Map -->                       
-            <div class="file-field">              
-              <div class="custom-file">
-                <input type="file" class="custom-file-input" data-multiple-target="{target} files selected" multiple="">
-                <label class="custom-file-label" for="customFile">Pilih Gambar</label>
               </div>
-            </div>
             <button type="submit" class="btn btn-primary tombol">Laporkan</button>
           </form>
         </div>        

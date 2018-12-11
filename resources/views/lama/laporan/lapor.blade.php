@@ -19,7 +19,7 @@
         <div class="row">
           <div class="col-md-10 mx-auto p-3">
           <div class="container bg-light rounded p-3">
-            <form>
+            <form action="POST" method="{{ route('lapor') }}">
               <div class="form-row">
                 <div class="form-group col-md-5">
                   <label for="jenisBencana">Jenis Bencana</label>
