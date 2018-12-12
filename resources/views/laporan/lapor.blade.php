@@ -159,17 +159,17 @@ google.maps.event.addDomListener(window, 'load', initialize);
 
                 <div class="form-group col-lg-12">
                   <label for="alamat">Alamat</label>
-                  <input type="text" class="form-control" name="alamat" id="alamat" disabled>
+                  <input type="text" class="form-control" name="alamat" id="alamat" >
                 </div>
 
                 <div class="form-row-fluid">
                  <div class="form-group col-lg-6">
                   <label for="latitude">Latitude</label>
-                  <input type="text" class="form-control" name="latitude" id="lat" disabled>
+                  <input type="text" class="form-control" name="latitude" id="lat" >
                  </div>
                  <div class="form-group col-lg-6">
                    <label for="longitude">Longitude</label>
-                   <input type="text" class="form-control" name="longitude" id="lng" disabled>
+                   <input type="text" class="form-control" name="longitude" id="lng" >
                  </div>
                </div>                 
             

@@ -14,9 +14,12 @@
 // Auth::routes();
 
 
-Route::get('/asd', function () {
-    return view('lama/laporan/lapor');
-});
+// Route::get('/asd', function () {
+//     return view('home.maps');
+// });
+
+Route::get('/maps','ControllerMaps@index');
+
 
 Route::get('/','HomeController@index');
 // Route::get('/lapor', 'LaporController@index');
