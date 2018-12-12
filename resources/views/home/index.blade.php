@@ -2,12 +2,11 @@
 <html lang="en">
   <head>
 
-    <style>
+  <style>
     html {
       scroll-behavior: smooth;
     }
-    
-</style>
+  </style>
 
 
     <!-- Required meta tags -->
