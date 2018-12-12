@@ -31,68 +31,11 @@
 
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBOYROYFc-XcfFCMmw5MVlOZc1Tuh_HC2U"
     type="text/javascript"></script>
-     <script>
-      
 
-        function initialize() {
-          var locations = <?php print_r(json_encode($map)) ?>;
-          console.log(locations);
-          var propertiPeta = {
-            center:new google.maps.LatLng(-7.684029, 110.423406),
-            zoom:9,
-            mapTypeId:google.maps.MapTypeId.ROADMAP
-          };
-          
-          var peta = new google.maps.Map(document.getElementById("googleMap"), propertiPeta);
-          
-          
-          // membuat Marker
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
 
-          var marker=new google.maps.Marker({
-              position: new google.maps.LatLng(-7.687989, 110.414362),
-              map: peta,
-          });
-
-         //  $.each( locations, function( index, value ){
-         //    mymap.addMarker({
-         //      latitude: value.latitude,
-         //      longitude: value.longitude,
-         //      title: value.city,
-         //      click: function(e) {
-         //        alert('This is '+value.city+', gujarat from India.');
-         //      }
-         //    });
-         // });
-
-
-        }
-
-      //   function geocodeLatLng(geocoder, map, infowindow) {
-      //   var input = document.getElementById('latlng').value;
-      //   var latlngStr = input.split(',', 2);
-      //   var latlng = {lat: parseFloat(latlngStr[0]), lng: parseFloat(latlngStr[1])};
-      //   geocoder.geocode({'location': latlng}, function(results, status) {
-      //     if (status === 'OK') {
-      //       if (results[0]) {
-      //         map.setZoom(11);
-      //         var marker = new google.maps.Marker({
-      //           position: latlng,
-      //           map: map
-      //         });
-      //         infowindow.setContent(results[0].formatted_address);
-      //         infowindow.open(map, marker);
-      //       } else {
-      //         window.alert('No results found');
-      //       }
-      //     } else {
-      //       window.alert('Geocoder failed due to: ' + status);
-      //     }
-      //   });
-      // }
-
-        // event jendela di-load  
-        google.maps.event.addDomListener(window, 'load', initialize);
-    </script>
   </head>
   <body>
 
@@ -193,7 +136,24 @@
          <h4>PETA SEBARAN LOKASI RAWAN BENCANA</h4>
         </div>        
          <div class="gmap col-lg-12 mx-auto">
-            <div class="form-control" id="googleMap" style="height: 430px;" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></div>
+            <div class="form-control" id="googleMap" style="height: 430px;" frameborder="0" scrolling="no" marginheight="0" marginwidth="0">
+              <script type="text/javascript">
+                var locations = <?php print_r(json_encode($map)) ?>;
+                var mymap = new GMaps({
+                  el: '#googleMap',
+                  lat: 21.170240,
+                  lng: 72.831061,
+                  zoom:6
+                });
+
+                $.each( locations, function( index, value ){
+                  mymap.addMarker({
+                    lat: value.latitude,
+                    lng: value.longitude,
+                  });
+               });
+              </script>
+            </div>
          </div>
       </div>
       <!-- akhir Map -->     
@@ -246,9 +206,7 @@
  -->
 <!--  <script type="text/javascript" src="{{asset('css/')}}"></script>
  -->    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+    
   </body>
 
 </html>
