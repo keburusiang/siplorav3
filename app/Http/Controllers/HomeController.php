@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\laporan;
 use Illuminate\Http\Request;
+use DB;
 
 class HomeController extends Controller
 {
@@ -16,12 +17,11 @@ class HomeController extends Controller
     /**
      * Show the application dashboard.
      *
-     * @return \Illuminate\Http\Response
+     * @return \I9lluminate\Http\Response
      */
     public function index()
     {
-        $dataLat = laporan::where('latitude')->first();
-        $dataLng = laporan::where('longitude')->first();
-        return view('/home/index', compact('dataLat','dataLng'));
+        $map = laporan::all();
+        return view('home.index', compact('map'));
     }
 }

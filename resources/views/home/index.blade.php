@@ -32,7 +32,10 @@
     type="text/javascript"></script>
      <script>
 
+
         function initialize() {
+          var locations = <?php print_r(json_encode($map)) ?>;
+          console.log(locations);
           var propertiPeta = {
             center:new google.maps.LatLng(-7.684029, 110.423406),
             zoom:9,
@@ -44,15 +47,22 @@
           
           // membuat Marker
 
-          var marker=new google.maps.Marker({
-              position: new google.maps.LatLng(-7.687989, 110.414362),
-              map: peta,
-          });
+          // var marker=new google.maps.Marker({
+          //     position: new google.maps.LatLng(-7.687989, 110.414362),
+          //     map: peta,
+          // });
 
-          var marker=new google.maps.Marker({
-              position: new google.maps.LatLng(-7.696770, 110.485006),
-              map: peta,
-          });
+         //  $.each( locations, function( index, value ){
+         //    mymap.addMarker({
+         //      latitude: value.latitude,
+         //      longitude: value.longitude,
+         //      title: value.city,
+         //      click: function(e) {
+         //        alert('This is '+value.city+', gujarat from India.');
+         //      }
+         //    });
+         // });
+
 
         }
 
@@ -228,23 +238,6 @@
       </div>
     </div>
   </footer>     
-    
-@foreach($dataLat as $i){
-  {{$i->latitude}}
-}
-@endforeach
-
-<!-- @foreach($dataLng as $i){
-  {{$i}}
-}
-@endforeach -->
-
-
-
-
-
-
-
 
 
     <!-- Optional JavaScript -->     
