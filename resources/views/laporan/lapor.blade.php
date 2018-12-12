@@ -25,72 +25,73 @@
 
     <!-- MAPS -->
 
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBOYROYFc-XcfFCMmw5MVlOZc1Tuh_HC2U"
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBOYROYFc-XcfFCMmw5MVlOZc1Tuh_HC2U"
     type="text/javascript"></script>
-        <script>
-// variabel global marker
-var marker;
-  
-function taruhMarker(peta, posisiTitik){
-    
-    if( marker ){
-      // pindahkan marker
-      marker.setPosition(posisiTitik);
-    } else {
-      // buat marker baru
-      marker = new google.maps.Marker({
-        position: posisiTitik,
-        map: peta
-      });
-    }
-        convert_latlng(posisiTitik);
 
-     // isi nilai koordinat ke form
-    document.getElementById("lat").value = posisiTitik.lat();
-    document.getElementById("lng").value = posisiTitik.lng();
+    <script>
+      // variabel global marker
+      var marker;
+        
+      function taruhMarker(peta, posisiTitik){
+          
+          if( marker ){
+            // pindahkan marker
+            marker.setPosition(posisiTitik);
+          } else {
+            // buat marker baru
+            marker = new google.maps.Marker({
+              position: posisiTitik,
+              map: peta
+            });
+          }
+              convert_latlng(posisiTitik);
 
-    // convert_latlng(posisiTitik);
-    
-}
-  
-// merubah geotag menjadi alamat
-function convert_latlng(pos) {
+           // isi nilai koordinat ke form
+          document.getElementById("lat").value = posisiTitik.lat();
+          document.getElementById("lng").value = posisiTitik.lng();
 
- // membuat geocoder
- var geocoder = new google.maps.Geocoder();
- geocoder.geocode({'latLng': pos}, function(r) {
+          // convert_latlng(posisiTitik);
+          
+      }
+        
+      // merubah geotag menjadi alamat
+      function convert_latlng(pos) {
 
-  if (r && r.length > 0) {
-   document.getElementById('alamat').value = r[0].formatted_address;
-  } else {
-   document.getElementById('alamat').value = 'Alamat tidak di temukan di lokasi !!';
-  }
+       // membuat geocoder
+       var geocoder = new google.maps.Geocoder();
+       geocoder.geocode({'latLng': pos}, function(r) {
 
- });
-}
+        if (r && r.length > 0) {
+         document.getElementById('alamat').value = r[0].formatted_address;
+        } else {
+         document.getElementById('alamat').value = 'Alamat tidak di temukan di lokasi !!';
+        }
 
-function initialize() {
-  var propertiPeta = {
-    center:new google.maps.LatLng(-7.687739,110.413222),
-    zoom:9,
-    mapTypeId:google.maps.MapTypeId.ROADMAP
-  };
-  
-  var peta = new google.maps.Map(document.getElementById("googleMap"), propertiPeta);
-  
-  // even listner ketika peta diklik
-  google.maps.event.addListener(peta, 'click', function(event) {
-    taruhMarker(this, event.latLng);
-  });
+       });
+      }
 
-}
+      function initialize() {
+        var propertiPeta = {
+          center:new google.maps.LatLng(-7.687739,110.413222),
+          zoom:9,
+          mapTypeId:google.maps.MapTypeId.ROADMAP
+        };
+        
+        var peta = new google.maps.Map(document.getElementById("googleMap"), propertiPeta);
+        
+        // even listner ketika peta diklik
+        google.maps.event.addListener(peta, 'click', function(event) {
+          taruhMarker(this, event.latLng);
+        });
+
+      }
 
 
-// event jendela di-load  
-google.maps.event.addDomListener(window, 'load', initialize);
-  
+      // event jendela di-load  
+      google.maps.event.addDomListener(window, 'load', initialize);
+        
 
-</script>
+      </script>
 
 
   <title>SIPLORA</title>
@@ -142,6 +143,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
     <div class="container lapor" id="lapor">
       <div class="row">        
         <div class="col-md-8 pt-5 mx-auto">
+          <h4 class="text-center">Laporkan Kejadian</h4>
           <form action="/lapor" method="POST">
             @csrf
             <div class="form-group col-lg-12">
@@ -159,7 +161,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
 
                 <div class="form-group col-lg-12">
                   <label for="alamat">Alamat</label>
-                  <input type="text" class="form-control" name="alamat" id="alamat" >
+                  <input type="text" class="form-control" name="alamat" id="alamat" required>
                 </div>
 
                 <div class="form-row-fluid">

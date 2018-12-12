@@ -2,16 +2,19 @@
 .navbar{
 	position: relative;
 	z-index: 1;
+	background-color: black;
+	color: white;
+
+}
+
+.navbar-brand, .nav-link{
+	color: white !important;
+	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.7);
 }
 
 .navbar-brand{
 	font-family: viga;
 	font-size: 32px;
-}
-
-.nav-item .dropdown-menu-right{
-	background-color: blue;
-	width: 50px;
 }
 
 
@@ -82,6 +85,7 @@
 .about{
 	margin-top: 120px;
 	text-align: center;
+	margin-bottom: 100px;
 }
 
 .about h3{
@@ -109,32 +113,27 @@
 	font-size: 30px;
 	font-weight: 300px;
 	text-transform: uppercase;
-	margin-top: 70px;
-}
-
-.gmap iframe{
-	overflow:hidden;
-	background:none!important;
-	height:300px;	
-	width: 80%;
-	margin: 30px;
+	margin-top: 50px;	
+	margin-bottom: 50px;
 }
 
 
-/*footer*/
-footer .contact{	
-	margin-top: 200px;
+
+
+/*contact*/
+.contact{	
+	margin-top: 350px;
 	color: white;
 	text-align: center;	
 	background-color: black;
 	font-family: viga;
 }
 
-footer .contact .footer-links a{
+.contact .footer-links a{
 	color: white;
 }
 
-footer .contact .footer-icons a{
+.contact .footer-icons a{
 	display: inline-block;
 	width: 35px;
 	height: 35px;
@@ -151,16 +150,14 @@ footer .contact .footer-icons a{
 	margin-bottom: 5px;
 }
 
+
+
 /*footer*/
-footer .copyright {
+footer .copyright{
 	color: #ACACAC;
 	text-align: center;
 	background-color: black;	
 }
-
-
-
-
 
 /*utility*/
 .tombol{
@@ -168,12 +165,16 @@ footer .copyright {
 	border-radius: 40px;
 }
 
+
 /*VERSI DESKTOP*/
 @media (min-width: 992px) {
-	/*.navbar{
-		background-color: #c62828;
+	.navbar{
+	position: relative;
+	z-index: 1;
+	background-color: transparent;
+	color: white;
 	}
-*/
+
 	.navbar-brand, .nav-link{
 		color: white !important;
 		text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.7);
@@ -231,8 +232,11 @@ footer .copyright {
 	}
 
 	/*contact*/
-	
-	footer .contact{
+	.contact{
+		background-color: black;
+	}
+
+	.contact{
 		height: 100px;
 		color: white;
 		background-color: black;
@@ -245,5 +249,6 @@ footer .copyright {
 		text-align: left;
 	}
 
+	/*footer*/
 	
 }

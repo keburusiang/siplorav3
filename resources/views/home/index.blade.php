@@ -40,7 +40,7 @@
   <body>
 
     <!-- iki Navbar -->
-    <nav class="navbar navbar-expand-lg fixed-top navbar-light" id="mainNav">
+    <nav class="navbar navbar-expand-lg navbar-dark" id="mainNav">
       <div class="container">
       <a class="navbar-brand" href="{{URL::to('/')}}">SIPLORA</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -121,7 +121,7 @@
     <!-- about Siplora -->
       <div class="row about" id="about">
         <div class="col-lg-6">
-          <img src="{{asset('perubahan/home/img/workingspace.png')}}" alt="about" class="img-fluid">
+          <img src="{{asset('perubahan/home/img/jumbotron-bg.jpg')}}" alt="about" class="img-fluid">
         </div>
         <div class="col-lg-5">
           <h3>About us</h3>
@@ -130,7 +130,7 @@
       </div>
     <!-- Akhir about Siplora -->
 
-    <!-- MAP -->
+    <!-- MAP -->    
       <div class="row map pb-5" id="map">
         <div class="col-lg-10 mx-auto">
          <h4>PETA SEBARAN LOKASI RAWAN BENCANA</h4>
@@ -156,17 +156,16 @@
             </div>
          </div>
       </div>
-      <!-- akhir Map -->     
+      <!-- akhir Map --> 
 
     </div>
     <!-- Akhir isine -->
 
-     <footer>
     <!-- contact -->
     <div class="contact" id="contact">
       <div class="container">
         <div class="row contact">         
-            <div class="col-lg-4 pt-3">
+            <div class="col-lg-3 pt-3">
               <h4>SIPLORA</h4>
                 <p class="footer-links">
                   <a class="" href="#mainNav">Home</a>
@@ -177,11 +176,14 @@
                   ·                  
                   <a href="#contact">Contact</a>
                 </p>
-            </div>
-            <div class="col-lg-4 pt-3">
-              
-            </div>
-            <div class="col-lg-4 pt-3">
+            </div>    
+            <div class="col-lg-3 pt-3">
+             
+            </div>  
+            <div class="col-lg-3 pt-3">
+             
+            </div>           
+            <div class="col-lg-3 pt-3">
               <h4>Contact Us</h4>
               <div class="footer-icons">
                 <a href="https://facebook.com/amiinmnugroho"><i class="fa fa-facebook"></i></a>
@@ -189,16 +191,23 @@
                 <a href="https://linkedin.com/in/amiinmn"><i class="fa fa-linkedin"></i></a> 
                 <a href="https://instagram.com/amiinmn"><i class="fa fa-instagram"></i></a>         
               </div>              
-            </div>                    
+            </div>       
         </div>
-        <div class="row copyright pt-3">
-          <div class="col text-center">
-           <p>2018. Sistem Pelaporan Lokasi Rawan Bencana By Shabaka</p>
-          </div>        
       </div>
+    </div>   
+    <!-- akhir contact -->
+
+    <!-- footer -->
+    <footer>
+      <div class="container-fluid">
+      <div class="row copyright pt-3">
+        
+        <div class="col text-center">
+         <p>2018. Sistem Pelaporan Lokasi Rawan Bencana By Shabaka</p>
+        </div>
+        </div>        
       </div>
-    </div>
-  </footer>     
+    </footer>
 
 
     <!-- Optional JavaScript -->     
