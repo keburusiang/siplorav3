@@ -20,8 +20,9 @@
     <link href="http://fonts.googleapis.com/css?family=Roboto:400,700,300" rel="stylesheet" type="text/css">
     <link href="{{asset('dashboard/css/pe-icon-7-stroke.css')}}" rel="stylesheet" />
 		<script type="text/javascript">
-			var locations = <?php print_r(json_encode($pelapor) ?>;
-			console.log(locations);
+		var pelapor = <?php print_r(json_encode($pelapor)) ?>;
+
+		console.log(pelapor);
 
 		</script>
 </head>
@@ -66,6 +67,11 @@
                 </div>
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav navbar-right">
+												<li>
+														<a href="#">
+															{{ $pelapor['namaDepan'] }}
+														</a>
+												</li>
                     		<li>
                             <a href="#">
                                 <p>Log out</p>
@@ -138,6 +144,14 @@
 
     </div>
 </div>
+<div class="card">
+	<label id="cok"></label>
+	<script type="text/javascript">
+				for (x in pelapor) {
+			document.getElementById("cok").innerHTML += pelapor[x];
+			}
+	</script>
+</div>
 </body>
 
     <!--   Core JS Files   -->
@@ -154,13 +168,17 @@
 		<!-- DEMO -->
 		<script src="{{asset('dashboard/js/demo.js')}}"></script>
 		<script type="text/javascript">
+		var pelapor = <?php print_r(json_encode($pelapor)) ?>;
+
+		console.log(pelapor);
+
 	    	$(document).ready(function(){
 
 	        	demo.initChartist();
 
 	        	$.notify({
 	            	icon: 'pe-7s-id',
-	            	message: "Hello <b>ADMIN </b> Jangan Lupa Mengecek Daftar <br> <b>Laporan yang sudah ter-Verifikasi</b> Hari Ini <br>- Selamat Bekerja"
+	            	message: "Hello <b> pelapor.namaDepan contenteditable="" </b> Jangan Lupa Mengecek Daftar <br> <b>Laporan yang sudah ter-Verifikasi</b> Hari Ini <br>- Selamat Bekerja"
 
 	            },{
 	                type: 'info',

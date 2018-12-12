@@ -38,4 +38,5 @@ $this->post('/logout', 'Auth\LoginController@logout')->name('logout');
 
 // redirect ke DASHBOARD
 
-Route::get('/pelapor/dashboard/', 'PelaporController@dashboard');
+// Route::get('/pelapor/dashboard/{id}', 'PelaporController@dashboard');
+Route::resource('/pelapor/dashboard','PelaporController');

@@ -23,8 +23,8 @@ class LaporController extends Controller
 
     public function index()
     {
-
-        return view('laporan/lapor');
+        $pelapor = User::all();
+        return view('laporan/lapor',compact('pelapor'));
     }
 
     /**
@@ -55,7 +55,7 @@ class LaporController extends Controller
         $laporan-> alamat = $request-> alamat;
         $laporan-> user_id = $id;
         $laporan->save();
-        return redirect('/pelapor/dashboard/');
+        return redirect('/');
     }
 
     /**

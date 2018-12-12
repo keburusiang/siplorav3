@@ -2,20 +2,22 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use Illuminate\Http\Request;
 
 class PelaporController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function dashboard($id)
-    {
-        $pelapor = user::find($id);
-        return view('dashboard.pelapor.index',compact('pelapor'));
-    }
 
     /**
      * Show the form for creating a new resource.
@@ -46,7 +48,8 @@ class PelaporController extends Controller
      */
     public function show($id)
     {
-        //
+      $pelapor = User::find($id);
+      return view('dashboard.pelapor.index',compact('pelapor'));
     }
 
     /**
