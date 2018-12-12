@@ -141,9 +141,9 @@
                 var locations = <?php print_r(json_encode($map)) ?>;
                 var mymap = new GMaps({
                   el: '#googleMap',
-                  lat: 21.170240,
-                  lng: 72.831061,
-                  zoom:6
+                  lat: -7.543037,
+                  lng: 110.485844,
+                  zoom:9, 
                 });
 
                 $.each( locations, function( index, value ){
