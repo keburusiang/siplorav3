@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\laporan;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -20,6 +20,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('/home/index');
+        $dataLat = laporan::where('latitude')->first();
+        $dataLng = laporan::where('longitude')->first();
+        return view('/home/index', compact('dataLat','dataLng'));
     }
 }

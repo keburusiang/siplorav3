@@ -27,6 +27,61 @@
     <link rel="stylesheet" type="text/css" href="{{asset('perubahan/home/css/home.css')}}">
 
     <title>SIPLORA</title>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBOYROYFc-XcfFCMmw5MVlOZc1Tuh_HC2U"
+    type="text/javascript"></script>
+     <script>
+
+        function initialize() {
+          var propertiPeta = {
+            center:new google.maps.LatLng(-7.684029, 110.423406),
+            zoom:9,
+            mapTypeId:google.maps.MapTypeId.ROADMAP
+          };
+          
+          var peta = new google.maps.Map(document.getElementById("googleMap"), propertiPeta);
+          
+          
+          // membuat Marker
+
+          var marker=new google.maps.Marker({
+              position: new google.maps.LatLng(-7.687989, 110.414362),
+              map: peta,
+          });
+
+          var marker=new google.maps.Marker({
+              position: new google.maps.LatLng(-7.696770, 110.485006),
+              map: peta,
+          });
+
+        }
+
+      //   function geocodeLatLng(geocoder, map, infowindow) {
+      //   var input = document.getElementById('latlng').value;
+      //   var latlngStr = input.split(',', 2);
+      //   var latlng = {lat: parseFloat(latlngStr[0]), lng: parseFloat(latlngStr[1])};
+      //   geocoder.geocode({'location': latlng}, function(results, status) {
+      //     if (status === 'OK') {
+      //       if (results[0]) {
+      //         map.setZoom(11);
+      //         var marker = new google.maps.Marker({
+      //           position: latlng,
+      //           map: map
+      //         });
+      //         infowindow.setContent(results[0].formatted_address);
+      //         infowindow.open(map, marker);
+      //       } else {
+      //         window.alert('No results found');
+      //       }
+      //     } else {
+      //       window.alert('Geocoder failed due to: ' + status);
+      //     }
+      //   });
+      // }
+
+        // event jendela di-load  
+        google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
   </head>
   <body>
 
@@ -122,12 +177,12 @@
     <!-- Akhir about Siplora -->
 
     <!-- MAP -->
-      <div class="row map" id="map">
+      <div class="row map pb-5" id="map">
         <div class="col-lg-10 mx-auto">
          <h4>PETA SEBARAN LOKASI RAWAN BENCANA</h4>
         </div>        
          <div class="gmap col-lg-12 mx-auto">
-                  <iframe id="gmap" src="https://maps.google.com/maps?q=universitas%20islam%20indonesia&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+            <div class="form-control" id="googleMap" style="height: 430px;" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></div>
          </div>
       </div>
       <!-- akhir Map -->     
@@ -174,10 +229,15 @@
     </div>
   </footer>     
     
+@foreach($dataLat as $i){
+  {{$i->latitude}}
+}
+@endforeach
 
-
-
-
+<!-- @foreach($dataLng as $i){
+  {{$i}}
+}
+@endforeach -->
 
 
 
