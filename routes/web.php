@@ -18,8 +18,6 @@
 //     return view('home.maps');
 // });
 
-Route::get('/maps','ControllerMaps@index');
-
 
 Route::get('/','HomeController@index');
 // Route::get('/lapor', 'LaporController@index');
@@ -37,3 +35,7 @@ $this->post('/login', 'Auth\LoginController@login');
 
 $this->post('/logout', 'Auth\LoginController@logout')->name('logout');
 
+
+// redirect ke DASHBOARD
+
+Route::get('/pelapor/dashboard/', 'PelaporController@dashboard');

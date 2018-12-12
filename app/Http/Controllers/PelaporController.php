@@ -2,29 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\laporan;
-use App\User;
-use Auth;
 use Illuminate\Http\Request;
-use Illuminate\Support\Str;
 
-class LaporController extends Controller
+class PelaporController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-
-    public function __construct()
+    public function dashboard($id)
     {
-        $this->middleware('auth');
-    }
-
-    public function index()
-    {
-
-        return view('laporan/lapor');
+        $pelapor = user::find($id);
+        return view('dashboard.pelapor.index',compact('pelapor'));
     }
 
     /**
@@ -45,17 +35,7 @@ class LaporController extends Controller
      */
     public function store(Request $request)
     {
-        $id = Auth::user()->id;
-        $laporan = new Laporan();
-        $laporan-> kode_laporan = Str::random(5);
-        $laporan-> jenis_laporan = $request-> jenisBencana;
-        $laporan-> deskripsi = $request-> deskripsi;
-        $laporan-> latitude = $request-> latitude;
-        $laporan-> longitude = $request-> longitude;
-        $laporan-> alamat = $request-> alamat;
-        $laporan-> user_id = $id;
-        $laporan->save();
-        return redirect('/pelapor/dashboard/');
+        //
     }
 
     /**
