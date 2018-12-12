@@ -12,6 +12,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gmaps.js/0.4.24/gmaps.js"></script>
 
     <!-- iki Bootstrap CSS -->
     <link href="{{asset('perubahan/home/vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
@@ -31,7 +32,7 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBOYROYFc-XcfFCMmw5MVlOZc1Tuh_HC2U"
     type="text/javascript"></script>
      <script>
-
+      
 
         function initialize() {
           var locations = <?php print_r(json_encode($map)) ?>;
@@ -47,10 +48,10 @@
           
           // membuat Marker
 
-          // var marker=new google.maps.Marker({
-          //     position: new google.maps.LatLng(-7.687989, 110.414362),
-          //     map: peta,
-          // });
+          var marker=new google.maps.Marker({
+              position: new google.maps.LatLng(-7.687989, 110.414362),
+              map: peta,
+          });
 
          //  $.each( locations, function( index, value ){
          //    mymap.addMarker({
