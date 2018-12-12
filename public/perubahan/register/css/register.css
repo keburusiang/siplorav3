@@ -19,7 +19,6 @@
 .card{
 	margin: auto;
 	border-radius: 8px;
-	width: 380px;
 	margin-top: 100px;
 	margin-bottom: 100px;
 	box-shadow: 0px 0px 20px #c7cad1;box-shadow: 0px 0px 20px #c7cad1;
@@ -27,8 +26,7 @@
 }
 
 /*contact*/
-.contact{	
-	margin-top: ;
+.contact{		
 	color: white;
 	text-align: center;	
 	background-color: black;

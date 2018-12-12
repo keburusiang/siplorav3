@@ -21,7 +21,7 @@
     <link href="https://fonts.googleapis.com/css?family=Viga" rel="stylesheet">
 
     <!-- iki CSS -->
-    <link rel="stylesheet" type="text/css" href="{{asset('perubahan/laporan/css/laporan.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('perubahan/login/css/login.css')}}">
 
 
 
@@ -69,15 +69,13 @@
       </div>
     </nav>
     <!-- Navbar entek -->
-    
 
-    <!-- ISINE -->
-    <section class="login" id="login">
-      <div class="container">              
-        <div class="row">          
-          <div class="col-md-5 mx-auto p-3">            
-            <form method="POST" action="{{ route('login') }}" class="bg-light rounded p-3">
-              <h4>Masuk Dengan Akun Anda</h4>
+    <div class="container">
+    <div class="card col-lg-4 ">
+      <h4 class="card-title text-center pt-3">Masuk Akun Anda</h4>
+      <p class="text-center">Belum punya akun? <a href="{{URL::to('/register')}}" class="card-link">Klik disini</a></p>
+      <div class="card-body p-0 pb-4">
+        <form method="POST" action="{{ route('login') }}" class="">       
             @csrf
             <div class="form-row">
               <div class="form-group col-md">
@@ -97,13 +95,49 @@
               </div>
             </div>
               <div style="text-align:center;">
-                <button  type="submit" class="btn btn-primary btn-xl">Login</button>
+                <button  type="submit" class="btn btn-primary mt-2" style="width:100%">Login</button>
+              </div>
+            </form>
+      </div>
+    </div>
+    </div>
+    
+
+    <!-- ISINE -->
+    <!-- <section class="login" id="login">
+      <div class="container">              
+        <div class="row">          
+          <div class="col-md-5 mx-auto p-3">            
+          
+            <form method="POST" action="{{ route('login') }}" class="kotak rounded p-3">
+              <h4 class="text-center">Masuk  Akun Anda</h4>
+            @csrf
+            <div class="form-row">
+              <div class="form-group col-md">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" name="email" id="email" placeholder="Email" required>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md">
+                <label for="password">Password</label>
+                <input type="password" class="form-control" name="password" id="password" placeholder="Password" required>
+                @if ($errors->has('password'))
+                  <span class="invalid-feedback" role="alert">
+                    <strong>email atau password salah</strong>
+                  </span>
+                @endif
+              </div>
+            </div>
+              <div style="text-align:center;">
+                <button  type="submit" class="btn btn-primary mt-2" style="width:100%">Login</button>
               </div>
             </form>
           </div>
         </div>
+        </div>
       </div>
-    </section>
+    </section>  -->
 
 
     <!-- contact -->
