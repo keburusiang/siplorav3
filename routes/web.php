@@ -14,9 +14,9 @@
 // Auth::routes();
 
 
-// Route::get('/asd', function () {
-//     return view('home.maps');
-// });
+Route::get('/about', function () {
+    return view('home.about');
+});
 
 
 Route::get('/','HomeController@index');

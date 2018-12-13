@@ -35,8 +35,8 @@
     <!-- data-color="blue | azure | green | orange | red | purple" -->
 
         <div class="sidebar-wrapper">
-            <div class="logo">
-                <a class="simple-text">
+            <div class="logo" href="{{URL::to("/")}}">
+                <a >
                     SIPLORA
                 </a>
             </div>
@@ -71,21 +71,16 @@
                 </div>
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav navbar-right">
-											<li class="nav-item dropdown">
-						                <a id="navbarDropdown" class="btn btn-primary dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>{{ Auth::user()->namaDepan }}
-						                    <span class="caret"></span>
-						                </a>
-						                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-						                    <a class="dropdown-item" href="{{ route('logout') }}"
-						                        onclick="event.preventDefault();
-						                        document.getElementById('logout-form').submit();">
-						                        {{ ('Logout') }}
-						                    </a>
-						                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-						                    @csrf
-						                    </form>
-						                </div>
-						            </li>
+											<li >
+												<a class="btn btn-primary"  href="{{ route('logout') }}"
+														onclick="event.preventDefault();
+														document.getElementById('logout-form').submit();">
+														{{ ('Logout') }}
+												</a>
+												<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+												@csrf
+												</form>
+						          </li>
                     </ul>
                 </div>
             </div>
