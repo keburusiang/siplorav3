@@ -20,8 +20,9 @@
     <link href="http://fonts.googleapis.com/css?family=Roboto:400,700,300" rel="stylesheet" type="text/css">
     <link href="{{asset('dashboard/css/pe-icon-7-stroke.css')}}" rel="stylesheet" />
 		<script type="text/javascript">
-			var locations = <?php print_r(json_encode($pelapor) ?>;
-			console.log(locations);
+		var pelapor = <?php print_r(json_encode($pelapor)) ?>;
+
+		console.log(pelapor);
 
 		</script>
 </head>
@@ -29,23 +30,26 @@
 
 <div class="wrapper">
     <div class="sidebar" data-color="azure" data-image="{{asset('dashboard/img/volcano.jpg')}}">
+
     <!-- data-color="blue | azure | green | orange | red | purple" -->
+
     	<div class="sidebar-wrapper">
             <div class="logo">
                 <a class="simple-text">
                     SIPLORA
                 </a>
             </div>
+
             <ul class="nav">
                 <li class="active">
-                    <a href="dashboardAdmin.html">
-                        <i class="pe-7s-graph"></i>
-                        <p>Dashboard</p>
+                    <a href="{{URL::to('/pelapor/dashboard/'.$pelapor->id)}}">
+                        <i class="pe-7s-note2"></i>
+                        <p>Laporan</p>
                     </a>
                 </li>
                 <li>
-                    <a href="userProfile.html">
-                        <i class="pe-7s-note2"></i>
+                    <a href="{{URL::to('/pelapor/dashboard/profile/'.$pelapor->id)}}">
+                        <i class="pe-7s-user"></i>
                         <p>User Profile</p>
                     </a>
                 </li>
@@ -62,71 +66,162 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#">Dashboard</a>
+                    <a class="navbar-brand" href="#">Laporan</a>
                 </div>
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav navbar-right">
-                    		<li>
+                    <li>
                             <a href="#">
                                 <p>Log out</p>
                             </a>
                         </li>
-												<li class="separator hidden-lg">
-												</li>
+						<li class="separator hidden-lg"></li>
                     </ul>
                 </div>
             </div>
         </nav>
 
         <div class="content">
-            <div class="container-fluid">
                 <div class="row">
-                    <div class="col-md-12" align="center">
+                    <div class="col-md-12">
                         <div class="card">
                             <div class="header">
-                                <h4 class="title">Statistik Laporan</h4>
+                                <h4 class="title">Laporan</h4>
+                                <!--
                                 <p class="category">Lokasi Rawan Bencana</p>
+                                -->
                             </div>
                             <div class="content">
-                                <div id="chartPreferences" class="ct-chart ct-perfect-fourth"></div>
-                                <div class="footer">
-                                    <div class="legend">
-                                        <i class="fa fa-circle text-info"></i> Diterima
-                                        <i class="fa fa-circle text-danger"></i> Menunggu
-                                        <i class="fa fa-circle text-warning"></i> Ditolak
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Jenis Bencana</label>
+                                            <label id="jenisBencana" class="form-control" ></label>
+                                        </div>
                                     </div>
-                                    <hr>
-                                    <div class="stats">
-                                        <i class="fa fa-clock-o"></i> Diupdate 3 Hari yang lalu
+                                     <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Alamat</label>
+                                            <label id="alamat" class="form-control" ></label>
+                                        </div>
                                     </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Deskripsi Bencana</label>
+                                            <label id="deskripsi" class="form-control"></label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                <h5>Status Laporan</h5>
+
+                                <div class="alert alert-danger">
+                                    <button type="button" aria-hidden="true" class="close">×</button>
+                                    <span><b> Ditolak - </b> Maaf, Laporan Anda Kami Tolak, karena data tidak sesuai dengan yang ada dilapangan. </span>
                                 </div>
+                            </div>
+                                </div>
+                        <!-- content -->
                             </div>
                             <br>
-                            <!--
+                        <!-- card -->
+                        </div>
+
+        <div class="content">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
                             <div class="header">
-                                <h4 class="title">Provinsi Rawan Bencana</h4>
-                                <p class="category">Berdasarkan Laporan Yang Diterima</p>
+                                <h4 class="title">Laporan</h4>
+                                <!--
+                                <p class="category">Lokasi Rawan Bencana</p>
+                                -->
                             </div>
                             <div class="content">
-                                <div id="chartActivity" class="ct-chart"></div>
-
-                                <div class="footer">
-                                    <div class="legend">
-                                        <i class="fa fa-circle text-info"></i> Laporan Diterima
-                                        <i class="fa fa-circle text-danger"></i> Laporan Ditolak
-                                    </div>
-                                    <hr>
-                                    <div class="stats">
-                                        <i class="fa fa-check"></i> Data laporan Resmi</div>
+                                <div class="row">
+																	<div class="col-md-6">
+																			<div class="form-group">
+																					<label>Jenis Bencana</label>
+																					<label id="jenisBencana" class="form-control" ></label>
+																			</div>
+																	</div>
+																	 <div class="col-md-6">
+																			<div class="form-group">
+																					<label>Alamat</label>
+																					<label id="alamat" class="form-control" ></label>
+																			</div>
+																	</div>
+																	<div class="col-md-6">
+																			<div class="form-group">
+																					<label>Deskripsi Bencana</label>
+																					<label id="deskripsi" class="form-control"></label>
+																			</div>
+																	</div>
+                                    <div class="col-md-6">
+                                <h5>Status Laporan</h5>
+                                <div class="alert alert-warning">
+                                    <button type="button" aria-hidden="true" class="close">×</button>
+                                    <span><b> Tunggu - </b> Maaf, Laporan anda masih dalam Tahap verifikasi, Secepat mungkin kami update</span>
                                 </div>
                             </div>
-                        -->
+                                </div>
+                        <!-- content -->
+                            </div>
+                            <br>
+                        <!-- card -->
+                        </div>
+
+        <div class="content">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="header">
+                                <h4 class="title">Laporan</h4>
+                                <!--
+                                <p class="category">Lokasi Rawan Bencana</p>
+                                -->
+                            </div>
+                            <div class="content">
+                                <div class="row">
+																	<div class="col-md-6">
+																			<div class="form-group">
+																					<label>Jenis Bencana</label>
+																					<label id="jenisBencana" class="form-control" ></label>
+																			</div>
+																	</div>
+																	 <div class="col-md-6">
+																			<div class="form-group">
+																					<label>Alamat</label>
+																					<label id="alamat" class="form-control" ></label>
+																			</div>
+																	</div>
+																	<div class="col-md-6">
+																			<div class="form-group">
+																					<label>Deskripsi Bencana</label>
+																					<label id="deskripsi" class="form-control"></label>
+																			</div>
+																	</div>
+                                    <div class="col-md-6">
+                                <h5>Status Laporan</h5>
+                                <div class="alert alert-success">
+                                    <button type="button" aria-hidden="true" class="close">×</button>
+                                    <span><b> Diterima - </b> Selamat Laporan Anda Diterima dan telah diverifikasi. Terima kasih sudah berpartisipasi dalam pencegahan Bencana</span>
+                                </div>
+                                </div>
+                            </div>
+                                </div>
+                        <!-- content -->
+                            </div>
+                            <br>
+                        <!-- card -->
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
+    </div>
+    </div>
+</div>
+</div>
         <footer class="footer">
             <div class="container-fluid">
                 <nav class="pull-left"></nav>
@@ -154,13 +249,17 @@
 		<!-- DEMO -->
 		<script src="{{asset('dashboard/js/demo.js')}}"></script>
 		<script type="text/javascript">
+		var pelapor = <?php print_r(json_encode($pelapor)) ?>;
+
+		console.log(pelapor);
+
 	    	$(document).ready(function(){
 
 	        	demo.initChartist();
 
 	        	$.notify({
 	            	icon: 'pe-7s-id',
-	            	message: "Hello <b>ADMIN </b> Jangan Lupa Mengecek Daftar <br> <b>Laporan yang sudah ter-Verifikasi</b> Hari Ini <br>- Selamat Bekerja"
+	            	message: "Hello <b> pelapor.namaDepan contenteditable="" </b> Jangan Lupa Mengecek Daftar <br> <b>Laporan yang sudah ter-Verifikasi</b> Hari Ini <br>- Selamat Bekerja"
 
 	            },{
 	                type: 'info',
