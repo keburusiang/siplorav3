@@ -22,7 +22,9 @@
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">    
 
     <!-- iki font -->
-    <link href="https://fonts.googleapis.com/css?family=Viga" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Viga|Roboto|Poppin" rel="stylesheet">
+    
+
 
     <!-- iki CSS -->
     <link rel="stylesheet" type="text/css" href="{{asset('perubahan/home/css/home.css')}}">
@@ -85,8 +87,8 @@
     <div class="jumbotron jumbotron-fluid">
       <div class="container">
         <h1 class="display-4">Laporkan Lokasi Rawan Bencana</h1>
-        <a href="{{URL::to('/lapor')}}" class="btn btn-danger tombol">LAPORKAN</a> 
-        <a href="{{URL::to('/lacak')}}" class="btn btn-secondary tombol">LACAK LAPORAN</a> 
+        <a href="{{URL::to('/lapor')}}" class="btn btn-primary tombol">LAPORKAN</a> 
+        <!-- <a href="{{URL::to('/lacak')}}" class="btn btn-secondary tombol">LACAK LAPORAN</a>  -->
       </div>
     </div>
     <!-- jumbotron entek -->
@@ -99,19 +101,24 @@
         <div class="col-10 info-panel">
           <div class="row">
             <div class="col-lg">
-              <img src="{{asset('perubahan/home/img/employee.png')}}" class="float-left">
-              <h4>Melayani</h4>
-              <p>lorem5</p>          
+              <img src="{{asset('perubahan/home/img/office.svg')}}" class="float-left">
+              <h4>Lapor</h4>
+              <p>Laporkan lokasi di sekitar anda.</p>          
             </div>
             <div class="col-lg">
               <img src="{{asset('perubahan/home/img/employee.png')}}" class="float-left">
-              <h4>Melayani</h4>
-              <p>lorem5</p>          
+              <h4>Verivikasi</h4>
+              <p>Laporan anda akan diverifikasi</p>          
             </div>
             <div class="col-lg">
               <img src="{{asset('perubahan/home/img/employee.png')}}" class="float-left">
-              <h4>Melayani</h4>
-              <p>lorem5</p>          
+              <h4>Lacak</h4>
+              <p>Lacak status laporan anda</p>          
+            </div>
+            <div class="col-lg">
+              <img src="{{asset('perubahan/home/img/employee.png')}}" class="float-left">
+              <h4>Map</h4>
+              <p>lihal lokasi yang anda laporkan</p>          
             </div>
           </div>
         </div>
