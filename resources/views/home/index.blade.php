@@ -12,14 +12,14 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/gmaps.js/0.4.24/gmaps.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gmaps.js/0.4.24/gmaps.js"></script>
 
     <!-- iki Bootstrap CSS -->
     <link href="{{asset('perubahan/home/vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
     <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous"> -->
 
-    <!-- iki icon -->    
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">    
+    <!-- iki icon -->
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
 
     <!-- iki font -->
     <link href="https://fonts.googleapis.com/css?family=Viga|Roboto|Poppin" rel="stylesheet">
@@ -62,7 +62,7 @@
           @else
 
           <li class="nav-item dropdown">
-                <a id="navbarDropdown" class="btn btn-primary dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>{{ Auth::user()->namaDepan }} 
+                <a id="navbarDropdown" class="btn btn-primary dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>{{ Auth::user()->namaDepan }}
                     <span class="caret"></span>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
@@ -89,13 +89,15 @@
         <h1 class="display-4">Laporkan Lokasi Rawan Bencana</h1>
         <a href="{{URL::to('/lapor')}}" class="btn btn-primary tombol">LAPORKAN</a> 
         <!-- <a href="{{URL::to('/lacak')}}" class="btn btn-secondary tombol">LACAK LAPORAN</a>  -->
+        <a href="{{URL::to('/lapor')}}" class="btn btn-danger tombol">LAPORKAN</a>
+        <a href="{{URL::to('/lacak')}}" class="btn btn-secondary tombol">LACAK LAPORAN</a>
       </div>
     </div>
     <!-- jumbotron entek -->
 
     <!-- ISINE -->
     <div class="container">
-      
+
     <!-- info -->
       <div class="row justify-content-center">
         <div class="col-10 info-panel">
@@ -119,6 +121,18 @@
               <img src="{{asset('perubahan/home/img/employee.png')}}" class="float-left">
               <h4>Map</h4>
               <p>lihal lokasi yang anda laporkan</p>          
+              <h4>Melayani</h4>
+              <p>lorem5</p>
+            </div>
+            <div class="col-lg">
+              <img src="{{asset('perubahan/home/img/employee.png')}}" class="float-left">
+              <h4>Melayani</h4>
+              <p>lorem5</p>
+            </div>
+            <div class="col-lg">
+              <img src="{{asset('perubahan/home/img/employee.png')}}" class="float-left">
+              <h4>Melayani</h4>
+              <p>lorem5</p>
             </div>
           </div>
         </div>
@@ -133,15 +147,15 @@
         <div class="col-lg-5">
           <h3>About us</h3>
           <p>SIPLORA adalah sistem pelayanan masyarakat guna meningkatkan aksi preventif bencana dengan cara melaporkan lokasi yang rawan terjadi bencana</p>
-        </div>    
+        </div>
       </div>
     <!-- Akhir about Siplora -->
 
-    <!-- MAP -->    
+    <!-- MAP -->
       <div class="row map pb-5" id="map">
         <div class="col-lg-10 mx-auto">
          <h4>PETA SEBARAN LOKASI RAWAN BENCANA</h4>
-        </div>        
+        </div>
          <div class="gmap col-lg-12 mx-auto">
             <div class="form-control" id="googleMap" style="height: 430px;" frameborder="0" scrolling="no" marginheight="0" marginwidth="0">
               <script type="text/javascript">
@@ -150,7 +164,9 @@
                   el: '#googleMap',
                   lat: -7.543037,
                   lng: 110.485844,
-                  zoom:9, 
+                  zoom:9,
+                  mapTypeControl: false,
+                  mapTypeId: google.maps.MapTypeId.TERRAIN,
                 });
 
                 $.each( locations, function( index, value ){
@@ -163,7 +179,7 @@
             </div>
          </div>
       </div>
-      <!-- akhir Map --> 
+      <!-- akhir Map -->
 
     </div>
     <!-- Akhir isine -->
@@ -171,7 +187,7 @@
     <!-- contact -->
     <div class="contact" id="contact">
       <div class="container">
-        <div class="row contact">         
+        <div class="row contact">
             <div class="col-lg-3 pt-3">
               <h4>SIPLORA</h4>
                 <p class="footer-links">
@@ -180,49 +196,49 @@
                   <a href="#about">About</a>
                   ·
                   <a href="#map">Map</a>
-                  ·                  
+                  ·
                   <a href="#contact">Contact</a>
                 </p>
-            </div>    
+            </div>
             <div class="col-lg-3 pt-3">
-             
-            </div>  
+
+            </div>
             <div class="col-lg-3 pt-3">
-             
-            </div>           
+
+            </div>
             <div class="col-lg-3 pt-3">
               <h4>Contact Us</h4>
               <div class="footer-icons">
                 <a href="https://facebook.com/amiinmnugroho"><i class="fa fa-facebook"></i></a>
                 <a href="https://twitter.com/amiinmn"><i class="fa fa-twitter"></i></a>
-                <a href="https://linkedin.com/in/amiinmn"><i class="fa fa-linkedin"></i></a> 
-                <a href="https://instagram.com/amiinmn"><i class="fa fa-instagram"></i></a>         
-              </div>              
-            </div>       
+                <a href="https://linkedin.com/in/amiinmn"><i class="fa fa-linkedin"></i></a>
+                <a href="https://instagram.com/amiinmn"><i class="fa fa-instagram"></i></a>
+              </div>
+            </div>
         </div>
       </div>
-    </div>   
+    </div>
     <!-- akhir contact -->
 
     <!-- footer -->
     <footer>
       <div class="container-fluid">
       <div class="row copyright pt-3">
-        
+
         <div class="col text-center">
          <p>2018. Sistem Pelaporan Lokasi Rawan Bencana By Shabaka</p>
         </div>
-        </div>        
+        </div>
       </div>
     </footer>
 
 
-    <!-- Optional JavaScript -->     
+    <!-- Optional JavaScript -->
 <!--     <script type="text/javascript" src="{{asset('js/new-age.min.js')}}"></script>
  -->
 <!--  <script type="text/javascript" src="{{asset('css/')}}"></script>
  -->    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    
+
   </body>
 
 </html>
