@@ -88,9 +88,7 @@
       <div class="container">
         <h1 class="display-4">Laporkan Lokasi Rawan Bencana</h1>
         <a href="{{URL::to('/lapor')}}" class="btn btn-primary tombol">LAPORKAN</a>
-        <!-- <a href="{{URL::to('/lacak')}}" class="btn btn-secondary tombol">LACAK LAPORAN</a>  -->
-        <a href="{{URL::to('/lapor')}}" class="btn btn-danger tombol">LAPORKAN</a>
-        <a href="{{URL::to('/lacak')}}" class="btn btn-secondary tombol">LACAK LAPORAN</a>
+        <!-- <a href="{{URL::to('/lacak')}}" class="btn btn-secondary tombol">LACAK LAPORAN</a>  -->       
       </div>
     </div>
     <!-- jumbotron entek -->
@@ -120,20 +118,9 @@
             <div class="col-lg">
               <img src="{{asset('perubahan/home/img/employee.png')}}" class="float-left">
               <h4>Map</h4>
-              <p>lihal lokasi yang anda laporkan</p>
-              <h4>Melayani</h4>
-              <p>lorem5</p>
+              <p>lihal lokasi yang anda laporkan</p>              
             </div>
-            <div class="col-lg">
-              <img src="{{asset('perubahan/home/img/employee.png')}}" class="float-left">
-              <h4>Melayani</h4>
-              <p>lorem5</p>
-            </div>
-            <div class="col-lg">
-              <img src="{{asset('perubahan/home/img/employee.png')}}" class="float-left">
-              <h4>Melayani</h4>
-              <p>lorem5</p>
-            </div>
+            
           </div>
         </div>
       </div>
