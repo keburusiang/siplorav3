@@ -46,62 +46,64 @@
     	</div>
     </div>
     <div class="main-panel">
-        <nav class="navbar navbar-default navbar-fixed">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    	<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation-example-2">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    	</button>
-                    <a class="navbar-brand" href="#">Laporan</a>
-                </div>
-                <div class="collapse navbar-collapse">
-                    <ul class="nav navbar-nav navbar-right">
-                    		<li>
-                            <a href="#">
-                                <p>Log out</p>
-                            </a>
-                        </li>
-												<li class="separator hidden-lg">
-												</li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
+				<nav class="navbar navbar-default navbar-fixed">
+						<div class="container-fluid">
+								<div class="navbar-header">
+										<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation-example-2">
+												<span class="sr-only">Toggle navigation</span>
+												<span class="icon-bar"></span>
+												<span class="icon-bar"></span>
+										</button>
+										<a class="navbar-brand" href="#">User Profile</a>
+								</div>
+								<div class="collapse navbar-collapse">
+										<ul class="nav navbar-nav navbar-right">
+											<li >
+												<a class="btn btn-primary"  href="{{ route('logout') }}"
+														onclick="event.preventDefault();
+														document.getElementById('logout-form').submit();">
+														{{ ('Logout') }}
+												</a>
+												<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+												@csrf
+												</form>
+											</li>
+										</ul>
+								</div>
+						</div>
+				</nav>
 				<div class="content">
             <div class="row">
                 <div class="col-md-12">
 									<!-- LOOP DATA LAPORAN -->
 									@foreach ($data as $laporan)
-                    <div class="card">
+                    <div class="card" style="width:98%; margin: 0 auto;">
                         <div class="header">
-                            <h4 class="title">Laporan</h4>
+                            <h4 class="title">Kode Laporan : <b>{{$laporan->kode_laporan}}</b></h4>
                         </div>
                         <div class="content">
                             <div class="row">
                                 <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label>Jenis Bencana</label>
-                                        <label id="jenisBencana" class="form-control" >{{$laporan->jenis_laporan}}</label>
-                                    </div>
+																	<h5>Jenis Laporan</h5>
+																	<div class="alert alert-info">
+																			<span>{{$laporan->jenis_laporan}}</span>
+																	</div>
                                 </div>
                                 <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label>Alamat</label>
-                                        <label id="alamat" class="form-control" >{{$laporan->alamat}}</label>
-                                    </div>
+																	<h5>Alamat</h5>
+																	<div class="alert alert-info">
+																			<span>{{$laporan->alamat}}</span>
+																	</div>
                                 </div>
                                     <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label>Deskripsi Bencana</label>
-                                            <label id="deskripsi" class="form-control">{{$laporan->deskripsi}}</label>
-                                        </div>
+																			<h5>Deskripsi</h5>
+																			<div class="alert alert-info">
+																					<span>{{$laporan->deskripsi}}</span>
+																			</div>
                                     </div>
                                 <div class="col-md-6">
                                     <h5>Status Laporan</h5>
                                     <div class="alert alert-danger">
-                                        <button type="button" aria-hidden="true" class="close">×</button>
                                         <span><b> Ditolak - </b> Maaf, Laporan Anda Kami Tolak, karena data tidak sesuai dengan yang ada dilapangan. </span>
                                     </div>
                                 </div>

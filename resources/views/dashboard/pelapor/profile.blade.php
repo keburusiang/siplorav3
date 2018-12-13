@@ -30,33 +30,29 @@
 <body>
 
 <div class="wrapper">
-    <div class="sidebar" data-color="azure" data-image="{{asset('dashboard/img/volcano.jpg')}}">
-
-    <!-- data-color="blue | azure | green | orange | red | purple" -->
-
-        <div class="sidebar-wrapper">
-            <div class="logo" href="{{URL::to("/")}}">
-                <a >
-                    SIPLORA
-                </a>
-            </div>
-
-            <ul class="nav">
-                <li>
-                    <a href="{{URL::to('/pelapor/dashboard/')}}">
-                        <i class="pe-7s-graph"></i>
-                        <p>Laporan</p>
-                    </a>
-                </li>
-                <li class="active">
-                    <a href="{{URL::to('/pelapor/dashboard/profile/')}}">
-                        <i class="pe-7s-user"></i>
-                        <p>User Profile</p>
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </div>
+	<div class="sidebar" data-color="azure" data-image="{{asset('dashboard/img/volcano.jpg')}}">
+		<div class="sidebar-wrapper">
+					<div class="logo">
+							<a class="simple-text">
+									SIPLORA
+							</a>
+					</div>
+					<ul class="nav">
+							<li >
+									<a href="{{URL::to('/pelapor/dashboard/')}}">
+											<i class="pe-7s-note2"></i>
+											<p>Laporan</p>
+									</a>
+							</li>
+							<li class="active">
+									<a href="{{URL::to('/pelapor/dashboard/profile/')}}">
+											<i class="pe-7s-user"></i>
+											<p>User Profile</p>
+									</a>
+							</li>
+					</ul>
+		</div>
+	</div>
 
     <div class="main-panel">
         <nav class="navbar navbar-default navbar-fixed">
