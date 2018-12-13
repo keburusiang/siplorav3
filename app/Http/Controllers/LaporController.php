@@ -55,7 +55,7 @@ class LaporController extends Controller
         $laporan-> alamat = $request-> alamat;
         $laporan-> user_id = $id;
         $laporan->save();
-        return redirect('/');
+        return redirect('/pelapor/dashboard/'.Auth::user()->id);
     }
 
     /**
