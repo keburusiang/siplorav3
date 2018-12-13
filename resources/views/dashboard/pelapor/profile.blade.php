@@ -43,13 +43,13 @@
 
             <ul class="nav">
                 <li>
-                    <a href="{{URL::to('/pelapor/dashboard/'.$pelapor->id)}}">
+                    <a href="{{URL::to('/pelapor/dashboard/')}}">
                         <i class="pe-7s-graph"></i>
                         <p>Laporan</p>
                     </a>
                 </li>
                 <li class="active">
-                    <a href="{{URL::to('/pelapor/dashboard/profile/'.$pelapor->id)}}">
+                    <a href="{{URL::to('/pelapor/dashboard/profile/')}}">
                         <i class="pe-7s-user"></i>
                         <p>User Profile</p>
                     </a>

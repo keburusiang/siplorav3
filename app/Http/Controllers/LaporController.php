@@ -55,7 +55,7 @@ class LaporController extends Controller
         $laporan-> alamat = $request-> alamat;
         $laporan-> user_id = $id;
         $laporan->save();
-        return redirect('/pelapor/dashboard/'.Auth::user()->id);
+        return redirect('/pelapor/dashboard/');
     }
 
     /**
@@ -87,9 +87,21 @@ class LaporController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
+
+          $id = Auth::users()->id;
+          $laporan = new Laporan();
+          $laporan-> kode_laporan = Str::random(5);
+          $laporan-> jenis_laporan = $request-> jenisBencana;
+          $laporan-> deskripsi = $request-> deskripsi;
+          $laporan-> latitude = $request-> latitude;
+          $laporan-> longitude = $request-> longitude;
+          $laporan-> alamat = $request-> alamat;
+          $laporan-> user_id = $id;
+          $laporan->save();
+          return redirect('/pelapor/dashboard/');
+
     }
 
     /**
