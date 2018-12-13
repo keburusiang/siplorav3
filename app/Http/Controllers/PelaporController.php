@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\User;
+use App\laporan;
 use Illuminate\Http\Request;
 
 class PelaporController extends Controller
@@ -19,6 +20,7 @@ class PelaporController extends Controller
     public function show($id)
     {
       $pelapor = User::find($id);
-      return view('dashboard.pelapor.index',compact('pelapor'));
+      $data = laporan::find($pelapor->id);
+      return view('dashboard.pelapor.index',compact('pelapor','data'));
     }
 }

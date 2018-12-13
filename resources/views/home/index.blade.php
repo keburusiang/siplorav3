@@ -23,7 +23,7 @@
 
     <!-- iki font -->
     <link href="https://fonts.googleapis.com/css?family=Viga|Roboto|Poppin" rel="stylesheet">
-    
+
 
 
     <!-- iki CSS -->
@@ -87,7 +87,7 @@
     <div class="jumbotron jumbotron-fluid">
       <div class="container">
         <h1 class="display-4">Laporkan Lokasi Rawan Bencana</h1>
-        <a href="{{URL::to('/lapor')}}" class="btn btn-primary tombol">LAPORKAN</a> 
+        <a href="{{URL::to('/lapor')}}" class="btn btn-primary tombol">LAPORKAN</a>
         <!-- <a href="{{URL::to('/lacak')}}" class="btn btn-secondary tombol">LACAK LAPORAN</a>  -->
         <a href="{{URL::to('/lapor')}}" class="btn btn-danger tombol">LAPORKAN</a>
         <a href="{{URL::to('/lacak')}}" class="btn btn-secondary tombol">LACAK LAPORAN</a>
@@ -105,22 +105,22 @@
             <div class="col-lg">
               <img src="{{asset('perubahan/home/img/office.svg')}}" class="float-left">
               <h4>Lapor</h4>
-              <p>Laporkan lokasi di sekitar anda.</p>          
+              <p>Laporkan lokasi di sekitar anda.</p>
             </div>
             <div class="col-lg">
               <img src="{{asset('perubahan/home/img/employee.png')}}" class="float-left">
               <h4>Verivikasi</h4>
-              <p>Laporan anda akan diverifikasi</p>          
+              <p>Laporan anda akan diverifikasi</p>
             </div>
             <div class="col-lg">
               <img src="{{asset('perubahan/home/img/employee.png')}}" class="float-left">
               <h4>Lacak</h4>
-              <p>Lacak status laporan anda</p>          
+              <p>Lacak status laporan anda</p>
             </div>
             <div class="col-lg">
               <img src="{{asset('perubahan/home/img/employee.png')}}" class="float-left">
               <h4>Map</h4>
-              <p>lihal lokasi yang anda laporkan</p>          
+              <p>lihal lokasi yang anda laporkan</p>
               <h4>Melayani</h4>
               <p>lorem5</p>
             </div>
@@ -193,7 +193,7 @@
                 <p class="footer-links">
                   <a class="" href="#mainNav">Home</a>
                   ·
-                  <a href="#about">About</a>
+                  <a href="{{URL::to("/about")}}">About</a>
                   ·
                   <a href="#map">Map</a>
                   ·
