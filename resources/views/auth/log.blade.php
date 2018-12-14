@@ -70,7 +70,8 @@
     </nav>
     <!-- Navbar entek -->
 
-    <div class="container">
+    <!-- ISI LOGIN -->
+    <div class="container login">
     <div class="card col-lg-4 ">
       <h4 class="card-title text-center pt-3">Masuk Akun Anda</h4>
       <p class="text-center">Belum punya akun? <a href="{{URL::to('/register')}}" class="card-link">Klik disini</a></p>
