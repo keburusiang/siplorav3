@@ -89,7 +89,7 @@
       <div class="container">
         <h1 class="display-4">Laporkan Lokasi Rawan Bencana</h1>
         <a href="{{URL::to('/lapor')}}" class="btn btn-primary tombol">LAPORKAN</a>
-        <!-- <a href="{{URL::to('/lacak')}}" class="btn btn-secondary tombol">LACAK LAPORAN</a>  -->       
+        <!-- <a href="{{URL::to('/lacak')}}" class="btn btn-secondary tombol">LACAK LAPORAN</a>  -->
       </div>
     </div>
     <!-- jumbotron entek -->
@@ -119,9 +119,9 @@
             <div class="col-lg">
               <img src="{{asset('perubahan/home/img/employee.png')}}" class="float-left">
               <h4>Map</h4>
-              <p>lihal lokasi yang anda laporkan</p>              
+              <p>lihal lokasi yang anda laporkan</p>
             </div>
-            
+
           </div>
         </div>
       </div>
@@ -147,22 +147,47 @@
          <div class="gmap col-lg-12 mx-auto">
             <div class="form-control" id="googleMap" style="height: 430px;" frameborder="0" scrolling="no" marginheight="0" marginwidth="0">
               <script type="text/javascript">
-                var locations = <?php print_r(json_encode($map)) ?>;
-                var mymap = new GMaps({
-                  el: '#googleMap',
-                  lat: -7.543037,
-                  lng: 110.485844,
-                  zoom:9,
-                  mapTypeControl: false,
-                  mapTypeId: google.maps.MapTypeId.TERRAIN,
-                });
+                var locations = @json($map);
+                var map = new google.maps.Map(document.getElementById('googleMap'), {
+                   zoom: 10,
+                   center: new google.maps.LatLng(-7.543037, 110.485844),
+                   mapTypeControl: false,
+                   mapTypeId: google.maps.MapTypeId.TERRAIN,
+                 });
 
-                $.each( locations, function( index, value ){
-                  mymap.addMarker({
-                    lat: value.latitude,
-                    lng: value.longitude,
+                // lat: -7.543037,
+                // lng: 110.485844,
+              var infowindow = new google.maps.InfoWindow();
+
+              var marker, i;
+
+              for (i = 0; i < locations.length; i++) {
+
+                var id = locations[i].status_id;
+                if(id == 1)
+                {
+
+                  marker = new google.maps.Marker({
+                    position: new google.maps.LatLng(locations[i].latitude, locations[i].longitude),
+                    map: map
                   });
-               });
+                }
+
+
+              google.maps.event.addListener(marker, 'click', (function(marker, i) {
+                  return function() {
+
+                    infowindow.setContent(locations[i].jenis_laporan +"  <br> "+ locations[i].alamat);
+                    infowindow.open(map, marker);
+                  }
+                })(marker, i));
+              }
+               //  $.each( locations, function( index, value ){
+               //    mymap.addMarker({
+               //      lat: value.latitude,
+               //      lng: value.longitude,
+               //    });
+               // });
               </script>
             </div>
          </div>
