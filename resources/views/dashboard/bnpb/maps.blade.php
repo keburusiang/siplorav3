@@ -37,19 +37,19 @@
 
             <ul class="nav">
                 <li>
-                    <a href="dashboardBnpb.html">
+                    <a href="{{URL::to('/bnpb/dashboard/')}}">
                         <i class="pe-7s-graph"></i>
                         <p>Dashboard</p>
                     </a>
                 </li>
                 <li>
-                    <a href="tableBnpb.html">
+                    <a href="{{URL::to('/bnpb/dashboard/table')}}">
                         <i class="pe-7s-note2"></i>
                         <p>Table List</p>
                     </a>
                 </li>
                 <li class="active">
-                    <a href="mapsBnpb.html">
+                    <a href="{{URL::to('/bnpb/dashboard/map')}}">
                         <i class="pe-7s-map-marker"></i>
                         <p>Maps</p>
                     </a>
@@ -83,7 +83,8 @@
             </div>
         </nav>
         <!-- konten -->
-        <div id="map"></div>
+            <div id="googleMap" style="height: 90%"  frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></div>
+        
 
     </div>
 </div>
@@ -98,15 +99,55 @@
 <!--  Lokasi Notifications   -->
 <script src="{{asset('dashboard/js/bootstrap-notify.js')}}"></script>
 <!--  Google Maps    -->
-<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key="></script>
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBOYROYFc-XcfFCMmw5MVlOZc1Tuh_HC2U"></script>
 <!-- Light Bootstrap Table Core javascript and methods for Demo purpose -->
 <script src="{{asset('dashboard/js/light-bootstrap-dashboard.js?v=1.4.0')}}"></script>
 <!-- DEMO -->
 <script src="{{asset('dashboard/js/demo.js')}}"></script>
-    <script>
-        $().ready(function(){
-            demo.initGoogleMaps();
-        });
-    </script>
+                  <script type="text/javascript">
+
+                var locations = @json($map);
+                console.log(map);
+                var map = new google.maps.Map(document.getElementById('googleMap'), {
+                   zoom: 10,
+                   center: new google.maps.LatLng(-7.543037, 110.485844),
+                   mapTypeControl: false,
+                   mapTypeId: google.maps.MapTypeId.TERRAIN,
+                 });
+
+                // lat: -7.543037,
+                // lng: 110.485844,
+              var infowindow = new google.maps.InfoWindow();
+
+              var marker, i;
+
+              for (i = 0; i < locations.length; i++) {
+
+                var id = locations[i].status_id;
+                if(id == 1)
+                {
+
+                  marker = new google.maps.Marker({
+                    position: new google.maps.LatLng(locations[i].latitude, locations[i].longitude),
+                    map: map
+                  });
+                }
+
+
+              google.maps.event.addListener(marker, 'click', (function(marker, i) {
+                  return function() {
+
+                    infowindow.setContent(locations[i].jenis_laporan +"  <br> "+ locations[i].alamat);
+                    infowindow.open(map, marker);
+                  }
+                })(marker, i));
+              }
+               //  $.each( locations, function( index, value ){
+               //    mymap.addMarker({
+               //      lat: value.latitude,
+               //      lng: value.longitude,
+               //    });
+               // });
+              </script>
 
 </html>

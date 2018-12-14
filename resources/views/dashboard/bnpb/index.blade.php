@@ -21,7 +21,7 @@
   <link href="{{asset('dashboard/css/pe-icon-7-stroke.css')}}" rel="stylesheet" />
 </head>
 <body>
-
+  
 <div class="wrapper">
     <div class="sidebar" data-color="azure" data-image="{{asset('dashboard/img/volcano.jpg')}}">
 
@@ -36,19 +36,19 @@
 
             <ul class="nav">
                 <li class="active">
-                    <a href="dashboardBnpb.html">
+                    <a href="{{URL::to('/bnpb/dashboard/')}}">
                         <i class="pe-7s-graph"></i>
                         <p>Dashboard</p>
                     </a>
                 </li>
                 <li>
-                    <a href="tableBnpb.html">
+                    <a href="{{URL::to('/bnpb/dashboard/table')}}">
                         <i class="pe-7s-note2"></i>
                         <p>Table List</p>
                     </a>
                 </li>
                 <li>
-                    <a href="mapsBnpb.html">
+                    <a href="{{URL::to('/bnpb/dashboard/map')}}">
                         <i class="pe-7s-map-marker"></i>
                         <p>Maps</p>
                     </a>

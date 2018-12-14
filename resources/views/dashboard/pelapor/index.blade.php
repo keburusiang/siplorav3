@@ -54,7 +54,7 @@
 												<span class="icon-bar"></span>
 												<span class="icon-bar"></span>
 										</button>
-										<a class="navbar-brand" href="#">User Profile</a>
+										<a class="navbar-brand" href="#">{{$pelapor->namaDepan}} {{$pelapor->namaBelakang}}</a>
 								</div>
 								<div class="collapse navbar-collapse">
 										<ul class="nav navbar-nav navbar-right">
@@ -160,23 +160,21 @@
 		<script src="{{asset('dashboard/js/demo.js')}}"></script>
 		<script type="text/javascript">
 		var pelapor = <?php print_r(json_encode($pelapor)) ?>;
-
 		console.log(pelapor);
+    	$(document).ready(function(){
 
-	    	$(document).ready(function(){
+        	demo.initChartist();
 
-	        	demo.initChartist();
+        	$.notify({
+            	icon: 'pe-7s-id',
+            	message: "Selamat datang " + pelapor['namaDepan'],
+            },{
+                type: 'info',
+                timer: 4000
+            });
 
-	        	$.notify({
-	            	icon: 'pe-7s-id',
-	            	message: "Hello <b> pelapor.namaDepan contenteditable="" </b> Jangan Lupa Mengecek Daftar <br> <b>Laporan yang sudah ter-Verifikasi</b> Hari Ini <br>- Selamat Bekerja"
-
-	            },{
-	                type: 'info',
-	                timer: 4000
-	            });
-
-	    	});
+    	});
+	</script>
 			</script>
 
 </html>
