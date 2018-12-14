@@ -140,7 +140,67 @@
 
 
     <!-- ISINE -->
+
     <div class="container lapor" id="lapor">
+      <form action="/lapor" method="POST">
+      <h4 class=" text-center pt-3">Laporkan Kejadian</h4>
+      <div class="card">        
+        <div class="card-body p-0">
+          @csrf
+            <div class="form-group col-lg-12">
+              <label for="jenisBencana">Jenis Bencana</label>
+              <input type="text" class="form-control" id="jenisBencana"  name="jenisBencana" required>
+              <span> <b>Contoh:</b> Banjir </span>
+            </div>
+              <div class="form-group col-lg-12">
+                <label for="deskripsi">Deskripsi Lokasi</label>
+                <textarea class="form-control" id="deskripsi" name="deskripsi" rows="5" required></textarea>
+                <span> <b>Contoh:</b> Tanggul jebol dikhawatirkan terjadi banjir. </span>
+              </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="form-group col-lg-12">
+                  <label for="alamat">Alamat</label>
+                  <input type="text" class="form-control" name="alamat" id="alamat" required>
+                </div>
+
+                <div class="form-row-fluid">
+                 <div class="form-group col-lg-6">
+                  <label for="latitude">Latitude</label>
+                  <input type="text" class="form-control" name="latitude" id="lat" >
+                 </div>
+                 <div class="form-group col-lg-6">
+                   <label for="longitude">Longitude</label>
+                   <input type="text" class="form-control" name="longitude" id="lng" >
+                 </div>
+               </div>
+
+        
+              <div class="form-group col-lg-12">
+                <label for="googleMap">Pilih Maps</label>
+                  <div class="form-control" id="googleMap" style="width:100%;height:450px;"></div>
+              </div>
+         
+
+            <div class="form-group col-lg-12">
+              <div class="file-field">
+                <div class="custom-file">
+                  <input type="file" class="custom-file-input" data-multiple-target="{target} files selected" multiple="">
+                  <label class="custom-file-label" for="customFile">Pilih Gambar</label>
+                </div>
+              </div>
+            </div>
+            <div class="form-group col-lg-12">
+              <button type="submit" class="btn btn-primary">Laporkan</button>
+              <button type="reset" class="btn btn-danger">Reset</button>
+            </div>
+      </div>
+      </form>
+    </div>
+
+
+ <!--    <div class="container lapor" id="lapor">
       <div class="row">
         <div class="col-md-8 pt-5 mx-auto">
           <h4 class="text-center">Laporkan Kejadian</h4>
@@ -157,7 +217,7 @@
                 <span> <b>Contoh:</b> Tanggul jebol dikhawatirkan terjadi banjir. </span>
               </div>
 
-            <!-- ini alamat -->
+      
 
                 <div class="form-group col-lg-12">
                   <label for="alamat">Alamat</label>
@@ -175,12 +235,12 @@
                  </div>
                </div>
 
-            <!-- MAP -->
+        
               <div class="form-group col-lg-12">
                 <label for="googleMap">Pilih Maps</label>
                   <div class="form-control" id="googleMap" style="width:100%;height:450px;"></div>
               </div>
-            <!-- akhir Map -->
+         
 
             <div class="form-group col-lg-12">
               <div class="file-field">
@@ -197,7 +257,7 @@
           </form>
         </div>
       </div>
-    </div>
+    </div> -->
 
 
     <!-- contact -->
