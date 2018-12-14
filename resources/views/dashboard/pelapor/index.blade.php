@@ -79,34 +79,48 @@
 									@foreach ($data as $laporan)
                     <div class="card mb-1 ml-4" style="width:98%; margin-left: 1%;">
                         <div class="header">
-                            <h4 class="title">Kode Laporan : <b>{{$laporan->kode_laporan}}</b></h4>
+													<div class="row">
+														<div class="col-xs-10">
+															<h4 class="title">Kode Laporan : <b>{{$laporan->kode_laporan}}</b></h4>
+														</div>
+														<div class="col-xs-2">
+																@if($laporan->status_id == 1)
+																<div class="alert alert-success notif ">
+																		<span><b>Diterima</b></span>
+																</div>
+																@elseif($laporan->status_id == 2)
+																<div class="alert alert-warning notif">
+																		<span><b>Diproses</b></span>
+																</div>
+																@else
+																<div class="alert alert-danger notif">
+																		<span><b>Ditolak</b></span>
+																</div>
+																@endif
+														</div>
+													</div>
                         </div>
-                        <div class="content">
-                            <div class="row">
+                        <div class="content infocon">
+                            <div class="row infodes">
                                 <div class="col-md-6">
 																	<h5>Jenis Laporan</h5>
 																	<div class="alert alert-info">
 																			<span>{{$laporan->jenis_laporan}}</span>
 																	</div>
                                 </div>
+																<div class="col-md-6">
+																	<h5>Deskripsi</h5>
+																	<div class="alert alert-info">
+																			<span>{{$laporan->deskripsi}}</span>
+																	</div>
+																</div>
                                 <div class="col-md-6">
 																	<h5>Alamat</h5>
 																	<div class="alert alert-info">
 																			<span>{{$laporan->alamat}}</span>
 																	</div>
                                 </div>
-                                    <div class="col-md-6">
-																			<h5>Deskripsi</h5>
-																			<div class="alert alert-info">
-																					<span>{{$laporan->deskripsi}}</span>
-																			</div>
-                                    </div>
-                                <div class="col-md-6">
-                                    <h5>Status Laporan</h5>
-                                    <div class="alert alert-danger">
-                                        <span><b> Ditolak - </b> Maaf, Laporan Anda Kami Tolak, karena data tidak sesuai dengan yang ada dilapangan. </span>
-                                    </div>
-                                </div>
+
                             </div>
                         <!-- content -->
                         </div>
