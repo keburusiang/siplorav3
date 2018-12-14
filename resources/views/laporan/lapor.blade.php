@@ -121,6 +121,7 @@
                     <span class="caret"></span>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="{{URL::to('/pelapor/dashboard')}}">Dashboard</a>
                     <a class="dropdown-item" href="{{ route('logout') }}"
                         onclick="event.preventDefault();
                         document.getElementById('logout-form').submit();">
@@ -145,7 +146,7 @@
       <form action="/lapor" method="POST">
       <h4 class=" text-center pt-3">Laporkan Kejadian</h4>
       <div class="card">        
-        <div class="card-body p-0">
+        <div class="card-body col-lg-6 p-0">
           @csrf
             <div class="form-group col-lg-12">
               <label for="jenisBencana">Jenis Bencana</label>
@@ -158,23 +159,24 @@
                 <span> <b>Contoh:</b> Tanggul jebol dikhawatirkan terjadi banjir. </span>
               </div>
         </div>
+        <div class="form-group col-lg-12">
+            <label for="alamat">Alamat</label>
+            <input type="text" class="form-control" name="alamat" id="alamat" required>
+            </div>
+
+            <div class="form-row-fluid">
+              <div class="form-group col-lg-6">
+                <label for="latitude">Latitude</label>
+                <input type="text" class="form-control" name="latitude" id="lat" >
+              </div>
+              <div class="form-group col-lg-6">
+                <label for="longitude">Longitude</label>
+                <input type="text" class="form-control" name="longitude" id="lng" >
+              </div>
+            </div>
       </div>
       <div class="card">
-        <div class="form-group col-lg-12">
-                  <label for="alamat">Alamat</label>
-                  <input type="text" class="form-control" name="alamat" id="alamat" required>
-                </div>
-
-                <div class="form-row-fluid">
-                 <div class="form-group col-lg-6">
-                  <label for="latitude">Latitude</label>
-                  <input type="text" class="form-control" name="latitude" id="lat" >
-                 </div>
-                 <div class="form-group col-lg-6">
-                   <label for="longitude">Longitude</label>
-                   <input type="text" class="form-control" name="longitude" id="lng" >
-                 </div>
-               </div>
+        
 
         
               <div class="form-group col-lg-12">
