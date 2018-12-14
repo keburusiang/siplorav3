@@ -75,7 +75,7 @@
                   </a>
                   <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                    @csrf
-                  </form>                                         
+                  </form>
                 </div>
             </li>
         @endguest
@@ -150,6 +150,7 @@
               <script type="text/javascript">
                 var locations = @json($map);
                 var map = new google.maps.Map(document.getElementById('googleMap'), {
+                  icon: src="ditolak.png",
                    zoom: 10,
                    center: new google.maps.LatLng(-7.543037, 110.485844),
                    mapTypeControl: false,
