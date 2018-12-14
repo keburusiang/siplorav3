@@ -104,22 +104,22 @@
                             <div class="row infodes">
                                 <div class="col-md-6">
 																	<h5>Jenis Laporan</h5>
-																	<div class="alert alert-info">
+																	<div class="alert kotak">
 																			<span>{{$laporan->jenis_laporan}}</span>
 																	</div>
                                 </div>
-																<div class="col-md-6">
-																	<h5>Deskripsi</h5>
-																	<div class="alert alert-info">
-																			<span>{{$laporan->deskripsi}}</span>
-																	</div>
-																</div>
                                 <div class="col-md-6">
 																	<h5>Alamat</h5>
-																	<div class="alert alert-info">
+																	<div class="alert kotak ">
 																			<span>{{$laporan->alamat}}</span>
 																	</div>
                                 </div>
+																<div class="col-md-12">
+																	<h5>Deskripsi</h5>
+																	<div class="alert kotak">
+																			<span>{{$laporan->deskripsi}}</span>
+																	</div>
+																</div>
 
                             </div>
                         <!-- content -->

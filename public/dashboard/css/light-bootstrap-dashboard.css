@@ -14,12 +14,19 @@
 
  */
 /*      light colors         */
-
 /* tambahan */
 
 .notif{
   width: 80px;
   float: right;
+}
+
+.kotak{
+  background-color: #F9F9F9;
+}
+
+.infodes span{
+  color: #333333;
 }
 
 @media (min-width:992px) {
@@ -31,7 +38,8 @@
     margin-top: -40px;
   }
   .infocon{
-    height: 220px;
+    height: auto;
+    margin-bottom: -20px;
   }
 }
 
