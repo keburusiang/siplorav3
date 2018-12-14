@@ -1231,6 +1231,7 @@ fieldset[disabled] .btn-neutral.active {
 .alert[data-notify="container"] {
     padding: 10px 10px 10px 20px;
     border-radius: 4px;
+    width: auto;
 }
 
 .alert.alert-with-icon {

@@ -35,6 +35,7 @@ class BnpbController extends Controller
     }
     public function showMap()
     {
-        return view('dashboard.bnpb.maps');
+        $map = laporan::all();
+        return view('dashboard.bnpb.maps',compact('map'));
     }
 }
