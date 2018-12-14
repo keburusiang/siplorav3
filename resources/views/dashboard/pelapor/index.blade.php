@@ -77,7 +77,7 @@
                 <div class="col-md-12">
 									<!-- LOOP DATA LAPORAN -->
 									@foreach ($data as $laporan)
-                    <div class="card" style="width:98%; margin: 0 auto;">
+                    <div class="card mb-1 ml-4" style="width:98%; margin-left: 1%;">
                         <div class="header">
                             <h4 class="title">Kode Laporan : <b>{{$laporan->kode_laporan}}</b></h4>
                         </div>
@@ -113,11 +113,11 @@
                         <br>
                         <!-- card -->
                     </div>
+
 										@endforeach
                 </div>
             </div>
         </div>
-				{{var_dump($data)}}
 <!-- footer -->
         <footer class="footer">
             <div class="container-fluid">

@@ -22,13 +22,10 @@ class PelaporController extends Controller
     {
         // code...
         $pelapor = User::find(Auth::user()->id);
-        $data = laporan::find(Auth::user()->laporan);
+        $data = laporan::where('user_id', Auth::user()->id)->get();
         return view('dashboard.pelapor.index',compact('pelapor','data'));
 
+
     }
-    public function update(){
-      $pelapor = User::find(Auth::user()->id);
-      $data = laporan::find(Auth::user()->laporan);
-      return view('dashboard.pelapor.index',compact('pelapor','data'));
-    }
+
 }

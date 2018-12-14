@@ -44,3 +44,7 @@ Route::patch('/pelapor/dashboard/', 'PelaporController@update');
 Route::get('/pelapor/dashboard/profile/','PelaporController@showProfile')->middleware('auth');
 
 // Route::get('/pelapor/dashboard/pelapor/','PelaporController@showProfile');
+
+Route::get('/bnpb/dashboard/','BnpbController@show');
+Route::get('/bnpb/dashboard/table/','BnpbController@showTable');
+Route::get('/bnpb/dashboard/map/','BnpbController@showMap');
