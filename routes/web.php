@@ -48,3 +48,4 @@ Route::get('/pelapor/dashboard/profile/','PelaporController@showProfile')->middl
 Route::get('/bnpb/dashboard/','BnpbController@show');
 Route::get('/bnpb/dashboard/table/','BnpbController@showTable');
 Route::get('/bnpb/dashboard/map/','BnpbController@showMap');
+Route::post('/bnpb/dashboard/table/{lapor}','LaporController@verif')->name('verif');

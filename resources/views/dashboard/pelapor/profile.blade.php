@@ -24,7 +24,7 @@
 
     <!--     Fonts and icons     -->
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-    <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300|Viga' rel='stylesheet' type='text/css'>
     <link href="{{asset('dashboard/css/pe-icon-7-stroke.css')}}" rel="stylesheet" />
 </head>
 <body>
@@ -33,9 +33,9 @@
 	<div class="sidebar" data-color="azure" data-image="{{asset('dashboard/img/volcano.jpg')}}">
 		<div class="sidebar-wrapper">
 					<div class="logo">
-							<a class="simple-text">
-									SIPLORA
-							</a>
+						<a href="{{URL::to('/')}}" class="simple-text" style="font-family: viga; font-size:32px;">
+								SIPLORA
+						</a>
 					</div>
 					<ul class="nav">
 							<li >

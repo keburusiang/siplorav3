@@ -75,7 +75,7 @@
                   </a>
                   <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                    @csrf
-                  </form>                                         
+                  </form>
                 </div>
             </li>
         @endguest
@@ -170,7 +170,7 @@
 
                   marker = new google.maps.Marker({
                     position: new google.maps.LatLng(locations[i].latitude, locations[i].longitude),
-                    map: map
+                    map: map,
                   });
                 }
 

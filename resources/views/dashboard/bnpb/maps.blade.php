@@ -10,6 +10,8 @@
   <!-- Bootstrap CSS     -->
   <link href="{{asset('dashboard/css/bootstrap.min.css')}}" rel="stylesheet" />
   <!-- Animation -->
+  <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"> -->
+
   <link href="{{asset('dashboard/css/animate.min.css')}}" rel="stylesheet"/>
   <!--  BS  -->
   <link href="{{asset('dashboard/css/light-bootstrap-dashboard.css?v=1.4.0')}}" rel="stylesheet"/>
@@ -17,6 +19,8 @@
   <link href="{{asset('dashboard/css/demo.css')}}" rel="stylesheet" />
   <!--     Fonts and icons     -->
   <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Viga|Roboto|Poppin" rel="stylesheet">
+
   <link href="http://fonts.googleapis.com/css?family=Roboto:400,700,300" rel="stylesheet" type="text/css">
   <link href="{{asset('dashboard/css/pe-icon-7-stroke.css')}}" rel="stylesheet" />
 </head>
@@ -30,7 +34,7 @@
 
     	<div class="sidebar-wrapper">
             <div class="logo">
-                <a class="simple-text">
+                <a href="{{URL::to('/')}}" class="simple-text" style="font-family: viga; font-size:30px;">
                     SIPLORA
                 </a>
             </div>
@@ -82,10 +86,40 @@
                 </div>
             </div>
         </nav>
-        <!-- konten -->
-            <div id="googleMap" style="height: 90%"  frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></div>
-        
+        <div class="content">
+            <div class="container-fluid">
+              <div class="row" >
+                <div class="col-lg-4" >
+                  <div class="card card-user" style="height: 110px;">
+                      <div class="content">
 
+                      </div>
+                  </div>
+                </div>
+                <div class="col-lg-4">
+                  <div class="card card-user" style="height: 110px;">
+                      <div class="content">
+
+                      </div>
+                  </div>
+                </div>
+                <div class="col-lg-4">
+                  <div class="card card-user" style="height: 110px;">
+                      <div class="content">
+
+                      </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                  <div class="col-md-12" align="center">
+                      <div class="card" style="padding:0px importan; border-radius: 10px; box-shadow: 0px 0px 20px #c7cad1;">
+                            <div id="googleMap" class="z-depth-1-half " style="height: 500px;border-radius: 10px;"></div>
+                      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
     </div>
 </div>
 

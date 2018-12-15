@@ -10,6 +10,8 @@
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
     <meta name="viewport" content="width=device-width" />
 
+		<!-- Sweet Alert -->
+		<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <!-- Bootstrap CSS     -->
     <link href="{{asset('dashboard/css/bootstrap.min.css')}}" rel="stylesheet" />
 
@@ -24,6 +26,7 @@
 
     <!--     Fonts and icons     -->
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Viga|Roboto|Poppin" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
     <link href="{{asset('dashboard/css/pe-icon-7-stroke.css')}}" rel="stylesheet" />
 </head>
@@ -36,7 +39,7 @@
 
     	<div class="sidebar-wrapper">
             <div class="logo">
-                <a class="simple-text">
+                <a href="{{URL::to('/')}}" class="simple-text" style="font-family: viga; font-size:30px;">
                     SIPLORA
                 </a>
             </div>
@@ -95,90 +98,84 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="card">
-
                             <div class="header">
-                                <h4 class="title">Tabel Verifikasi Laporan</h4>
-                                <p class="category">Berdasar Data Laporan yang masuk lewat SIPLORA</p>
+                                <h4 class="title"><b>Laporan Masuk</b></h4>
                             </div>
                             <div class="content table-responsive table-full-width">
                                 <table class="table table-hover table-striped">
                                     <thead>
-                                        <th>Verif</th>
-                                        <th>Kode Laporan</th>
-                                    	<th>Tanggal</th>
-                                    	<th>Jenis Bencana</th>
-                                    	<th>Lokasi Bencana</th>
-                                    	<th>Nama Pelapor</th>
-                                        <th>Tolak</th>
+																			<th style="width:100px;">Kode Laporan</th>
+																			<th style="width:95px;">Nama Pelapor</th>
+																			<th style="width:100px;">Tanggal</th>
+																			<th style="width:120px;">Jenis Bencana</th>
+																			<th style="width:250px;">Lokasi Bencana</th>
+                                      <th style="width:5px;">Tolak</th>
+																			<th style="width:5px;">Verif</th>
                                     </thead>
                                     <tbody>
-																			@foreach($data as $tol)
-                                        <tr>
-                                            <td>
-                                                <div class="checkbox">
-                                                  <input id="checkbox1" type="checkbox">
-                                                   <label for="checkbox1"></label>
-                                                 </div>
-                                             </td>
-                                        	<td>1</td>
-                                        	<td>10/23/2018</td>
-                                        	<td>{{$tol->jenis_laporan}}</td>
-                                        	<td>{{$tol->alamat}}</td>
-                                        	<td>{{$tol->namaDepan}}</td>
-                                            <td><button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs">
-                                                        <i class="fa fa-times"></i>
-                                                    </button></td>
-                                        </tr>
-																				@endforeach
+																			@foreach($data2 as $tol)
+																			<tr>
+																				<td>{{$tol->kode_laporan}}</td>
+																				<td>{{$tol->namaDepan}}</td>
+																				<td>{{$tol->created_at}}</td>
+																				<td>{{$tol->jenis_laporan}}</td>
+																				<td>{{$tol->alamat}}</td>
+																				<td>
+																					<form action="{{url('/lapor/'.$tol->id)}}" method="POST">
+																						{{csrf_field()}} {{method_field('PUT')}}
+																						<button value="3" name="status" type="submit" rel="tooltip" title="Tidak Diterima" class="btn btn-danger btn-simple btn-md">
+																							<i class="fa fa-times"></i>
+																						</button>
+																					</form>
+																				</td>
+																				<td>
+																					<form action="{{url('/lapor/'.$tol->id)}}" method="POST">
+																						{{csrf_field()}} {{method_field('PUT')}}
+																						<button value="1" name="status" type="submit" rel="tooltip" title="Verifikasi" class="btn btn-success btn-simple btn-md">
+																							<i class="fa fa-check"></i>
+																						</button>
+																					</form>
+																			 	</td>
+																			</tr>
+																			@endforeach
                                     </tbody>
                                 </table>
                             </div>
                         </div>
 												<div class="card">
-
                             <div class="header">
-                                <h4 class="title">Tabel Belum Laporan</h4>
-                                <p class="category">Berdasar Data Laporan yang masuk lewat SIPLORA</p>
+                                <h4 class="title"> <b>Laporan Terverifikasi</b> </h4>
                             </div>
                             <div class="content table-responsive table-full-width">
-                                <table class="table table-hover table-striped">
-                                    <thead>
-                                        <th>Verif</th>
-                                        <th>Kode Laporan</th>
-                                    	<th>Tanggal</th>
-                                    	<th>Jenis Bencana</th>
-                                    	<th>Lokasi Bencana</th>
-                                    	<th>Nama Pelapor</th>
-                                        <th>Tolak</th>
+                                <table class="table table-hover table-striped ">
+                                    <thead >
+																			<tr>
+																				<th style="width:95px;">Kode Laporan</th>
+																				<th style="width:90px;">Nama Pelapor</th>
+	                                    	<th style="width:100px;">Tanggal</th>
+	                                    	<th style="width:120px;">Jenis Bencana</th>
+	                                    	<th style="width:150px;">Lokasi Bencana</th>
+																			</tr>
                                     </thead>
                                     <tbody>
-																			@foreach($data2 as $tol)
+																			@foreach($data as $tol)
                                         <tr>
-                                            <td>
-                                                <div class="checkbox">
-                                                  <input id="checkbox1" type="checkbox">
-                                                   <label for="checkbox1"></label>
-                                                 </div>
-                                             </td>
-                                        	<td>1</td>
-                                        	<td>10/23/2018</td>
-                                        	<td>{{$tol->jenis_laporan}}</td>
-                                        	<td>{{$tol->alamat}}</td>
-                                        	<td>{{$tol->namaDepan}}</td>
-                                            <td><button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs">
-                                                        <i class="fa fa-times"></i>
-                                                    </button></td>
+	                                      	<td>{{$tol->kode_laporan}}</td>
+																					<td>{{$tol->namaDepan}}</td>
+	                                      	<td>10/23/2018</td>
+	                                      	<td>{{$tol->jenis_laporan}}</td>
+	                                      	<td>{{$tol->alamat}}</td>
                                         </tr>
 																				@endforeach
                                     </tbody>
                                 </table>
                             </div>
                         </div>
+
                     </div>
                 </div>
             </div>
         </div>
-
         <footer class="footer">
             <div class="container-fluid">
                 <nav class="pull-left"></nav>
