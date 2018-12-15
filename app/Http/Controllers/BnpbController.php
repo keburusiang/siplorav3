@@ -35,7 +35,10 @@ class BnpbController extends Controller
     }
     public function showMap()
     {
+        $count1 = laporan::where('status_id', 1)->count();
+        $count2 = laporan::where('status_id', 2)->count();
+        $count3 = laporan::where('status_id', 3)->count();
         $map = laporan::all();
-        return view('dashboard.bnpb.maps',compact('map'));
+        return view('dashboard.bnpb.maps',compact('map','count1','count2','count3'));
     }
 }
