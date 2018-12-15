@@ -53,7 +53,7 @@
 }
 
 /*info panel*/
-.info-panel{
+/*.info-panel{
 	box-shadow: 0 3px 20px rgba(0, 0, 0, 0.5);
 	border-radius: 12px;
 	background-color: white;
@@ -80,6 +80,17 @@
 	font-size: 14px;	
 	color: #ACACAC;
 	margin-top: -5px;
+}*/
+
+.card{
+	height: 150px;
+	margin-top: 20px;
+	border-radius: 8px;
+
+}
+
+.card:hover{
+	box-shadow: 0px 0px 20px #c7cad1;
 }
 
 
@@ -87,7 +98,7 @@
 .about{
 	margin-top: 120px;
 	text-align: center;
-	margin-bottom: 100px;
+	/*margin-bottom: 100px;*/
 }
 
 .about h3{
@@ -105,6 +116,10 @@
 
 
 /*MAP*/
+
+.section {
+	height: 650px;
+}
 .map{
 	text-align: center;
 	height:300px;	
@@ -115,16 +130,15 @@
 	font-size: 30px;
 	font-weight: 300px;
 	text-transform: uppercase;
-	margin-top: 50px;	
-	margin-bottom: 50px;
+	margin-top: 90px;	
+	margin-bottom: 30px;
 }
 
 
 
 
 /*contact*/
-.contact{	
-	margin-top: 350px;
+.contact{		
 	color: white;
 	text-align: center;	
 	background-color: black;
@@ -173,6 +187,8 @@ footer .copyright{
 	padding-top: 10px ;
 	text-align: center;
 }
+
+
 
 
 /*VERSI DESKTOP*/

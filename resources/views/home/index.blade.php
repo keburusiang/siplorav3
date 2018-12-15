@@ -96,7 +96,7 @@
     <!-- jumbotron entek -->
 
     <!-- ISINE -->
-    <div class="container">
+   <!--  <div class="container"> -->
 
     <!-- info -->
       <!-- <div class="row justify-content-center">
@@ -127,8 +127,35 @@
         </div>
       </div> -->
     <!-- Akhir info -->
+    <div class="container">
+    <div class="row">
+      <div class="col-md">
+        <div class="card ">
+          
+        </div>
+        
+      </div>
+       <div class="col-md">
+        <div class="card ">
+          
+        </div>
+      </div>
+       <div class="col-md">
+        <div class="card ">
+          
+        </div>
+      </div>
+       <div class="col-md">
+        <div class="card ">
+          
+        </div>
+      </div>
+      
+    </div>
+    </div>
 
     <!-- about Siplora -->
+    <section class="section">
       <div class="row about" id="about">
         <div class="col-lg-6">
           <img src="{{asset('perubahan/home/img/jumbotron-bg.jpg')}}" alt="about" class="img-fluid">
@@ -138,9 +165,12 @@
           <p>SIPLORA adalah sistem pelayanan masyarakat guna meningkatkan aksi preventif bencana dengan cara melaporkan lokasi yang rawan terjadi bencana</p>
         </div>
       </div>
+    </section>
     <!-- Akhir about Siplora -->
 
     <!-- MAP -->
+    <section class="section bg-light">
+    <div class="container">
       <div class="row map pb-5" id="map">
         <div class="col-lg-10 mx-auto">
          <h4>PETA SEBARAN LOKASI RAWAN BENCANA</h4>
@@ -193,12 +223,15 @@
             </div>
          </div>
       </div>
+      </div>
+    </section>
       <!-- akhir Map -->
 
-    </div>
+    <!-- </div> -->
     <!-- Akhir isine -->
 
     <!-- contact -->
+    
     <div class="contact" id="contact">
       <div class="container">
         <div class="row contact">
@@ -232,6 +265,7 @@
         </div>
       </div>
     </div>
+   
     <!-- akhir contact -->
 
     <!-- footer -->
