@@ -21,16 +21,16 @@ class BnpbController extends Controller
         //         ->join('users', 'laporans.user_id','=','users.id')
         //         ->select('laporans.jenis_laporan', 'laporans.alamat','laporans.kode_laporan', 'users.namaDepan')
         //         ->get();
-                $data = DB::table('laporans')
-                        ->join('users', 'laporans.user_id','=','users.id')
-                        ->select('laporans.jenis_laporan', 'laporans.status_id' , 'laporans.alamat','laporans.kode_laporan', 'users.namaDepan')
-                        ->where('laporans.status_id', '1')
-                        ->get();
-                        $data2 = DB::table('laporans')
-                                ->join('users', 'laporans.user_id','=','users.id')
-                                ->select('laporans.jenis_laporan', 'laporans.status_id' , 'laporans.alamat','laporans.kode_laporan', 'users.namaDepan')
-                                ->where('laporans.status_id', '2')
-                                ->get();
+        $data = DB::table('laporans')
+                ->join('users', 'laporans.user_id','=','users.id')
+                ->select('laporans.jenis_laporan', 'laporans.status_id' , 'laporans.alamat','laporans.kode_laporan', 'users.namaDepan')
+                ->where('laporans.status_id', '1')
+                ->get();
+        $data2 = DB::table('laporans')
+                ->join('users', 'laporans.user_id','=','users.id')
+                ->select('laporans.created_at','laporans.id','laporans.jenis_laporan', 'laporans.status_id' , 'laporans.alamat','laporans.kode_laporan', 'users.namaDepan')
+                ->where('laporans.status_id', '2')
+                ->get();
         return view('dashboard.bnpb.table', compact('data','data2'));
     }
     public function showMap()

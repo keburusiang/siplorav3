@@ -12,6 +12,8 @@
   <!-- Animation -->
   <link href="{{asset('dashboard/css/animate.min.css')}}" rel="stylesheet"/>
   <!--  BS  -->
+  <link href="https://fonts.googleapis.com/css?family=Viga|Roboto|Poppin" rel="stylesheet">
+
   <link href="{{asset('dashboard/css/light-bootstrap-dashboard.css?v=1.4.0')}}" rel="stylesheet"/>
   <!--  DEMO  -->
   <link href="{{asset('dashboard/css/demo.css')}}" rel="stylesheet" />
@@ -21,7 +23,7 @@
   <link href="{{asset('dashboard/css/pe-icon-7-stroke.css')}}" rel="stylesheet" />
 </head>
 <body>
-  
+
 <div class="wrapper">
     <div class="sidebar" data-color="azure" data-image="{{asset('dashboard/img/volcano.jpg')}}">
 
@@ -29,7 +31,7 @@
 
     	<div class="sidebar-wrapper">
             <div class="logo">
-                <a class="simple-text">
+                <a href="{{URL::to('/')}}" class="simple-text" style="font-family: viga; font-size:32px;">
                     SIPLORA
                 </a>
             </div>
@@ -86,7 +88,6 @@
                 <div class="row">
                     <div class="col-md-12" align="center">
                         <div class="card">
-
                             <div class="header">
                                 <h4 class="title">Statistik Laporan</h4>
                                 <p class="category">Lokasi Rawan Bencana</p>

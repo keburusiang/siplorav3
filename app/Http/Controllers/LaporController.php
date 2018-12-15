@@ -87,21 +87,12 @@ class LaporController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request)
+    public function update(Request $request, $id)
     {
-
-          $id = Auth::users()->id;
-          $laporan = new Laporan();
-          $laporan-> kode_laporan = Str::random(5);
-          $laporan-> jenis_laporan = $request-> jenisBencana;
-          $laporan-> deskripsi = $request-> deskripsi;
-          $laporan-> latitude = $request-> latitude;
-          $laporan-> longitude = $request-> longitude;
-          $laporan-> alamat = $request-> alamat;
-          $laporan-> user_id = $id;
-          $laporan->save();
-          return redirect('/pelapor/dashboard/');
-
+      $data = laporan::find($id);
+      $data->status_id = $request->status;
+      $data->save();
+      return redirect()->back();
     }
 
     /**
@@ -112,6 +103,9 @@ class LaporController extends Controller
      */
     public function destroy($id)
     {
-        //
+      $delete = laporan::find($id);
+      $delete ->status_id = 1;
+      $delete->save();
+      return redirect()->back();
     }
 }
