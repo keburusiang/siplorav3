@@ -10,8 +10,10 @@
   <!-- Bootstrap CSS     -->
   <link href="{{asset('dashboard/css/bootstrap.min.css')}}" rel="stylesheet" />
   <!-- Animation -->
-  <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"> -->
-
+  <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script> -->
   <link href="{{asset('dashboard/css/animate.min.css')}}" rel="stylesheet"/>
   <!--  BS  -->
   <link href="{{asset('dashboard/css/light-bootstrap-dashboard.css?v=1.4.0')}}" rel="stylesheet"/>
@@ -23,6 +25,23 @@
 
   <link href="http://fonts.googleapis.com/css?family=Roboto:400,700,300" rel="stylesheet" type="text/css">
   <link href="{{asset('dashboard/css/pe-icon-7-stroke.css')}}" rel="stylesheet" />
+  <style >
+  .modal-dialog{
+  }
+  .modal-body   {
+    overflow-y: auto;
+  }
+  .modal {
+  position: absolute;
+  width: 620px;
+  height: 140px;;
+  top: 250px;
+  bottom: 20px;
+  left: 400px;
+  z-index: 10040;
+  /* overflow-y: hidden!important; */
+}
+  </style>
 </head>
 
 <body>
@@ -90,23 +109,26 @@
             <div class="container-fluid">
               <div class="row" >
                 <div class="col-lg-4" >
-                  <div class="card card-user" style="height: 110px;">
+                  <div class="card card-user" style="height: 110px; background-color:#A1E82C;">
                       <div class="content">
-
+                        Laporan Diterima
+                        {{$count1}}
                       </div>
                   </div>
                 </div>
                 <div class="col-lg-4">
-                  <div class="card card-user" style="height: 110px;">
+                  <div class="card card-user" style="height: 110px; background-color:#FFBC67;">
                       <div class="content">
-
+                        Laporan Diproses
+                        {{$count2}}
                       </div>
                   </div>
                 </div>
                 <div class="col-lg-4">
-                  <div class="card card-user" style="height: 110px;">
+                  <div class="card card-user" style="height: 110px; background-color:#FC727A;">
                       <div class="content">
-
+                        Laporan Ditolak
+                        {{$count3}}
                       </div>
                   </div>
                 </div>
@@ -121,8 +143,28 @@
             </div>
         </div>
     </div>
-</div>
-
+  </div>
+      @foreach($map as $data)
+      <div class="modal" id="modalMaps"   aria-hidden="true" data-backdrop="false">
+          <div class="modal-content">
+            <div id="modalMaps" class="modal-body" >
+              <div class="col-md-12">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" >
+                  <span style="color:red;" >&times;</span>
+                </button>
+                  <div class="row">
+                    <b>Jenis Bencana</b><br>
+                    <p id="jenisBencana"style="font-size: 12px;"></p>
+                  </div>
+                  <div class="row">
+                    <b>Alamat</b><br>
+                    <p id="alamat" style="font-size: 12px;"></p>
+                  </div>
+              </div>
+            </div>
+          </div>
+      </div>
+      @endforeach
 </body>
 
 <!--   Core JS Files   -->
@@ -151,6 +193,18 @@
 
                 // lat: -7.543037,
                 // lng: 110.485844,
+
+              var icons = {
+                  1 :{
+                    icon: '/img/diterima.png'
+                  },
+                  2 :{
+                    icon: '/img/diproses.png'
+                  },
+                  3 :{
+                    icon: '/img/ditolak.png'
+                  }
+              };
               var infowindow = new google.maps.InfoWindow();
 
               var marker, i;
@@ -158,21 +212,28 @@
               for (i = 0; i < locations.length; i++) {
 
                 var id = locations[i].status_id;
-                if(id == 1)
-                {
-
                   marker = new google.maps.Marker({
                     position: new google.maps.LatLng(locations[i].latitude, locations[i].longitude),
+                    icon: icons[locations[i].status_id].icon,
                     map: map
                   });
-                }
 
 
               google.maps.event.addListener(marker, 'click', (function(marker, i) {
                   return function() {
-
-                    infowindow.setContent(locations[i].jenis_laporan +"  <br> "+ locations[i].alamat);
-                    infowindow.open(map, marker);
+                    // infowindow.setContent(locations[i].jenis_laporan +"  <br> "+ locations[i].alamat);
+                    // infowindow.open(map, marker);
+                    $('#modalMaps').modal('show');
+                    // $('#myModal').modal({backdrop: 'static', keyboard: false})
+                    $('#jenisBencana').html(locations[i].jenis_laporan);
+                    $('#alamat').html(locations[i].alamat);
+                    var s = locations[i].status_id;
+                    if (s == 1) {
+                      $('#status').html("Diterima");
+                    }else if (s == 2) {
+                      $('#status').html("Diproses");
+                    }
+                      $('#status').html("Ditolak");
                   }
                 })(marker, i));
               }

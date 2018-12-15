@@ -150,8 +150,8 @@
               <script type="text/javascript">
                 var locations = @json($map);
                 var map = new google.maps.Map(document.getElementById('googleMap'), {
-                   zoom: 10,
-                   center: new google.maps.LatLng(-7.543037, 110.485844),
+                   zoom: 6,
+                   center: new google.maps.LatLng(-3.495488, 111.821524),
                    mapTypeControl: false,
                    mapTypeId: google.maps.MapTypeId.TERRAIN,
                  });
