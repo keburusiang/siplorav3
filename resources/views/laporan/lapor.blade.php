@@ -28,6 +28,10 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBOYROYFc-XcfFCMmw5MVlOZc1Tuh_HC2U"
     type="text/javascript"></script>
 
+    <!-- sweat alert -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+
     <script>
       // variabel global marker
       var marker;
@@ -101,7 +105,7 @@
   <body>
 
     <!-- iki Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark" id="mainNav">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
       <div class="container">
       <a class="navbar-brand" href="{{URL::to('/')}}">SIPLORA</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -187,7 +191,10 @@
               </div>
             </div>
             <div class="form-group col-lg-12">
-              <button type="submit" class="btn btn-primary">Laporkan</button>
+              <button type="submit" id="tombollapor" class="btn btn-primary" onclick="Swal('Berhasil',
+              'bismillah',
+              'Sweatalert',
+              'success')">Laporkan</button>
               <button type="reset" class="btn btn-danger">Reset</button>
             </div>
       </div>

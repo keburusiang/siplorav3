@@ -1,7 +1,7 @@
 /*IKI BAGIAN NAVBAR*/
 .navbar{
-	position: relative;
-	z-index: 1;
+	/*position: relative;*/
+	/*z-index: 1;*/
 	background-color: black;
 	color: white;
 
@@ -25,6 +25,7 @@
 	height: 440px;
 	text-align: center;
 	position: relative;
+	margin-top: 0px;
 }
 
 .jumbotron .container{
@@ -177,16 +178,17 @@ footer .copyright{
 /*VERSI DESKTOP*/
 @media (min-width: 992px) {
 	.navbar{
-	position: relative;
-	z-index: 1;
-	background-color: transparent;
+	/*position: relative;*/
+	/*z-index: 1;*/
+	/*background-color: transparent;*/
 	color: white;
 	}
 
-	.navbar-brand, .nav-link{
-		color: white !important;
-		text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.7);
+	.nav-link:click::after {
+		background-color: black;
 	}
+
+	
 
 	.nav-link{
 		text-transform: uppercase;
@@ -205,7 +207,7 @@ footer .copyright{
 	}
 
 	.jumbotron{
-		margin-top: -75px;
+		margin-top: 0x;
 		height: 640px;
 	}
 

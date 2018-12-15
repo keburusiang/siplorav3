@@ -42,7 +42,7 @@
   <body>
 
     <!-- iki Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark" id="mainNav">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
       <div class="container">
       <a class="navbar-brand" href="{{URL::to('/')}}">SIPLORA</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -99,7 +99,7 @@
     <div class="container">
 
     <!-- info -->
-      <div class="row justify-content-center">
+      <!-- <div class="row justify-content-center">
         <div class="col-10 info-panel">
           <div class="row">
             <div class="col-lg">
@@ -125,7 +125,7 @@
 
           </div>
         </div>
-      </div>
+      </div> -->
     <!-- Akhir info -->
 
     <!-- about Siplora -->
