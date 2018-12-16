@@ -57,7 +57,7 @@
           <a class="nav-item nav-link" href="#map">Map</a>
           <a class="nav-item nav-link" href="#contact">Contact</a>
           @guest
-          <a class="nav-item btn btn-primary" href="{{URL::to('/login')}}">Masuk</a>
+          <a class="nav-item btn btn-primary" href="{{URL::to('/pilihan')}}">Masuk</a>
           @if (Route::has('register'))         
           @endif
           @else

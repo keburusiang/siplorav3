@@ -24,4 +24,8 @@ class HomeController extends Controller
         $map = laporan::all();
         return view('home.index', compact('map'));
     }
+
+    public function login(){
+        return view('home.pilihan');
+    }
 }

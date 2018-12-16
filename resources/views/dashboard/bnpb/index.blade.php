@@ -155,8 +155,6 @@
   <script src="{{asset('dashboard/js/chartist.min.js')}}"></script>
   <!--  Lokasi Notifications   -->
   <script src="{{asset('dashboard/js/bootstrap-notify.js')}}"></script>
-  <!--  Google Maps    -->
-  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key="></script>
   <!-- Light Bootstrap Table Core javascript and methods for Demo purpose -->
   <script src="{{asset('dashboard/js/light-bootstrap-dashboard.js?v=1.4.0')}}"></script>
   <!-- DEMO -->
@@ -169,8 +167,7 @@
 
         	$.notify({
             	icon: 'pe-7s-id',
-            	message: "Hello <b>BNPB </b> Jangan Lupa Mengecek Daftar <br> <b>Laporan Verifikasi</b> Hari Ini - Selamat Bekerja"
-
+            	message: "Hello <b>BNPB </b>",
             },{
                 type: 'info',
                 timer: 4000
