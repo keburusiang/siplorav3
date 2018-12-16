@@ -70,8 +70,34 @@
     </nav>
     <!-- Navbar entek -->
 
+    <div class="container">
+        <div class="col-8">
+            <h3 class="text-center text-blueCA mb-5">Masuk Sebagai</h3>
+            <div class="row text-center">
+                <div class="card pl-4 pr-4">
+                  <h4 class="card-title text-center pt-3">Pelapor</h4>            
+                  <div class="card-body p-0 pb-4">
+                    <img src="{{asset('perubahan/home/img/profile1.png')}}">
+                      <div>
+                        <a class="nav-item btn btn-primary" style="width:100%" href="{{URL::to('/login')}}">Masuk</a>
+                      </div>                
+                  </div>
+                </div>                
+                    <div class="card pl-4 pr-4">
+                      <h4 class="card-title text-center pt-3">BNPB</h4>          
+                      <div class="card-body p-0 pb-4">
+                      <img src="{{asset('perubahan/home/img/city-hall.png')}}">           
+                        <div>
+                          <a class="nav-item btn btn-primary" style="width:100%" href="{{URL::to('/loginBnpb')}}">Masuk</a>
+                        </div>                
+                      </div>
+                    </div>                    
+            </div>
+        </div>
+    </div>
+
     <!-- ISI LOGIN -->
-    <div class="container pilihan">         
+    <!-- <div class="container pilihan">         
       <div class="row pt-5">
          <div class="col">
             <h3 class="text-center">Masuk Sebagai</h3>
@@ -93,7 +119,7 @@
           <div class="card pl-4 pr-4">
             <h4 class="card-title text-center pt-3">BNPB</h4>          
             <div class="card-body p-0 pb-4">
-            <img src="{{asset('perubahan/home/img/profile2.png')}}">           
+            <img src="{{asset('perubahan/home/img/city-hall.png')}}">           
               <div>
                 <a class="nav-item btn btn-primary" style="width:100%" href="{{URL::to('/loginBnpb')}}">Masuk</a>
               </div>                
@@ -101,7 +127,7 @@
           </div>    
         </div>
       </div>
-    </div>    
+    </div>     -->
 
 
     <!-- contact -->
