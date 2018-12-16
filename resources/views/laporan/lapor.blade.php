@@ -190,6 +190,13 @@
                 </div>
               </div>
             </div> -->
+           <div class="form-group">
+            <div class="container">
+            <div class="custom-control custom-checkbox mb-3">
+              <input type="checkbox" class="custom-control-input" id="customControlValidation1" required>
+              <label class="custom-control-label" for="customControlValidation1">Laporan ini dapat dipertanggungjawabkan</label>              
+            </div>
+            </div>
             <div class="form-group col-lg-12">
               <button type="submit" id="tombollapor" class="btn btn-primary" onclick="Swal('Berhasil',
               'bismillah',
@@ -266,20 +273,20 @@
 
 
     <!-- contact -->
-    <div class="contact" id="contact">
+   <section class="contact" id="contact">
       <div class="container">
         <div class="row contact">
             <div class="col-lg-3 pt-3">
               <h4>SIPLORA</h4>
-                <p class="footer-links">
+                <div class="footer-links">
                   <a class="" href="#mainNav">Home</a>
                   ·
-                  <a href="{URL::to('/about')}}">About</a>
+                  <a href="#about">About</a>
                   ·
                   <a href="#map">Map</a>
                   ·
                   <a href="#contact">Contact</a>
-                </p>
+                </div>
             </div>
             <div class="col-lg-3 pt-3">
 
@@ -288,7 +295,7 @@
 
             </div>
             <div class="col-lg-3 pt-3">
-              <h4>Contact Us</h4>
+              <h4 class="kontak">Contact Us</h4>
               <div class="footer-icons">
                 <a href="https://facebook.com/amiinmnugroho"><i class="fa fa-facebook"></i></a>
                 <a href="https://twitter.com/amiinmn"><i class="fa fa-twitter"></i></a>
@@ -298,14 +305,14 @@
             </div>
         </div>
       </div>
-    </div>
+      </section>
+  
     <!-- akhir contact -->
 
     <!-- footer -->
     <footer>
       <div class="container-fluid">
       <div class="row copyright pt-3">
-
         <div class="col text-center">
          <p>2018. Sistem Pelaporan Lokasi Rawan Bencana By Shabaka</p>
         </div>

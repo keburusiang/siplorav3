@@ -103,16 +103,16 @@
     <section class="section info">
     <div class="container">
       <div class="row">
-        <div class="col-md">
+        <div class="col">
           <div class="card">            
            <div class="card-body">
-            <img src="{{asset('perubahan/home/img/office.svg')}}" class="card-img float-left">
+            <img src="{{asset('perubahan/home/img/notepad.png')}}" class="card-img float-left">
             <h4>Lapor</h4>
             <p>Laporkan lokasi di sekitar anda.</p>
             </div>            
           </div>          
         </div>
-         <div class="col-md">
+         <div class="col">
           <div class="card ">
             <div class="card-body">
             <img src="{{asset('perubahan/home/img/verif.png')}}" class="card-img float-left">
@@ -121,7 +121,7 @@
             </div>            
           </div>
         </div>
-         <div class="col-md">
+         <div class="col">
           <div class="card ">
             <div class="card-body">       
             <img src="{{asset('perubahan/home/img/lacak.png')}}" class="card-img float-left">
@@ -130,7 +130,7 @@
             </div>            
           </div>
         </div>
-         <div class="col-md">
+         <div class="col">
           <div class="card ">
             <div class="card-body">  
             <img src="{{asset('perubahan/home/img/map.png')}}" class="card-img float-left">

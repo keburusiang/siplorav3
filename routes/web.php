@@ -18,6 +18,11 @@ Route::get('/about', function () {
     return view('home.about');
 });
 
+Route::get('/pilihan', function () {
+    return view('home.pilihan');
+});
+
+
 
 Route::get('/','HomeController@index');
 // Route::get('/lapor', 'LaporController@index');

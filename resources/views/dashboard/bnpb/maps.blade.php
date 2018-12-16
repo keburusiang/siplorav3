@@ -8,13 +8,15 @@
   <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
   <meta name="viewport" content="width=device-width" />
   <!-- Bootstrap CSS     -->
+  <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"> -->
+
   <link href="{{asset('dashboard/css/bootstrap.min.css')}}" rel="stylesheet" />
   <!-- Animation -->
-  <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
+  <!--  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script> -->
-  <link href="{{asset('dashboard/css/animate.min.css')}}" rel="stylesheet"/>
+  <!-- <link href="{{asset('dashboard/css/animate.min.css')}}" rel="stylesheet"/> -->
   <!--  BS  -->
   <link href="{{asset('dashboard/css/light-bootstrap-dashboard.css?v=1.4.0')}}" rel="stylesheet"/>
   <!--  DEMO  -->
@@ -32,16 +34,71 @@
     overflow-y: auto;
   }
   .modal {
-  position: absolute;
-  width: 620px;
-  height: 140px;;
-  top: 250px;
-  bottom: 20px;
-  left: 400px;
-  z-index: 10040;
-  /* overflow-y: hidden!important; */
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    top: 550px;
+    bottom: 20px;
+    left: 60px;
+    /*z-index: 10040;*/
+    /* overflow-y: hidden!important; */
+  }
+
+  @media (min-width: 992px) {
+    .modal {
+      position: absolute;
+      width: 650px;
+      margin : auto;
+      height: auto;
+      top: 250px;
+      bottom: 20px;
+      /*left: 400px;*/
+      z-index: 10040;
+      /* overflow-y: hidden!important; */
+    }
+  }
+
+.card{
+  height: 110px;
+  box-shadow: 0px 0px 20px #c7cad1;
+  transition: 0.3s;
+
 }
+
+.card:hover{    
+  transform: translateY(-10px);
+}
+
+
+.card img{
+  width: 80px;
+  float: right;
+
+}
+
+label {
+  font-weight: bold;
+  font-size: 40px;
+}
+
   </style>
+  <script type="text/javascript">
+    $(".modal").click(function(){
+      $(".modal").addClass("visible");
+    });
+
+    $(".close").click(function(){
+      $(".modal").removeClass("visible");
+    });
+
+    $(document).click(function(event) {
+      //if you click on anything except the modal itself or the "open modal" link, close the modal
+      if (!$(event.target).closest(".modal,.js-open-modal").length) {
+        $("body").find(".modal").removeClass("visible");
+      }
+    });
+
+  </script>
 </head>
 
 <body>
@@ -91,7 +148,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#">Maps</a>
+                    <a class="navbar-brand" href="">Maps</a>
                 </div>
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav navbar-right">
@@ -109,35 +166,56 @@
             <div class="container-fluid">
               <div class="row" >
                 <div class="col-lg-4" >
-                  <div class="card card-user" style="height: 110px; background-color:#A1E82C;">
+                  <div class="card card-user" ">
                       <div class="content">
-                        Laporan Diterima
-                        {{$count1}}
+                        <div class="row">
+                          <div class="col-xs-6 pl-3">
+                             Laporan Diterima : <br>
+                             <label class="hitungan" style="font-size: 40px; font-weight: bold; color: #1D262D;">{{$count1}}</label>
+                          </div>
+                          <div class="col-xs-6 pl-3">
+                             <img src="{{asset('dashboard/img/checked.png')}}">
+                          </div>
+                        </div>                        
                       </div>
                   </div>
                 </div>
                 <div class="col-lg-4">
-                  <div class="card card-user" style="height: 110px; background-color:#FFBC67;">
+                  <div class="card card-user" ">
                       <div class="content">
-                        Laporan Diproses
-                        {{$count2}}
+                        <div class="row">
+                          <div class="col-xs-6 pl-3">
+                             Laporan Diproses : <br>
+                             <label class="hitungan" style="font-size: 40px; font-weight: bold; color: #1D262D;">{{$count2}}</label>
+                          </div>
+                          <div class="col-xs-6 pl-3">
+                             <img src="{{asset('dashboard/img/wait.png')}}">
+                          </div>
+                        </div>                        
                       </div>
                   </div>
-                </div>
+                </div>            
                 <div class="col-lg-4">
-                  <div class="card card-user" style="height: 110px; background-color:#FC727A;">
+                  <div class="card card-user" ">
                       <div class="content">
-                        Laporan Ditolak
-                        {{$count3}}
+                        <div class="row">
+                          <div class="col-xs-6 pl-3">
+                             Laporan Ditolak : <br>
+                             <label class="hitungan" style="font-size: 40px; font-weight: bold; color: #1D262D;">{{$count3}}</label>
+                          </div>
+                          <div class="col-xs-6 pl-3">
+                             <img src="{{asset('dashboard/img/cancel.png')}}">
+                          </div>
+                        </div>                        
                       </div>
                   </div>
                 </div>
               </div>
               <div class="row">
                   <div class="col-md-12" align="center">
-                      <div class="card" style="padding:0px importan; border-radius: 10px; box-shadow: 0px 0px 20px #c7cad1;">
-                            <div id="googleMap" class="z-depth-1-half " style="height: 500px;border-radius: 10px;"></div>
-                      </div>
+                      <!-- <div class="card" style="padding:0px !importan; border-radius: 10px; box-shadow: 0px 0px 20px #c7cad1;"> -->
+                            <div id="googleMap" class="z-depth-1-half " style="height: 500px;border-radius: 10px; box-shadow: 0px 0px 20px #c7cad1;"></div>
+                      <!-- </div> -->
                   </div>
               </div>
             </div>
@@ -145,13 +223,14 @@
     </div>
   </div>
       @foreach($map as $data)
-      <div class="modal" id="modalMaps"   aria-hidden="true" data-backdrop="false">
-          <div class="modal-content">
+      <div class="modal" id="modalMaps"   aria-hidden="true" data-backdrop="false">        
+          <div class="modal-content">            
             <div id="modalMaps" class="modal-body" >
               <div class="col-md-12">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close" >
+                <button type="button btn-xl" class="close" data-dismiss="modal" aria-label="Close">
                   <span style="color:red;" >&times;</span>
                 </button>
+               
                   <div class="row">
                     <b>Jenis Bencana</b><br>
                     <p id="jenisBencana"style="font-size: 12px;"></p>
