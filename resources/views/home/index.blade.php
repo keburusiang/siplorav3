@@ -88,7 +88,7 @@
     <div class="jumbotron jumbotron-fluid bg-white">
       <div class="container">
         <h1 class="display-4">Laporkan Lokasi Rawan Bencana</h1>
-        <a href="{{URL::to('/lapor')}}" class="btn btn-primary tombol">LAPORKAN</a>
+        <a href="{{URL::to('/lapor')}}" class="btn btn-primary tombol">LaAPORKAN</a>
         <!-- <a href="{{URL::to('/lacak')}}" class="btn btn-secondary tombol">LACAK LAPORAN</a>  -->
       </div>
     </div>
