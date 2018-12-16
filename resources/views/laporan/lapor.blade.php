@@ -153,8 +153,8 @@
       <h4 class=" text-center pt-3">Laporkan Lokasi</h4>
       <div class="row">
         <div class="col-md-6">
-          <!-- <div class="card p-0">        
-            <div class="card-body p-0"> -->
+          <div class="card p-0">        
+            <div class="card-body p-0">
               @csrf
                 <div class="form-group col-lg-12">
                   <label for="jenisBencana">Jenis Bencana</label>
@@ -172,12 +172,12 @@
                 <input type="hidden" class="form-control" name="latitude" value="lat" id="lat" >
                 <input type="hidden" class="form-control" name="longitude" value="lng" id="lng" >
                 </div>
-            <!-- </div>        
-          </div> -->
+            </div>        
+          </div>
       </div>
       <div class="col-md-6">
-      <!-- <div class="card p-0">
-        <div class="card-body p-0"> -->
+      <div class="card p-0">
+        <div class="card-body p-0">
               <div class="form-group col-lg-12">
                 <label for="googleMap">Pilih Maps</label>
                   <div class="form-control" id="googleMap" style="width:100%;height:350px;"></div>
@@ -199,8 +199,8 @@
             </div>
       </div>
     </div>
-   <!--  </div>
-    </div> -->
+    </div>
+    </div>
     </form>
     </div>
 
