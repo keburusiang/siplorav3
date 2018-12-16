@@ -153,8 +153,8 @@
       <h4 class=" text-center pt-3">Laporkan Lokasi</h4>
       <div class="row">
         <div class="col-md-6">
-          <!-- <div class="card p-0">        
-            <div class="card-body p-0"> -->
+          <div class="card p-0">        
+            <div class="card-body p-0">
               @csrf
                 <div class="form-group col-lg-12">
                   <label for="jenisBencana">Jenis Bencana</label>
@@ -163,7 +163,7 @@
                 </div>
                   <div class="form-group col-lg-12">
                     <label for="deskripsi">Deskripsi Lokasi</label>
-                    <textarea class="form-control" id="deskripsi" name="deskripsi" rows="5" required></textarea>
+                    <textarea class="form-control" id="deskripsi" name="deskripsi" rows="7" required></textarea>
                     <span> <b>Contoh:</b> Tanggul jebol dikhawatirkan terjadi banjir. </span>
                   </div>
                   <div class="form-group col-lg-12">
@@ -172,24 +172,24 @@
                 <input type="hidden" class="form-control" name="latitude" value="lat" id="lat" >
                 <input type="hidden" class="form-control" name="longitude" value="lng" id="lng" >
                 </div>
-            <!-- </div>        
-          </div> -->
+            </div>        
+          </div>
       </div>
       <div class="col-md-6">
-      <!-- <div class="card p-0">
-        <div class="card-body p-0"> -->
+      <div class="card p-0">
+        <div class="card-body p-0">
               <div class="form-group col-lg-12">
                 <label for="googleMap">Pilih Maps</label>
                   <div class="form-control" id="googleMap" style="width:100%;height:350px;"></div>
               </div>
-            <div class="form-group col-lg-12">
+            <!-- <div class="form-group col-lg-12">
               <div class="file-field">
                 <div class="custom-file">
                   <input type="file" class="custom-file-input" data-multiple-target="{target} files selected" multiple="">
                   <a class="custom-file-label" for="customFile">Pilih Gambar</a>
                 </div>
               </div>
-            </div>
+            </div> -->
             <div class="form-group col-lg-12">
               <button type="submit" id="tombollapor" class="btn btn-primary" onclick="Swal('Berhasil',
               'bismillah',
@@ -199,8 +199,8 @@
             </div>
       </div>
     </div>
-   <!--  </div>
-    </div> -->
+    </div>
+    </div>
     </form>
     </div>
 

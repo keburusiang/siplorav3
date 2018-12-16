@@ -32,26 +32,26 @@
 <div class="wrapper">
 	<div class="sidebar" data-color="azure" data-image="{{asset('dashboard/img/volcano.jpg')}}">
 		<div class="sidebar-wrapper">
-					<div class="logo">
-						<a href="{{URL::to('/')}}" class="simple-text" style="font-family: viga; font-size:32px;">
-								SIPLORA
-						</a>
-					</div>
-					<ul class="nav">
-							<li >
-									<a href="{{URL::to('/pelapor/dashboard/')}}">
-											<i class="pe-7s-note2"></i>
-											<p>Laporan</p>
-									</a>
-							</li>
-							<li class="active">
-									<a href="{{URL::to('/pelapor/dashboard/profile/')}}">
-											<i class="pe-7s-user"></i>
-											<p>User Profile</p>
-									</a>
-							</li>
-					</ul>
-		</div>
+    		<div class="logo">
+    			<a href="{{URL::to('/')}}" class="simple-text" style="font-family: viga; font-size:32px;">
+    					SIPLORA
+    			</a>
+    		</div>
+    		<ul class="nav">
+    			<li >
+					<a href="{{URL::to('/pelapor/dashboard/')}}">
+						<i class="pe-7s-note2"></i>
+						<p>Laporan</p>
+					</a>
+    			</li>
+    			<li class="active">
+					<a href="{{URL::to('/pelapor/dashboard/profile/')}}">
+						<i class="pe-7s-user"></i>
+						<p>User Profile</p>
+					</a>
+    			</li>
+    		</ul>
+	   </div>
 	</div>
 
     <div class="main-panel">
@@ -67,16 +67,16 @@
                 </div>
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav navbar-right">
-											<li >
-												<a class="btn btn-primary"  href="{{ route('logout') }}"
-														onclick="event.preventDefault();
-														document.getElementById('logout-form').submit();">
-														{{ ('Logout') }}
-												</a>
-												<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-												@csrf
-												</form>
-						          </li>
+    					<li >
+    						<a class="btn btn-primary"  href="{{ route('logout') }}"
+    							onclick="event.preventDefault();
+    							document.getElementById('logout-form').submit();">
+    							{{ ('Logout') }}
+    						</a>
+    						<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+    						@csrf
+    						</form>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -91,24 +91,33 @@
                                 <h4 class="title">Edit Profile</h4>
                             </div>
                             <div class="content">
-                                <form>
+                                <form method="POST" action="{{URL::to('/pelapor/dashboard/profile/')}}">
+                                    @csrf
                                     <div class="row">
                                         <div class="col-md-4">
                                             <div class="form-group">
                                                 <label>Nama Depan</label>
-                                                <input type="text" class="form-control" placeholder="Nama Depan" value="{{$pelapor->namaDepan}}">
+                                                <input name="namaDepan" type="text" class="form-control" placeholder="Nama Depan" value="{{$pelapor->namaDepan}}">
                                             </div>
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
                                                 <label>Nama Belakang</label>
-                                                <input type="text" class="form-control" placeholder="Nama Belakang" value="{{$pelapor->namaBelakang}}">
+                                                <input name="namaBelakang" type="text" class="form-control" placeholder="Nama Belakang" value="{{$pelapor->namaBelakang}}">
                                             </div>
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
                                                 <label>Tanggal Lahir</label>
-                                                <input type="Date" class="form-control" placeholder="Tanggal Lahir" value="{{$pelapor->tanggalLahir}}">
+                                                <input name="tanggalLahir" type="date" class="form-control" placeholder="Tanggal Lahir" value="{{$pelapor->tanggalLahir}}">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label>No Telepon</label>
+                                                <input type="telp" class="form-control" name="notelp" value="{{$pelapor->notelp}}"></textarea>
                                             </div>
                                         </div>
                                     </div>
@@ -116,7 +125,7 @@
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <label>Alamat</label>
-                                                <input class="form-control" name="alamat" value="{{$pelapor->alamat}}"></textarea>
+                                                <input type="text" class="form-control" name="alamat" value="{{$pelapor->alamat}}"></textarea>
                                             </div>
                                         </div>
                                     </div>
@@ -124,29 +133,29 @@
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <label>Email</label>
-                                                <input class="form-control" name="email" value="{{$pelapor->email}}"></textarea>
+                                                <input type="text" class="form-control" name="email" value="{{$pelapor->email}}"></textarea>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="row">
+                                    <!-- <div class="row">
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label for="password">Password Lama</label>
-                                                <input type="password" class="form-control" name="password" placeholder="Password Lama">
+                                                <input name="password" type="password" class="form-control" name="password" placeholder="Password Lama">
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label for="password">Password</label>
-                                                <input type="password" class="form-control" name="password" placeholder="Password Baru">
+                                                <input type="password" class="form-control" name="password_confirmation" placeholder="Password Baru">
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> -->
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <label>About Me</label>
-                                                <textarea rows="5" class="form-control" placeholder="Here can be your description"></textarea>
+                                                <textarea name="bio" rows="5" class="form-control" placeholder="Here can be your description">{{$pelapor->bio}}</textarea>
                                             </div>
                                         </div>
                                     </div>
@@ -168,7 +177,10 @@
                                     <img class="avatar border-gray" src="{{asset('dashboard/img/faces/fauzan.jpg')}}" alt="..."/>
 
                                       <h4 class="title">{{$pelapor->namaDepan}} {{$pelapor->namaBelakang}}<br />
-                                         <small>{{$pelapor->email}}</small>
+                                         <small>{{$pelapor->email}}</small><br>
+                                         <small>" <b>{{$pelapor->bio}}</b> "</small><br>
+                                         <hr>
+                                         <small>{{$pelapor->alamat}}</small>
                                       </h4>
                                     </a>
                                 </div>

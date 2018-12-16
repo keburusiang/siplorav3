@@ -185,8 +185,8 @@
                 var locations = @json($map);
                 console.log(map);
                 var map = new google.maps.Map(document.getElementById('googleMap'), {
-                   zoom: 10,
-                   center: new google.maps.LatLng(-7.543037, 110.485844),
+                   zoom: 6,
+                   center: new google.maps.LatLng(-3.236001, 111.039169),
                    mapTypeControl: false,
                    mapTypeId: google.maps.MapTypeId.TERRAIN,
                  });
