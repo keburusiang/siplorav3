@@ -104,40 +104,40 @@
                             <div class="content table-responsive table-full-width">
                                 <table class="table table-hover table-striped">
                                     <thead>
-																			<th style="width:100px;">Kode Laporan</th>
-																			<th style="width:95px;">Nama Pelapor</th>
-																			<th style="width:100px;">Tanggal</th>
-																			<th style="width:120px;">Jenis Bencana</th>
-																			<th style="width:250px;">Lokasi Bencana</th>
-                                      <th style="width:5px;">Tolak</th>
-																			<th style="width:5px;">Verif</th>
+										<th style="width:100px;">Kode Laporan</th>
+										<th style="width:95px;">Nama Pelapor</th>
+										<th style="width:100px;">Tanggal</th>
+										<th style="width:120px;">Jenis Bencana</th>
+										<th style="width:250px;">Lokasi Bencana</th>
+                                        <th style="width:5px;">Tolak</th>
+										<th style="width:5px;">Verif</th>
                                     </thead>
                                     <tbody>
-																			@foreach($data2 as $tol)
-																			<tr>
-																				<td>{{$tol->kode_laporan}}</td>
-																				<td>{{$tol->namaDepan}}</td>
-																				<td>{{$tol->created_at}}</td>
-																				<td>{{$tol->jenis_laporan}}</td>
-																				<td>{{$tol->alamat}}</td>
-																				<td>
-																					<form action="{{url('/lapor/'.$tol->id)}}" method="POST">
-																						{{csrf_field()}} {{method_field('PUT')}}
-																						<button value="3" name="status" type="submit" rel="tooltip" title="Tidak Diterima" class="btn btn-danger btn-simple btn-md">
-																							<i class="fa fa-times"></i>
-																						</button>
-																					</form>
-																				</td>
-																				<td>
-																					<form action="{{url('/lapor/'.$tol->id)}}" method="POST">
-																						{{csrf_field()}} {{method_field('PUT')}}
-																						<button value="1" name="status" type="submit" rel="tooltip" title="Verifikasi" class="btn btn-success btn-simple btn-md">
-																							<i class="fa fa-check"></i>
-																						</button>
-																					</form>
-																			 	</td>
-																			</tr>
-																			@endforeach
+										@foreach($data2 as $tol)
+										<tr>
+											<td>{{$tol->kode_laporan}}</td>
+											<td>{{$tol->namaDepan}}</td>
+											<td>{{$tol->created_at}}</td>
+											<td>{{$tol->jenis_laporan}}</td>
+											<td>{{$tol->alamat}}</td>
+											<td>
+												<form action="{{url('/lapor/'.$tol->id)}}" method="POST">
+													{{csrf_field()}} {{method_field('PUT')}}
+													<button value="3" name="status" type="submit" rel="tooltip" title="Tidak Diterima" class="btn btn-danger btn-simple btn-md">
+													<i class="fa fa-times"></i>
+													</button>
+													</form>
+											</td>
+											<td>
+    											<form action="{{url('/lapor/'.$tol->id)}}" method="POST">
+    												{{csrf_field()}} {{method_field('PUT')}}
+    												<button value="1" name="status" type="submit" rel="tooltip" title="Verifikasi" class="btn btn-success btn-simple btn-md">
+    													<i class="fa fa-check"></i>
+    												</button>
+    											</form>
+    									 	</td>
+        									</tr>
+										@endforeach
                                     </tbody>
                                 </table>
                             </div>
@@ -149,24 +149,24 @@
                             <div class="content table-responsive table-full-width">
                                 <table class="table table-hover table-striped ">
                                     <thead >
-																			<tr>
-																				<th style="width:95px;">Kode Laporan</th>
-																				<th style="width:90px;">Nama Pelapor</th>
+										<tr>
+											<th style="width:95px;">Kode Laporan</th>
+											<th style="width:90px;">Nama Pelapor</th>
 	                                    	<th style="width:100px;">Tanggal</th>
 	                                    	<th style="width:120px;">Jenis Bencana</th>
 	                                    	<th style="width:150px;">Lokasi Bencana</th>
-																			</tr>
+										</tr>
                                     </thead>
                                     <tbody>
-																			@foreach($data as $tol)
+										@foreach($data as $tol)
                                         <tr>
 	                                      	<td>{{$tol->kode_laporan}}</td>
-																					<td>{{$tol->namaDepan}}</td>
+											<td>{{$tol->namaDepan}}</td>
 	                                      	<td>10/23/2018</td>
 	                                      	<td>{{$tol->jenis_laporan}}</td>
 	                                      	<td>{{$tol->alamat}}</td>
                                         </tr>
-																				@endforeach
+										@endforeach
                                     </tbody>
                                 </table>
                             </div>

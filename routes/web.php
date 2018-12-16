@@ -42,6 +42,8 @@ $this->post('/logout', 'Auth\LoginController@logout')->name('logout');
 Route::get('/pelapor/dashboard/','PelaporController@show')->middleware('auth');
 Route::patch('/pelapor/dashboard/', 'PelaporController@update');
 Route::get('/pelapor/dashboard/profile/','PelaporController@showProfile')->middleware('auth');
+Route::post('/pelapor/dashboard/profile/','PelaporController@edit')->middleware('auth');
+
 
 // Route::get('/pelapor/dashboard/pelapor/','PelaporController@showProfile');
 
