@@ -2,8 +2,8 @@
 .navbar{
 	background-color: black;
 	color: white;
-	/*position: relative;
-	z-index: 1;*/
+	/*position: relative;*/
+	/*z-index: 1;*/
 }
 
 .navbar-brand, .nav-link{
@@ -16,16 +16,17 @@
 	font-size: 32px;
 }
 
+
 .about{
 	margin-top: 120px;
-	margin-bottom: 50px;
-
 }
 
-.
+
+
+
 /*contact*/
 .contact{	
-	margin-top: ;
+	margin-top: 100px;
 	color: white;
 	text-align: center;	
 	background-color: black;
@@ -50,8 +51,13 @@
 	line-height: 35px;
 
 	margin-right: 3px;
-	margin-bottom: 5px;
-}
+	transition: 0.3s;
+	}
+
+	.contact .footer-icons a:hover{
+		color: #0069D9;
+		
+	}
 
 
 

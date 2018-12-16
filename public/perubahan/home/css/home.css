@@ -3,6 +3,8 @@
 	font-family: Open Sans;
 }
 */
+
+
 .navbar{
 	/*position: relative;*/
 	/*z-index: 1;*/
@@ -213,11 +215,12 @@
 
 	margin-right: 3px;
 	margin-bottom: 5px;
+	transition: 0.3s;
 }
 
 .contact .footer-icons a:hover{
 	color: #0069D9;
-	transition: 0.3s;
+	
 }
 
 
@@ -274,7 +277,7 @@ footer .copyright{
 	}
 
 	.jumbotron{
-		margin-top: 0x;
+		margin-top: 0px;
 		height: 640px;
 	}
 
@@ -311,7 +314,7 @@ footer .copyright{
 	}
 
 	
-	/*contact*/	
+	
 	.contact{
 		height: 100px;
 		color: white;
@@ -322,9 +325,8 @@ footer .copyright{
 	
 
 	.contact .footer-icons a{
-		text-align: right;
+		text-align: left;
 	}
-
 
 	/*footer*/
 	

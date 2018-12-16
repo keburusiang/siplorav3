@@ -23,76 +23,9 @@
     <!-- iki CSS -->
     <link rel="stylesheet" type="text/css" href="{{asset('perubahan/home/css/about.css')}}">
 
-    <!-- MAPS -->
+   
 
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBOYROYFc-XcfFCMmw5MVlOZc1Tuh_HC2U"
-    type="text/javascript"></script>
-
-    <script>
-      // variabel global marker
-      var marker;
-        
-      function taruhMarker(peta, posisiTitik){
-          
-          if( marker ){
-            // pindahkan marker
-            marker.setPosition(posisiTitik);
-          } else {
-            // buat marker baru
-            marker = new google.maps.Marker({
-              position: posisiTitik,
-              map: peta
-            });
-          }
-              convert_latlng(posisiTitik);
-
-           // isi nilai koordinat ke form
-          document.getElementById("lat").value = posisiTitik.lat();
-          document.getElementById("lng").value = posisiTitik.lng();
-
-          // convert_latlng(posisiTitik);
-          
-      }
-        
-      // merubah geotag menjadi alamat
-      function convert_latlng(pos) {
-
-       // membuat geocoder
-       var geocoder = new google.maps.Geocoder();
-       geocoder.geocode({'latLng': pos}, function(r) {
-
-        if (r && r.length > 0) {
-         document.getElementById('alamat').value = r[0].formatted_address;
-        } else {
-         document.getElementById('alamat').value = 'Alamat tidak di temukan di lokasi !!';
-        }
-
-       });
-      }
-
-      function initialize() {
-        var propertiPeta = {
-          center:new google.maps.LatLng(-7.687739,110.413222),
-          zoom:9,
-          mapTypeId:google.maps.MapTypeId.ROADMAP
-        };
-        
-        var peta = new google.maps.Map(document.getElementById("googleMap"), propertiPeta);
-        
-        // even listner ketika peta diklik
-        google.maps.event.addListener(peta, 'click', function(event) {
-          taruhMarker(this, event.latLng);
-        });
-
-      }
-
-
-      // event jendela di-load  
-      google.maps.event.addDomListener(window, 'load', initialize);
-        
-
-      </script>
-
+    
 
   <title>SIPLORA</title>
   </head>
@@ -121,6 +54,7 @@
                     <span class="caret"></span>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                   <a class="dropdown-item" href="{{URL::to('/pelapor/dashboard')}}">Dashboard</a>
                     <a class="dropdown-item" href="{{ route('logout') }}"
                         onclick="event.preventDefault();
                         document.getElementById('logout-form').submit();">
@@ -156,48 +90,48 @@
     <!-- contact -->
     <div class="contact" id="contact">
       <div class="container">
-        <div class="row contact">         
+        <div class="row contact">
             <div class="col-lg-3 pt-3">
               <h4>SIPLORA</h4>
                 <p class="footer-links">
                   <a class="" href="#mainNav">Home</a>
                   ·
-                  <a href="#about">About</a>
+                  <a href="{URL::to('/about')}}">About</a>
                   ·
                   <a href="#map">Map</a>
-                  ·                  
+                  ·
                   <a href="#contact">Contact</a>
                 </p>
-            </div>    
+            </div>
             <div class="col-lg-3 pt-3">
-             
-            </div>  
+
+            </div>
             <div class="col-lg-3 pt-3">
-             
-            </div>           
+
+            </div>
             <div class="col-lg-3 pt-3">
               <h4>Contact Us</h4>
               <div class="footer-icons">
                 <a href="https://facebook.com/amiinmnugroho"><i class="fa fa-facebook"></i></a>
                 <a href="https://twitter.com/amiinmn"><i class="fa fa-twitter"></i></a>
-                <a href="https://linkedin.com/in/amiinmn"><i class="fa fa-linkedin"></i></a> 
-                <a href="https://instagram.com/amiinmn"><i class="fa fa-instagram"></i></a>         
-              </div>              
-            </div>       
+                <a href="https://linkedin.com/in/amiinmn"><i class="fa fa-linkedin"></i></a>
+                <a href="https://instagram.com/amiinmn"><i class="fa fa-instagram"></i></a>
+              </div>
+            </div>
         </div>
       </div>
-    </div>   
+    </div>
     <!-- akhir contact -->
 
     <!-- footer -->
     <footer>
       <div class="container-fluid">
       <div class="row copyright pt-3">
-        
+
         <div class="col text-center">
          <p>2018. Sistem Pelaporan Lokasi Rawan Bencana By Shabaka</p>
         </div>
-        </div>        
+        </div>
       </div>
     </footer>
 

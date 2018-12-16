@@ -12,11 +12,13 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script type="text/javascript" src="{{asset('perubahan/home/js/scrollme.js')}}"></script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gmaps.js/0.4.24/gmaps.js"></script>
 
     <!-- iki Bootstrap CSS -->
-    <link href="{{asset('perubahan/home/vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
-    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous"> -->
+    <!-- <link href="{{asset('perubahan/home/vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet"> -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
 
     <!-- iki icon -->
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
@@ -39,7 +41,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
 
   </head>
-  <body>
+  <body>    
 
     <!-- iki Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
@@ -56,8 +58,7 @@
           <a class="nav-item nav-link" href="#contact">Contact</a>
           @guest
           <a class="nav-item btn btn-primary" href="{{URL::to('/login')}}">Masuk</a>
-          @if (Route::has('register'))
-         <!--  <a class="nav-item btn btn-primary" href="{{URL::to('/register')}}">Register</a> -->
+          @if (Route::has('register'))         
           @endif
           @else
 
@@ -83,6 +84,9 @@
       </div>
     </nav>
     <!-- Navbar entek -->
+
+   
+
 
     <!-- iki Jumbotron -->
     <div class="jumbotron jumbotron-fluid bg-white">

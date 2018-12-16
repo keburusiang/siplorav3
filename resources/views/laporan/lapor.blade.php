@@ -180,13 +180,13 @@
         <div class="card-body p-0"> -->
               <div class="form-group col-lg-12">
                 <label for="googleMap">Pilih Maps</label>
-                  <div class="form-control" id="googleMap" style="width:100%;height:250px;"></div>
+                  <div class="form-control" id="googleMap" style="width:100%;height:350px;"></div>
               </div>
             <div class="form-group col-lg-12">
               <div class="file-field">
                 <div class="custom-file">
                   <input type="file" class="custom-file-input" data-multiple-target="{target} files selected" multiple="">
-                  <label class="custom-file-label" for="customFile">Pilih Gambar</label>
+                  <a class="custom-file-label" for="customFile">Pilih Gambar</a>
                 </div>
               </div>
             </div>
