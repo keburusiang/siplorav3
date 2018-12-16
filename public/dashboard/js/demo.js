@@ -248,8 +248,6 @@ demo = {
     	$.notify({
         	icon: "pe-7s-gift",
         	message: "Hello <b>Siplora Admin</b> - Selamat Bekerja"
-
-
         },{
             type: type[color],
             timer: 4000,
