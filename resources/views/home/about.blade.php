@@ -21,7 +21,7 @@
     <link href="https://fonts.googleapis.com/css?family=Viga" rel="stylesheet">
 
     <!-- iki CSS -->
-    <link rel="stylesheet" type="text/css" href="{{asset('perubahan/laporan/css/laporan.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('perubahan/home/css/about.css')}}">
 
     <!-- MAPS -->
 
@@ -141,7 +141,15 @@
 
     <!-- ISINE -->
     <div class="container about" id="about">
-   
+      <div class="row">
+        <div class="col-lg-6">
+          <img src="{{asset('perubahan/home/img/jumbotron-bg.jpg')}}" class="card-img">
+        </div>
+        <div class="col-lg-6">
+          <h3 class="pt-1 pb-3">Tentang Siplora</h3>
+          <p>SIPLORA adalah sistem pelayanan masyarakat guna meningkatkan aksi preventif bencana dengan cara melaporkan lokasi yang rawan terjadi bencana. Siplora dapat mengirimkan lokasi yang dilaporkan masyarakat menuju BDPB agar nantinya lokasi tersebut dapat ditunjau dan dilakukan upaya upaya pencegahan agar bencana di lokasi tersebut dapat dihindari </p>
+        </div>        
+      </div>
     </div>
 
 

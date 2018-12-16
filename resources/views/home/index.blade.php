@@ -55,7 +55,7 @@
           <a class="nav-item nav-link" href="#map">Map</a>
           <a class="nav-item nav-link" href="#contact">Contact</a>
           @guest
-          <a class="nav-item btn btn-primary" href="{{URL::to('/login')}}">Login</a>
+          <a class="nav-item btn btn-primary" href="{{URL::to('/login')}}">Masuk</a>
           @if (Route::has('register'))
          <!--  <a class="nav-item btn btn-primary" href="{{URL::to('/register')}}">Register</a> -->
           @endif
@@ -67,11 +67,10 @@
                 </a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                   <a class="dropdown-item" href="{{URL::to('/pelapor/dashboard')}}">Dashboard</a>
-
                   <a class="dropdown-item" href="{{ route('logout') }}"
                         onclick="event.preventDefault();
                         document.getElementById('logout-form').submit();">
-                        {{ ('Logout') }}
+                        {{ ('Keluar') }}
                   </a>
                   <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                    @csrf
@@ -86,7 +85,7 @@
     <!-- Navbar entek -->
 
     <!-- iki Jumbotron -->
-    <div class="jumbotron jumbotron-fluid">
+    <div class="jumbotron jumbotron-fluid bg-white">
       <div class="container">
         <h1 class="display-4">Laporkan Lokasi Rawan Bencana</h1>
         <a href="{{URL::to('/lapor')}}" class="btn btn-primary tombol">LAPORKAN</a>
@@ -96,82 +95,72 @@
     <!-- jumbotron entek -->
 
     <!-- ISINE -->
-   <!--  <div class="container"> -->
-
-    <!-- info -->
-      <!-- <div class="row justify-content-center">
-        <div class="col-10 info-panel">
-          <div class="row">
-            <div class="col-lg">
-              <img src="{{asset('perubahan/home/img/office.svg')}}" class="float-left">
-              <h4>Lapor</h4>
-              <p>Laporkan lokasi di sekitar anda.</p>
-            </div>
-            <div class="col-lg">
-              <img src="{{asset('perubahan/home/img/employee.png')}}" class="float-left">
-              <h4>Verivikasi</h4>
-              <p>Laporan anda akan diverifikasi</p>
-            </div>
-            <div class="col-lg">
-              <img src="{{asset('perubahan/home/img/employee.png')}}" class="float-left">
-              <h4>Lacak</h4>
-              <p>Lacak status laporan anda</p>
-            </div>
-            <div class="col-lg">
-              <img src="{{asset('perubahan/home/img/employee.png')}}" class="float-left">
-              <h4>Map</h4>
-              <p>lihal lokasi yang anda laporkan</p>
-            </div>
-
+   <!--  <div class="container"> -->  
+    <section class="section info">
+    <div class="container">
+      <div class="row">
+        <div class="col-md">
+          <div class="card">            
+           <div class="card-body">
+            <img src="{{asset('perubahan/home/img/office.svg')}}" class="card-img float-left">
+            <h4>Lapor</h4>
+            <p>Laporkan lokasi di sekitar anda.</p>
+            </div>            
+          </div>          
+        </div>
+         <div class="col-md">
+          <div class="card ">
+            <div class="card-body">
+            <img src="{{asset('perubahan/home/img/verif.png')}}" class="card-img float-left">
+            <h4>Verifikasi</h4>
+            <p>Laporan anda akan diverifikasi</p>
+            </div>            
           </div>
         </div>
-      </div> -->
-    <!-- Akhir info -->
-    <div class="container">
-    <div class="row">
-      <div class="col-md">
-        <div class="card ">
-          
+         <div class="col-md">
+          <div class="card ">
+            <div class="card-body">       
+            <img src="{{asset('perubahan/home/img/lacak.png')}}" class="card-img float-left">
+            <h4>Lacak</h4>
+            <p>Lacak status laporan anda</p>
+            </div>            
+          </div>
         </div>
-        
+         <div class="col-md">
+          <div class="card ">
+            <div class="card-body">  
+            <img src="{{asset('perubahan/home/img/map.png')}}" class="card-img float-left">
+            <h4>Map</h4>
+            <p>Lihat lokasi yang anda laporkan</p>
+            </div>            
+          </div>
+        </div>        
       </div>
-       <div class="col-md">
-        <div class="card ">
-          
-        </div>
-      </div>
-       <div class="col-md">
-        <div class="card ">
-          
-        </div>
-      </div>
-       <div class="col-md">
-        <div class="card ">
-          
-        </div>
-      </div>
-      
     </div>
-    </div>
+    </section>
+
 
     <!-- about Siplora -->
-    <section class="section">
-      <div class="row about" id="about">
+    <section class="section about pt-5" id="about">
+      <div class="container">
+      <div class="row" >
         <div class="col-lg-6">
-          <img src="{{asset('perubahan/home/img/jumbotron-bg.jpg')}}" alt="about" class="img-fluid">
+          <img src="{{asset('perubahan/home/img/iki.jpg')}}" alt="about" class="img-fluid rounded">
         </div>
-        <div class="col-lg-5">
+        <div class="col-lg-5 mn-5">
           <h3>About us</h3>
           <p>SIPLORA adalah sistem pelayanan masyarakat guna meningkatkan aksi preventif bencana dengan cara melaporkan lokasi yang rawan terjadi bencana</p>
+          <a href="{{URL::to('/about')}}" class="btn btn-primary">Selengkapnya</a>
         </div>
+      </div>
       </div>
     </section>
     <!-- Akhir about Siplora -->
 
     <!-- MAP -->
-    <section class="section bg-light">
+    <section class="section" id="map">
     <div class="container">
-      <div class="row map pb-5" id="map">
+      <div class="row map pb-5" >
         <div class="col-lg-10 mx-auto">
          <h4>PETA SEBARAN LOKASI RAWAN BENCANA</h4>
         </div>
@@ -232,20 +221,21 @@
 
     <!-- contact -->
     
-    <div class="contact" id="contact">
+   <!-- contact -->
+   <section class="contact" id="contact">
       <div class="container">
         <div class="row contact">
             <div class="col-lg-3 pt-3">
               <h4>SIPLORA</h4>
-                <p class="footer-links">
+                <div class="footer-links">
                   <a class="" href="#mainNav">Home</a>
                   ·
-                  <a href="{{URL::to("/about")}}">About</a>
+                  <a href="#about">About</a>
                   ·
                   <a href="#map">Map</a>
                   ·
                   <a href="#contact">Contact</a>
-                </p>
+                </div>
             </div>
             <div class="col-lg-3 pt-3">
 
@@ -254,7 +244,7 @@
 
             </div>
             <div class="col-lg-3 pt-3">
-              <h4>Contact Us</h4>
+              <h4 class="kontak">Contact Us</h4>
               <div class="footer-icons">
                 <a href="https://facebook.com/amiinmnugroho"><i class="fa fa-facebook"></i></a>
                 <a href="https://twitter.com/amiinmn"><i class="fa fa-twitter"></i></a>
@@ -264,21 +254,23 @@
             </div>
         </div>
       </div>
-    </div>
-   
+      </section>
+  
     <!-- akhir contact -->
 
     <!-- footer -->
     <footer>
       <div class="container-fluid">
       <div class="row copyright pt-3">
-
         <div class="col text-center">
          <p>2018. Sistem Pelaporan Lokasi Rawan Bencana By Shabaka</p>
         </div>
         </div>
       </div>
     </footer>
+
+    <!-- akhir footer -->
+
 
 
     <!-- Optional JavaScript -->
