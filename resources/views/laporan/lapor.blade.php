@@ -186,7 +186,7 @@
               <div class="file-field">
                 <div class="custom-file">
                   <input type="file" class="custom-file-input" data-multiple-target="{target} files selected" multiple="">
-                  <label class="custom-file-label" for="customFile">Pilih Gambar</label>
+                  <a class="custom-file-label" for="customFile">Pilih Gambar</a>
                 </div>
               </div>
             </div> -->
