@@ -18,6 +18,8 @@ class CreateUsersTable extends Migration
             $table->string('namaDepan');
             $table->string('namaBelakang');
             $table->string('email')->unique();
+            $table->string('bio')->nullable();
+            $table->string('alamat')->nullable();
             $table->Integer('role_id')->default('1');
             $table->date('tanggalLahir');
             $table->bigInteger('notelp');
