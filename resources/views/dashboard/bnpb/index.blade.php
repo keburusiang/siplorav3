@@ -169,8 +169,7 @@
 
         	$.notify({
             	icon: 'pe-7s-id',
-            	message: "Hello <b>BNPB </b> Jangan Lupa Mengecek Daftar <br> <b>Laporan Verifikasi</b> Hari Ini - Selamat Bekerja"
-
+            	message: "Hello <b>BNPB </b>",
             },{
                 type: 'info',
                 timer: 4000
