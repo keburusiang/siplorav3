@@ -163,17 +163,15 @@
 	<script type="text/javascript">
     	$(document).ready(function(){
 
+        	demo.initChartist();
+
         	$.notify({
-          icon: "pe-7s-gift",
-          message: "Hello <b>Siplora Admin</b> - Selamat Bekerja"
-        },{
-            type: type[color],
-            timer: 4000,
-            placement: {
-                from: from,
-                align: align
-            }
-        });
+            	icon: 'pe-7s-id',
+            	message: "Hello <b>BNPB </b>",
+            },{
+                type: 'info',
+                timer: 4000
+            });
 
     	});
 	</script>
