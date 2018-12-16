@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\laporan;
 use App\User;
 use Illuminate\Http\Request;
@@ -9,6 +10,11 @@ use DB;
 class BnpbController extends Controller
 {
     //
+
+    public function __construct()
+    {
+        $this->middleware('auth:bnpb');
+    }
 
     public function show()
     {

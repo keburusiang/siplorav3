@@ -33,6 +33,13 @@ $this->post('/register', 'Auth\RegisterController@register');
 $this->get('/login', 'Auth\LoginController@showLoginForm')->name('login');
 $this->post('/login', 'Auth\LoginController@login');
 
+$this->get('/loginBnpb', 'Bnpb\BnpbLoginController@showLoginForm')->name('bnpb.login');
+$this->post('/loginBnpb', 'Bnpb\BnpbLoginController@login');
+
+Route::post('/bnpb/dashboard/', 'Bnpb\BnpbLoginController@logout')->name('bnpb.logout');
+
+
+
 $this->post('/logout', 'Auth\LoginController@logout')->name('logout');
 
 

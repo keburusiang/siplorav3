@@ -41,6 +41,11 @@ return [
             'provider' => 'users',
         ],
 
+        'bnpb' => [
+            'driver' => 'session',
+            'provider' => 'bnpbs',
+        ],
+
         'api' => [
             'driver' => 'token',
             'provider' => 'users',
@@ -68,6 +73,10 @@ return [
         'users' => [
             'driver' => 'eloquent',
             'model' => App\User::class,
+        ],
+        'bnpbs' => [
+            'driver' => 'eloquent',
+            'model' => App\Bnpb::class,
         ],
 
         // 'users' => [
