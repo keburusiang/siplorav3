@@ -2,8 +2,8 @@
 .navbar{
 	background-color: black;
 	color: white;
-	position: relative;
-	z-index: 1;
+	/*position: relative;
+	z-index: 1;*/
 }
 
 .navbar-brand, .nav-link{
@@ -17,7 +17,7 @@
 }
 
 .about{
-	margin-top: 50px;
+	margin-top: 120px;
 	margin-bottom: 50px;
 
 }
