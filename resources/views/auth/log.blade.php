@@ -42,7 +42,7 @@
           <a class="nav-item nav-link" href="{{URL::to('/')}}">Home<span class="sr-only">(current)</span></a>          
           <a class="nav-item nav-link" href="#contact">Contact</a>
           @guest
-          <a class="nav-item btn btn-primary" href="{{URL::to('/login')}}">Login</a>
+          <a class="nav-item btn btn-primary" href="{{URL::to('/login')}}">Masuk</a>
           @if (Route::has('register'))
          <!--  <a class="nav-item btn btn-primary" href="{{URL::to('/register')}}">Register</a> -->
           @endif
@@ -56,7 +56,7 @@
                     <a class="dropdown-item" href="{{ route('logout') }}"
                         onclick="event.preventDefault();
                         document.getElementById('logout-form').submit();">
-                        {{ ('Logout') }}
+                        {{ ('Keluar') }}
                     </a>
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                     @csrf
@@ -96,7 +96,7 @@
               </div>
             </div>
               <div style="text-align:center;">
-                <button  type="submit" class="btn btn-primary mt-2" style="width:100%">Login</button>
+                <button  type="submit" class="btn btn-primary mt-2" style="width:100%">Masuk</button>
               </div>
             </form>
       </div>

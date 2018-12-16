@@ -118,7 +118,7 @@
                       </div>
                     </div>
                     <div style="text-align:center;">
-                      <button  type="submit" class="btn btn-primary mt-2" style="width:100%">Login</button>
+                      <button  type="submit" class="btn btn-primary mt-2" style="width:100%">Daftar</button>
                     </div>
                 </form>
 

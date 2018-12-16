@@ -1,4 +1,8 @@
 /*IKI BAGIAN NAVBAR*/
+/*body{
+	font-family: Open Sans;
+}
+*/
 .navbar{
 	/*position: relative;*/
 	/*z-index: 1;*/
@@ -45,8 +49,8 @@
 
 .jumbotron .display-4{
 	color: white;
-	margin-top: 50px;
-	font-weight: 300;
+	margin-top: 80px;
+	font-weight: 300px;
 	font-size: 42px;
 	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.7);
 	margin-bottom: 30px;
@@ -81,24 +85,54 @@
 	color: #ACACAC;
 	margin-top: -5px;
 }*/
+  
+
 
 .card{
-	height: 150px;
+	
 	margin-top: 20px;
-	border-radius: 8px;
-
-}
-
-.card:hover{
+	border-radius: 10px;
 	box-shadow: 0px 0px 20px #c7cad1;
+	transition: 0.3s;
+
 }
 
+.card:hover{	
+	
+	transform: translateY(-10px);
+	}
 
-/*About*/
-.about{
-	margin-top: 120px;
+
+.card-img{
+	width: 80px;	
+}
+
+.card-body h4{
+	padding-left: 90px;
+	font-weight: 250px;
+	font-family: Open Sans;
+
+}
+
+.card-body p{
+	margin-top: -10px;
+	color: grey;
+	font-size: 16px;
+	padding-left: 90px;
+}
+
+.section .about {
+	height: 450px;	
 	text-align: center;
-	/*margin-bottom: 100px;*/
+	background-color: #f9f9f9;
+
+}
+
+.about img{
+
+	margin-top: 30px;
+	margin-bottom: 10px;
+	
 }
 
 .about h3{
@@ -114,12 +148,19 @@
 	margin-top: 30px;
 }
 
+.about a{
+	margin-bottom: 50px;
+}
+
 
 /*MAP*/
 
-.section {
-	height: 650px;
+.section .map{
+	height: 450px;
+	padding-top: 50px;
+	margin-bottom: 200px
 }
+
 .map{
 	text-align: center;
 	height:300px;	
@@ -130,7 +171,7 @@
 	font-size: 30px;
 	font-weight: 300px;
 	text-transform: uppercase;
-	margin-top: 90px;	
+	margin-top: 30px;	
 	margin-bottom: 30px;
 }
 
@@ -138,7 +179,15 @@
 
 
 /*contact*/
-.contact{		
+.contact{
+		height: 200px;
+		color: white;
+		background-color: black;
+		text-align: center;
+		font-family: viga;	
+	}
+
+.contact p{
 	color: white;
 	text-align: center;	
 	background-color: black;
@@ -166,6 +215,10 @@
 	margin-bottom: 5px;
 }
 
+.contact .footer-icons a:hover{
+	color: #0069D9;
+	transition: 0.3s;
+}
 
 
 /*footer*/
@@ -174,18 +227,16 @@ footer .copyright{
 	text-align: center;
 	background-color: black;	
 }
-
 /*utility*/
 .tombol{
 	text-transform: uppercase;
-	font-size: 20px;
-	font-weight: 500;
-	border-radius: 40px;
-	font-family: 'Roboto' ,sans-serif;
+	font-size: 20px;	
+	border-radius:;	
+	font-family: Open Sans;
 	width: 200px;
 	height: 50px;
 	padding-top: 10px ;
-	text-align: center;
+	text-align: center;	
 }
 
 
@@ -193,12 +244,12 @@ footer .copyright{
 
 /*VERSI DESKTOP*/
 @media (min-width: 992px) {
-	.navbar{
-	/*position: relative;*/
-	/*z-index: 1;*/
-	/*background-color: transparent;*/
+	/*.navbar{
+	position: relative;
+	z-index: 1;
+	background-color: transparent;
 	color: white;
-	}
+	}*/
 
 	.nav-link:click::after {
 		background-color: black;
@@ -232,6 +283,8 @@ footer .copyright{
 		margin-top: 150px;
 	}
 
+	
+
 	.about{
 		text-align: left;
 	}
@@ -257,11 +310,8 @@ footer .copyright{
 		margin: auto;	
 	}
 
-	/*contact*/
-	.contact{
-		background-color: black;
-	}
-
+	
+	/*contact*/	
 	.contact{
 		height: 100px;
 		color: white;
@@ -272,8 +322,9 @@ footer .copyright{
 	
 
 	.contact .footer-icons a{
-		text-align: left;
+		text-align: right;
 	}
+
 
 	/*footer*/
 	
