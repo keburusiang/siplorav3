@@ -174,7 +174,7 @@
                             <div class="content">
                                 <div class="author">
                                      <a href="#">
-                                    <img class="avatar border-gray" src="{{asset('dashboard/img/faces/fauzan.jpg')}}" alt="..."/>
+                                    <img class="avatar border-gray" src="{{asset('perubahan/home/img/profile1.png')}}" alt="..."/>
 
                                       <h4 class="title">{{$pelapor->namaDepan}} {{$pelapor->namaBelakang}}<br />
                                          <small>{{$pelapor->email}}</small><br>

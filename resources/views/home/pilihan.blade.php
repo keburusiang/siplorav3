@@ -40,30 +40,8 @@
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav ml-auto">
           <a class="nav-item nav-link" href="{{URL::to('/')}}">Home<span class="sr-only">(current)</span></a>          
-          <a class="nav-item nav-link" href="#contact">Contact</a>
-          @guest
-          <a class="nav-item btn btn-primary" href="{{URL::to('/pilihan')}}">Masuk</a>
-          @if (Route::has('register'))
-         <!--  <a class="nav-item btn btn-primary" href="{{URL::to('/register')}}">Register</a> -->
-          @endif
-          @else
-
-          <li class="nav-item dropdown">
-                <a id="navbarDropdown" class="btn btn-primary dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>{{ Auth::user()->namaDepan }} 
-                    <span class="caret"></span>
-                </a>
-                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="{{ route('logout') }}"
-                        onclick="event.preventDefault();
-                        document.getElementById('logout-form').submit();">
-                        {{ ('Keluar') }}
-                    </a>
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                    @csrf
-                    </form>
-                </div>
-            </li>
-        @endguest
+          <a class="nav-item nav-link" href="{{URL::to('/about')}}">About</a>
+          
         </div>
       </div>
       </div>
