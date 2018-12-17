@@ -8,25 +8,34 @@
 .navbar{
 	/*position: relative;*/
 	/*z-index: 1;*/
-	background-color: black;
-	color: white;
+	/*background-color: transparent;*/
+	/*color: white;*/
+	-webkit-transition: all .3s ease 0s;
+    transition: all .3s ease 0s;
+    color: black;
 
 }
 
-.navbar-brand, .nav-link{
+
+
+/*.navbar-brand, .nav-link{
 	color: white !important;
 	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.7);
-}
+}*/
 
 .navbar-brand{
 	font-family: viga;
 	font-size: 32px;
 }
 
+.nav-link{
+	color: grey !important;
+}
+
 
 /*jumbotron*/ 
 .jumbotron{
- 	background-image:url(../../../perubahan/home/img/j.jpg);
+ 	background-image:url(../../../perubahan/home/img/bismillah.png);
 	background-size: cover;
 	height: 440px;
 	text-align: center;
@@ -44,50 +53,24 @@
 	display: block;
 	height: 100%;
 	width: 100%;
-	background-image: linear-gradient(to top, rgba(0,0,0,1), rgba(0,0,0,0));
+	/*background-image: linear-gradient(to top, rgba(0,0,0,1), rgba(0,0,0,0));*/
 	position:absolute;
 	bottom: 0;
 }
 
 .jumbotron .display-4{
-	color: white;
+	color: #324A5E;
 	margin-top: 80px;
-	font-weight: 300px;
+	/*font-weight: 300;*/
+	font-family: 'Roboto', sans-serif;
 	font-size: 42px;
-	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.7);
+	/*text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.7);*/
 	margin-bottom: 30px;
 }
 
-/*info panel*/
-/*.info-panel{
-	box-shadow: 0 3px 20px rgba(0, 0, 0, 0.5);
-	border-radius: 12px;
-	background-color: white;
-	margin-top: -100px;
-	padding: 30px;
-}
-
-.info-panel img{
-	width: 80px;
-	height: 80px;
-	margin-top: 10px;
-	margin-bottom: 10px;
-	margin-right: 20px;
-}
-
-.info-panel h4{
-	font-size: 16px;
+span{
 	font-weight: bold;
-	text-transform: uppercase;
-	margin-top: 5px;
 }
-
-.info-panel p{
-	font-size: 14px;	
-	color: #ACACAC;
-	margin-top: -5px;
-}*/
-  
 
 
 .card{
@@ -132,7 +115,7 @@
 
 .about img{
 
-	margin-top: 30px;
+	/*margin-top: 30px;*/
 	margin-bottom: 10px;
 	
 }
@@ -141,7 +124,8 @@
 	font-size: 50px;
 	font-weight: 300px;
 	text-transform: uppercase;
-	margin-top: 30px;
+	text-align: center;
+	/*margin-top: 30px;*/
 }
 
 .about p{
@@ -173,7 +157,7 @@
 	font-size: 30px;
 	font-weight: 300px;
 	text-transform: uppercase;
-	margin-top: 30px;	
+	/*margin-top: 30px;*/	
 	margin-bottom: 30px;
 }
 
@@ -235,13 +219,20 @@ footer .copyright{
 	text-transform: uppercase;
 	font-size: 20px;	
 	border-radius:;	
-	font-family: Open Sans;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 200;
 	width: 200px;
 	height: 50px;
 	padding-top: 10px ;
 	text-align: center;	
+	transition: 0.3s;
 }
 
+/*.tombol:hover{
+	box-shadow: 0px 0px 5px grey;
+	transition: 0.3s;
+}
+*/
 
 
 
@@ -253,6 +244,13 @@ footer .copyright{
 	background-color: transparent;
 	color: white;
 	}*/
+
+	.bg-custom{
+		background-color: white;
+		box-shadow: 0px 0px 20px #c7cad1;
+		text-decoration-color: black;
+
+	}
 
 	.nav-link:click::after {
 		background-color: black;
@@ -279,16 +277,17 @@ footer .copyright{
 	.jumbotron{
 		margin-top: 0px;
 		height: 640px;
+		text-align: left;
 	}
 
 	.jumbotron .display-4{
-		font-size: 62px;
-		margin-top: 150px;
+		font-size: 52px;
+		margin-top: 100px;
 	}
 
 	
 
-	.about{
+	.about h3{
 		text-align: left;
 	}
 
