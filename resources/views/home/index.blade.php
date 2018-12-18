@@ -7,7 +7,9 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <script type="text/javascript" src="{{asset('perubahan/home/js/scrollme.js')}}"></script>
+
+
+    <link rel="shortcut icon" type="image/png" href="{{asset('perubahan/home/img/favicon.png')}}">   
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gmaps.js/0.4.24/gmaps.js"></script>
 

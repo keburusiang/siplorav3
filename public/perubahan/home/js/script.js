@@ -25,7 +25,7 @@ $('.page-scroll').on('click', function(e) {
             navbar.fadeOut("fast");
         } 
         // Scroll up but still lower than 200 (change that to whatever suits your need)
-        else if(st < lastScrollTop && st >10) {
+        else if(st < lastScrollTop && st >100) {
             navbar.fadeIn("fast");
             navbar.removeClass('').addClass('bg-custom');
         }
