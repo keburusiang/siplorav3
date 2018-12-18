@@ -42,6 +42,7 @@
 .jumbotron{
  	background-image:url(../../../perubahan/home/img/bismillah.png);
 	background-size: cover;
+	background-attachment: fixed;
 	height: 440px;
 	text-align: center;
 	position: relative;
@@ -63,14 +64,23 @@
 	bottom: 0;
 }
 
-.jumbotron .display-4{
+.display-4{
+	opacity: 0;
+	transform: translate(-50px, 0);
+	transition: 5s;
 	color: #324A5E;
 	margin-top: 80px;
-	/*font-weight: 300;*/
+	font-weight: 200;
 	font-family: 'Roboto', sans-serif;
 	font-size: 42px;
 	/*text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.7);*/
 	margin-bottom: 30px;
+}
+
+ .muncul{
+	opacity: 1;
+	transform: translate(0,0);
+
 }
 
 span{
@@ -78,7 +88,8 @@ span{
 }
 
 
-.card{
+
+.info .card{
 	
 	margin-top: 20px;
 	border-radius: 10px;
@@ -87,6 +98,8 @@ span{
 
 
 }
+
+
 
 .card:hover{	
 	
@@ -286,11 +299,20 @@ footer .copyright{
 		text-align: left;
 	}
 
-	.jumbotron .display-4{
+
+ .display-4{
+		opacity: 0;
+		transform: translate(-50px, 0);
+		transition: 5s;
 		font-size: 52px;
 		margin-top: 100px;
 	}
 
+ .muncul{
+		opacity: 1;
+		transform: translate(0,0);
+
+	}
 	
 
 	.about h3{

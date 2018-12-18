@@ -31,12 +31,36 @@ $('.page-scroll').on('click', function(e) {
         }
         // Reached top
         else {
-            navbar.removeClass('bg-custom').addClass('b');
+            navbar.removeClass('bg-custom').addClass('');
         }
         lastScrollTop = st;
     });
 
 })(jQuery);
+
+
+
+
+$(window).on('load', function(){
+	$('.display-4').addClass('muncul');
+});
+
+
+
+
+// $(window).scroll(function(){
+
+// 	var	wScroll = $(this).scrollTop();
+
+// 		$('.jumbotron h1').css({
+// 			'transform' : 'translate(0px, '+ wScroll/2 +' %)'
+// 		});
+
+// 	if (wScroll > $('.info').offset().top - 0) {
+// 		$('.info .card')addClass('muncul');
+// 	}
+// });
+
 
 
 
