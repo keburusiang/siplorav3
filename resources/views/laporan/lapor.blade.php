@@ -35,7 +35,7 @@
 
     <script>
       // variabel global marker
-      var marker;
+      var marker,infoWindow;
 
       function taruhMarker(peta, posisiTitik){
 
@@ -76,7 +76,11 @@
       }
 
       function initialize() {
+        // Create the search box and link it to the UI element.
+        
+
         var propertiPeta = {
+
           center:new google.maps.LatLng(-7.687739,110.413222),
           zoom:9,
           mapTypeId:google.maps.MapTypeId.ROADMAP,
@@ -84,7 +88,33 @@
           streetViewControl: false,
         };
 
+        
+        
+
+
+
+
         var peta = new google.maps.Map(document.getElementById("googleMap"), propertiPeta);
+
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(function(position) {
+            var pos = {
+              lat: position.coords.latitude,
+              lng: position.coords.longitude
+            };
+
+            infoWindow.setPosition(pos);
+            infoWindow.setContent('Location found.');
+            infoWindow.open(peta);
+            peta.setCenter(pos);
+          }, function() {
+            handleLocationError(true, infoWindow, peta.getCenter());
+          });
+        } else {
+          // Browser doesn't support Geolocation
+          handleLocationError(false, infoWindow, peta.getCenter());
+        }
+
 
         // even listner ketika peta diklik
         google.maps.event.addListener(peta, 'click', function(event) {
@@ -92,6 +122,8 @@
         });
 
       }
+
+
 
 
       // event jendela di-load
