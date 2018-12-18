@@ -160,7 +160,9 @@
                     <span class="caret"></span>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="{{URL::to('/pelapor/dashboard')}}">Dashboard</a>
+                    <a class="dropdown-item" href="{{URL::to('/pelapor/dashboard')}}">Lacak Laporan</a>
+                    <a class="dropdown-item" href="{{URL::to('/pelapor/dashboard/profile/')}}">Profil</a>
+                    <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="{{ route('logout') }}"
                         onclick="event.preventDefault();
                         document.getElementById('logout-form').submit();">
@@ -202,6 +204,7 @@
                   <div class="form-group col-lg-12">
                 <label for="alamat">Alamat</label>
                 <input type="text" class="form-control" name="alamat" id="alamat" required>
+                <span> <b>Catatan :</b> Pilih lokasi pada peta.</span>
                 <input type="hidden" class="form-control" name="latitude" value="lat" id="lat" >
                 <input type="hidden" class="form-control" name="longitude" value="lng" id="lng" >
                 </div>
@@ -227,7 +230,7 @@
             <div class="container">
             <div class="custom-control custom-checkbox mb-3">
               <input type="checkbox" class="custom-control-input" id="customControlValidation1" required>
-              <label class="custom-control-label" for="customControlValidation1">Laporan ini dapat dipertanggungjawabkan</label>              
+              <label class="custom-control-label" for="customControlValidation1"><a > Laporan ini dapat dipertanggungjawabkan</a></label>              
             </div>
             </div>
             <div class="form-group col-lg-12">
@@ -309,49 +312,50 @@
 
 
     <!-- contact -->
-  <div class="contact" id="contact">
+ <section class="contact" id="contact">
       <div class="container">
-        <div class="row contact">         
+        <div class="row contact">
             <div class="col-lg-3 pt-3">
               <h4>SIPLORA</h4>
-                <p class="footer-links">
-                  <a class="" href="#mainNav">Home</a>
+                <div class="footer-links">
+                  <a class="page-scroll" href="{{URL::to('/')}}">Home</a>
                   ·
-                  <a href="#about">About</a>
+                  <a class="page-scroll" href="{{URL::to('/about')}}">About</a>
                   ·
-                  <a href="#map">Map</a>
-                  ·                  
-                  <a href="#contact">Contact</a>
-                </p>
-            </div>    
+                  <a class="page-scroll" href="{{URL::to('/')}}#map">Map</a>
+                  ·
+                  <a class="page-scroll" href="{{URL::to('/')}}#contact">Contact</a>
+                </div>
+            </div>
             <div class="col-lg-3 pt-3">
-             
-            </div>  
+
+            </div>
             <div class="col-lg-3 pt-3">
-             
-            </div>           
+
+            </div>
             <div class="col-lg-3 pt-3">
-              <h4>Contact Us</h4>
+              <h4 class="kontak">Contact Us</h4>
               <div class="footer-icons">
                 <a href="https://facebook.com/amiinmnugroho"><i class="fa fa-facebook"></i></a>
                 <a href="https://twitter.com/amiinmn"><i class="fa fa-twitter"></i></a>
-                <a href="https://linkedin.com/in/amiinmn"><i class="fa fa-linkedin"></i></a> 
-                <a href="https://instagram.com/amiinmn"><i class="fa fa-instagram"></i></a>         
-              </div>              
-            </div>       
+                <a href="https://linkedin.com/in/amiinmn"><i class="fa fa-linkedin"></i></a>
+                <a href="https://instagram.com/amiinmn"><i class="fa fa-instagram"></i></a>
+              </div>
+            </div>
         </div>
       </div>
-    </div>   
+      </section>
+  
     <!-- akhir contact -->
 
     <!-- footer -->
     <footer>
       <div class="container-fluid">
-      <div class="row copyright pt-3">        
+      <div class="row copyright pt-3">
         <div class="col text-center">
          <p>2018. Sistem Pelaporan Lokasi Rawan Bencana By Shabaka</p>
         </div>
-        </div>        
+        </div>
       </div>
     </footer>
 
@@ -367,7 +371,7 @@
     <!-- <script src="{{asset('perubahan/home/js/bootstrap.bundle.min.js')}}"></script> -->
     <!-- <script src="{{asset('perubahan/home/js/popper.min.js')}}"></script> -->
     <script src="{{asset('perubahan/home/js/bootstrap.min.js')}}"></script>
-    <!-- <script src="{{asset('perubahan/home/js/script.js')}}"></script> -->
+    <script src="{{asset('perubahan/home/js/sweetalert.min.js')}}"></script>
 
 
   </body>

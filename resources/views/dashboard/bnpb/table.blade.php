@@ -45,16 +45,16 @@
             </div>
 
             <ul class="nav">
-                <li>
+               <!--  <li>
                     <a href="{{URL::to('/bnpb/dashboard/')}}">
                         <i class="pe-7s-graph"></i>
                         <p>Dashboard</p>
                     </a>
-                </li>
+                </li> -->
                 <li class="active">
                     <a href="{{URL::to('/bnpb/dashboard/table')}}">
                         <i class="pe-7s-note2"></i>
-                        <p>Table List</p>
+                        <p>Daftar Laporan</p>
                     </a>
                 </li>
                 <li>
@@ -102,8 +102,8 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="card">
-                            <div class="header" style="background-color: #FF9D00;"> 
-                                <h4 class="title"><b>Laporan Masuk</b></h4>
+                            <div class="header" style="background-color: #FF9D00; padding-bottom: 15px;"> 
+                                <h4 class="title" style="color: white;"><b>Laporan Masuk</b></h4>
                             </div>
                             <div class="content table-responsive table-full-width">
                                 <table class="table table-hover table-striped">
@@ -147,8 +147,8 @@
                             </div>
                         </div>
 						<div class="card">
-                            <div class="header" style="background-color: #14E80B ;">
-                                <h4 class="title"> <b>Laporan Terverifikasi</b> </h4>
+                            <div class="header" style="background-color: #1ec957; padding-bottom: 15px;">
+                                <h4 class="title"  style="color: white;"> <b>Laporan Terverifikasi</b> </h4>
                             </div>
                             <div class="content table-responsive table-full-width">
                                 <table class="table table-hover table-striped ">
@@ -176,8 +176,8 @@
                             </div>
                         </div>
                         <div class="card">
-                            <div class="header" style="background-color: #D81E06 ;">
-                                <h4 class="title"> <b>Laporan Ditolak</b> </h4>
+                            <div class="header" style="background-color: #D81E06 ; padding-bottom: 15px;">
+                                <h4 class="title"  style="color: white;"> <b>Laporan Ditolak</b> </h4>
                             </div>
                             <div class="content table-responsive table-full-width">
                                 <table class="table table-hover table-striped ">

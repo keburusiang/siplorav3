@@ -61,4 +61,12 @@ class BnpbController extends Controller
       $data->save();
       return redirect()->back();
     }
+
+    public function destroy($id)
+    {
+      $delete = laporan::find($id);
+      $delete ->status_id = $request->status;
+      $delete->save();
+      return redirect()->back();
+    }
 }
