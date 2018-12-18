@@ -11,7 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 
-    <link rel="shortcut icon" type="image/png" href="{{asset('perubahan/home/img/favicon.png')}}">
+    <link rel="shortcut icon" type="image/png" href="{{asset('perubahan/home/img/favicon.png')}}">  
 
    <!-- iki Bootstrap CSS -->
     <link href="{{asset('perubahan/home/css/bootstrap.min.css')}}" rel="stylesheet">
@@ -106,7 +106,7 @@
   <body>
 
     <!-- iki Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top bg-white" id="mainNav">
       <div class="container">
       <a class="navbar-brand" href="{{URL::to('/')}}">SIPLORA</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -210,8 +210,10 @@
     </div>
     </div>
     </div>
+    </div>
     </form>
     </div>
+
 
 
  <!--    <div class="container lapor" id="lapor">
@@ -275,50 +277,49 @@
 
 
     <!-- contact -->
-   <section class="contact" id="contact">
+  <div class="contact" id="contact">
       <div class="container">
-        <div class="row contact">
+        <div class="row contact">         
             <div class="col-lg-3 pt-3">
               <h4>SIPLORA</h4>
-                <div class="footer-links">
+                <p class="footer-links">
                   <a class="" href="#mainNav">Home</a>
                   ·
                   <a href="#about">About</a>
                   ·
                   <a href="#map">Map</a>
-                  ·
+                  ·                  
                   <a href="#contact">Contact</a>
-                </div>
-            </div>
+                </p>
+            </div>    
             <div class="col-lg-3 pt-3">
-
-            </div>
+             
+            </div>  
             <div class="col-lg-3 pt-3">
-
-            </div>
+             
+            </div>           
             <div class="col-lg-3 pt-3">
-              <h4 class="kontak">Contact Us</h4>
+              <h4>Contact Us</h4>
               <div class="footer-icons">
                 <a href="https://facebook.com/amiinmnugroho"><i class="fa fa-facebook"></i></a>
                 <a href="https://twitter.com/amiinmn"><i class="fa fa-twitter"></i></a>
-                <a href="https://linkedin.com/in/amiinmn"><i class="fa fa-linkedin"></i></a>
-                <a href="https://instagram.com/amiinmn"><i class="fa fa-instagram"></i></a>
-              </div>
-            </div>
+                <a href="https://linkedin.com/in/amiinmn"><i class="fa fa-linkedin"></i></a> 
+                <a href="https://instagram.com/amiinmn"><i class="fa fa-instagram"></i></a>         
+              </div>              
+            </div>       
         </div>
       </div>
-      </section>
-  
+    </div>   
     <!-- akhir contact -->
 
     <!-- footer -->
     <footer>
       <div class="container-fluid">
-      <div class="row copyright pt-3">
+      <div class="row copyright pt-3">        
         <div class="col text-center">
          <p>2018. Sistem Pelaporan Lokasi Rawan Bencana By Shabaka</p>
         </div>
-        </div>
+        </div>        
       </div>
     </footer>
 
@@ -327,15 +328,14 @@
 
     <!-- JS MAPS -->
 
-
+   
 
     <!-- jquery dan kawan kawan -->
     <script src="{{asset('perubahan/home/js/jquery-3.3.1.min.js')}}"></script>
     <!-- <script src="{{asset('perubahan/home/js/bootstrap.bundle.min.js')}}"></script> -->
     <!-- <script src="{{asset('perubahan/home/js/popper.min.js')}}"></script> -->
     <script src="{{asset('perubahan/home/js/bootstrap.min.js')}}"></script>
-    <script src="{{asset('perubahan/home/js/script.js')}}"></script>
-    <script src="{{asset('perubahan/home/js/sweetalert.min.js')}}"></script>
+    <!-- <script src="{{asset('perubahan/home/js/script.js')}}"></script> -->
 
 
   </body>

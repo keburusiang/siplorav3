@@ -50,7 +50,7 @@
 	margin-top: ;
 	color: white;
 	text-align: center;	
-	background-color: black;
+	background-color: #324A5E;
 	font-family: viga;
 }
 
@@ -63,7 +63,7 @@
 	width: 35px;
 	height: 35px;
 	cursor: pointer;
-	background-color: black;
+	background-color: #324A5E;
 	border-radius: 2px;
 
 	font-size: 20px;
@@ -87,7 +87,7 @@
 footer .copyright{
 	color: #ACACAC;
 	text-align: center;
-	background-color: black;	
+	background-color: #324A5E;	
 }
 
 /*utility*/
@@ -134,7 +134,7 @@ footer .copyright{
 	.contact{
 		height: 100px;
 		color: white;
-		background-color: black;
+		background-color: #324A5E;
 		text-align: left;
 		font-family: viga;	
 	}

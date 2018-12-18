@@ -42,7 +42,7 @@
 .jumbotron{
  	background-image:url(../../../perubahan/home/img/bismillah.png);
 	background-size: cover;
-	background-attachment: fixed;
+	/*background-attachment: fixed;*/
 	height: 440px;
 	text-align: center;
 	position: relative;
@@ -187,7 +187,7 @@ span{
 .contact{
 		height: 200px;
 		color: white;
-		background-color: black;
+		background-color: #324A5E;
 		text-align: center;
 		font-family: viga;	
 	}
@@ -195,7 +195,7 @@ span{
 .contact p{
 	color: white;
 	text-align: center;	
-	background-color: black;
+	background-color: #324A5E;
 	font-family: viga;
 }
 
@@ -208,7 +208,7 @@ span{
 	width: 35px;
 	height: 35px;
 	cursor: pointer;
-	background-color: black;
+	background-color: #324A5E;
 	border-radius: 2px;
 
 	font-size: 20px;
@@ -231,7 +231,7 @@ span{
 footer .copyright{
 	color: #ACACAC;
 	text-align: center;
-	background-color: black;	
+	background-color: #324A5E;	
 }
 /*utility*/
 .tombol{
@@ -340,12 +340,14 @@ footer .copyright{
 		margin: auto;	
 	}
 
-	
+
+
+
 	
 	.contact{
 		height: 100px;
 		color: white;
-		background-color: black;
+		background-color: #324A5E;
 		text-align: left;
 		font-family: viga;	
 	}

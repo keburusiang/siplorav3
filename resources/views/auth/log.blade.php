@@ -44,7 +44,7 @@
           <a class="nav-item nav-link" href="{{URL::to('/')}}">Home<span class="sr-only">(current)</span></a>          
           <a class="nav-item nav-link" href="#contact">Contact</a>
           @guest
-          <a class="nav-item btn btn-primary" href="{{URL::to('/login')}}">Masuk</a>
+          <a class="nav-item btn btn-primary" href="{{URL::to('/loginBnpb')}}">BNPB</a>
           @if (Route::has('register'))
          <!--  <a class="nav-item btn btn-primary" href="{{URL::to('/register')}}">Register</a> -->
           @endif

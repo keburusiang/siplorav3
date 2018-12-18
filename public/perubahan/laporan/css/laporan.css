@@ -1,20 +1,35 @@
 /*IKI BAGIAN NAVBAR*/
 .navbar{
-	background-color: black;
-	color: white;
 	/*position: relative;*/
 	/*z-index: 1;*/
+	/*background-color: transparent;*/
+	/*color: white;*/
+	-webkit-transition: all .3s ease 0s;
+    transition: all .3s ease 0s;
+    color: black;
+    box-shadow: 0px 0px 20px #c7cad1;
+
 }
 
-.navbar-brand, .nav-link{
+.bg-custom{
+		background-color: white;
+		box-shadow: 0px 0px 20px #c7cad1;
+		text-decoration-color: black;
+
+	}
+
+
+
+/*.navbar-brand, .nav-link{
 	color: white !important;
 	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.7);
-}
+}*/
 
 .navbar-brand{
 	font-family: viga;
 	font-size: 32px;
 }
+
 
 .lapor{
 	margin-top: 100px;
@@ -62,7 +77,7 @@
 .contact{
 		height: 200px;
 		color: white;
-		background-color: black;
+		background-color: #324A5E;
 		text-align: center;
 		font-family: viga;	
 	}
@@ -70,7 +85,7 @@
 .contact p{
 	color: white;
 	text-align: center;	
-	background-color: black;
+	background-color: #324A5E;
 	font-family: viga;
 }
 
@@ -83,7 +98,7 @@
 	width: 35px;
 	height: 35px;
 	cursor: pointer;
-	background-color: black;
+	background-color: #324A5E;
 	border-radius: 2px;
 
 	font-size: 20px;
@@ -106,7 +121,7 @@
 footer .copyright{
 	color: #ACACAC;
 	text-align: center;
-	background-color: black;	
+	background-color: #324A5E;	
 }
 
 /*utility*/
@@ -118,10 +133,24 @@ footer .copyright{
 
 /*VERSI DESKTOP*/
 @media (min-width: 992px) {
+	.bg-custom{
+		background-color: white;
+		box-shadow: 0px 0px 20px #c7cad1;
+		text-decoration-color: black;
+
+	}
+
+	.nav-link:click::after {
+		background-color: black;
+	}
+
+	
+
 	.nav-link{
 		text-transform: uppercase;
 		margin-right: 20px;
 	}
+	
 
 	.nav-link:hover::after {
 		content: '';
@@ -133,11 +162,17 @@ footer .copyright{
 		margin-bottom: -8px;
 	}
 
+
+
 	/*contact*/
+	.contact{
+		background-color: #324A5E;
+	}
+
 	.contact{
 		height: 100px;
 		color: white;
-		background-color: black;
+		background-color: #324A5E;
 		text-align: left;
 		font-family: viga;	
 	}

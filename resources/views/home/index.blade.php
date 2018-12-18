@@ -67,7 +67,9 @@
                     <span class="caret"></span>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item" href="{{URL::to('/pelapor/dashboard')}}">Dashboard</a>
+                  <a class="dropdown-item" href="{{URL::to('/pelapor/dashboard')}}">Lacak Laporan</a>
+                  <a class="dropdown-item" href="{{URL::to('/pelapor/dashboard/profile/')}}">Profil</a>
+                  <div class="dropdown-divider"></div>
                   <a class="dropdown-item" href="{{ route('logout') }}"
                         onclick="event.preventDefault();
                         document.getElementById('logout-form').submit();">
@@ -222,8 +224,9 @@
 
     <!-- </div> -->
     <!-- Akhir isine -->
-
     <!-- contact -->
+
+    
     
    <!-- contact -->
    <section class="contact" id="contact">

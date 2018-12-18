@@ -31,7 +31,7 @@
   <body>
 
     <!-- iki Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark" id="mainNav">
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top bg-white" id="mainNav">
       <div class="container">
       <a class="navbar-brand" href="{{URL::to('/')}}">SIPLORA</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -41,7 +41,8 @@
         <div class="navbar-nav ml-auto">
           <a class="nav-item nav-link" href="{{URL::to('/')}}">Home<span class="sr-only">(current)</span></a>          
           <a class="nav-item nav-link" href="{{URL::to('/about')}}">About</a>
-          
+          <a class="nav-item btn btn-primary" href="{{URL::to('/login')}}">Pelapor</a>
+
         </div>
       </div>
       </div>
@@ -51,7 +52,7 @@
     <!-- ISI LOGIN -->
     <div class="container login">
     <div class="card col-lg-4 ">
-      <h4 class="card-title text-center pt-3">Login BNBP</h4>
+      <h4 class="card-title text-center pt-3">Login BNPB</h4>
       <div class="card-body p-0 pb-4">
         <form method="POST" action="{{ route('bnpb.login') }}" class="">       
             @csrf
