@@ -16,7 +16,12 @@
 
 }
 
+.bg-custom{
+		background-color: white;
+		box-shadow: 0px 0px 20px #c7cad1;
+		text-decoration-color: black;
 
+	}
 
 /*.navbar-brand, .nav-link{
 	color: white !important;
@@ -80,6 +85,7 @@ span{
 	box-shadow: 0px 0px 20px #c7cad1;
 	transition: 0.3s;
 
+
 }
 
 .card:hover{	
@@ -92,10 +98,10 @@ span{
 	width: 80px;	
 }
 
-.card-body h4{
+.card h4{
 	padding-left: 90px;
-	font-weight: 250px;
-	font-family: Open Sans;
+	font-weight: 250px;	
+	font-family: 'Open Sans', sans-serif;
 
 }
 
