@@ -173,13 +173,13 @@
             <div class="col-lg-3 pt-3">
               <h4>SIPLORA</h4>
                 <p class="footer-links">
-                  <a class="" href="#mainNav">Home</a>
+                  <a class="page-scroll" href="{{URL::to('/')}}">Home</a>
                   ·
-                  <a href="#about">About</a>
+                  <a class="page-scroll" href="{{URL::to('/about')}}">About</a>
                   ·
-                  <a href="#map">Map</a>
+                  <a class="page-scroll" href="{{URL::to('/')}}#map">Map</a>
                   ·
-                  <a href="#contact">Contact</a>
+                  <a class="page-scroll" href="{{URL::to('/')}}#contact">Contact</a>
                 </p>
             </div>
             <div class="col-lg-3 pt-3">

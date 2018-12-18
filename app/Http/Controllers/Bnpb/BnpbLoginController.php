@@ -25,7 +25,7 @@ class BnpbLoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/bnpb/dashboard/';
+    protected $redirectTo = '/bnpb/dashboard/table';
 
     public function showLoginForm(){
         return view('bnpb.log');

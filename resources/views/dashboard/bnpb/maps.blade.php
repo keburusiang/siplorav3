@@ -118,12 +118,12 @@ label {
             </div>
 
             <ul class="nav">
-                <li>
+                <!-- <li>
                     <a href="{{URL::to('/bnpb/dashboard/')}}">
                         <i class="pe-7s-graph"></i>
                         <p>Dashboard</p>
                     </a>
-                </li>
+                </li> -->
                 <li>
                     <a href="{{URL::to('/bnpb/dashboard/table')}}">
                         <i class="pe-7s-note2"></i>

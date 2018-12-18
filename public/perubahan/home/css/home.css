@@ -67,7 +67,7 @@
 .display-4{
 	opacity: 0;
 	transform: translate(-50px, 0);
-	transition: 5s;
+	transition: 1s;
 	color: #324A5E;
 	margin-top: 80px;
 	font-weight: 200;
@@ -129,13 +129,13 @@ span{
 	height: 450px;	
 	text-align: center;
 	background-color: #f9f9f9;
-
+	
 }
 
 .about img{
 
-	/*margin-top: 30px;*/
-	margin-bottom: 10px;
+	margin-top: 20px;
+	margin-bottom: 50px;
 	
 }
 
@@ -144,7 +144,7 @@ span{
 	font-weight: 300px;
 	text-transform: uppercase;
 	text-align: center;
-	/*margin-top: 30px;*/
+	margin-top: 20px;
 }
 
 .about p{
@@ -313,6 +313,21 @@ footer .copyright{
 		transform: translate(0,0);
 
 	}
+
+	.about img{
+
+	margin-top: 60px;
+	margin-bottom: 50px;
+	
+}
+
+.about h3{
+	font-size: 50px;
+	font-weight: 300px;
+	text-transform: uppercase;
+	text-align: center;
+	margin-top: 60px;
+}
 	
 
 	.about h3{

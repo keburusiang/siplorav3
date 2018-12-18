@@ -80,11 +80,11 @@
     <div class="container about" id="about">
       <div class="row">
         <div class="col-lg-6">
-          <img src="{{asset('perubahan/home/img/jumbotron-bg.jpg')}}" class="card-img">
+          <img src="{{asset('perubahan/home/img/about.png')}}" class="card-img">
         </div>
         <div class="col-lg-6">
           <h3 class="pt-1 pb-3">Tentang Siplora</h3>
-          <p>SIPLORA adalah sistem pelayanan masyarakat guna meningkatkan aksi preventif bencana dengan cara melaporkan lokasi yang rawan terjadi bencana. Siplora dapat mengirimkan lokasi yang dilaporkan masyarakat menuju BDPB agar nantinya lokasi tersebut dapat ditunjau dan dilakukan upaya upaya pencegahan agar bencana di lokasi tersebut dapat dihindari </p>
+          <p>SIPLORA adalah singkatan dari Sistem Pelaporan Lokasi Rawan Bencana, yang fokusnya pada sistem pelayanan masyarakat guna meningkatkan aksi preventif bencana dengan cara melaporkan lokasi yang rawan terjadi bencana. Siplora dapat mengirimkan lokasi yang dilaporkan masyarakat menuju BDPB agar nantinya lokasi tersebut dapat ditunjau dan dilakukan upaya upaya pencegahan agar bencana di lokasi tersebut dapat dihindari. </p>
         </div>        
       </div>
     </div>
@@ -97,13 +97,13 @@
             <div class="col-lg-3 pt-3">
               <h4>SIPLORA</h4>
                 <div class="footer-links">
-                  <a class="page-scroll" href="#mainNav">Home</a>
+                  <a class="page-scroll" href="{{URL::to('/')}}">Home</a>
                   ·
-                  <a class="page-scroll" href="#about">About</a>
+                  <a class="page-scroll" href="{{URL::to('/about')}}">About</a>
                   ·
-                  <a class="page-scroll" href="#map">Map</a>
+                  <a class="page-scroll" href="{{URL::to('/')}}#map">Map</a>
                   ·
-                  <a class="page-scroll" href="#contact">Contact</a>
+                  <a class="page-scroll" href="{{URL::to('/')}}#contact">Contact</a>
                 </div>
             </div>
             <div class="col-lg-3 pt-3">
