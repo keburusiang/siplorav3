@@ -29,7 +29,7 @@ class BnpbController extends Controller
         //         ->get();
         $data = DB::table('laporans')
                 ->join('users', 'laporans.user_id','=','users.id')
-                ->select('laporans.jenis_laporan', 'laporans.status_id' , 'laporans.alamat','laporans.kode_laporan', 'users.namaDepan')
+                ->select('laporans.created_at','laporans.jenis_laporan', 'laporans.status_id' , 'laporans.alamat','laporans.kode_laporan', 'users.namaDepan')
                 ->where('laporans.status_id', '1')
                 ->get();
         $data2 = DB::table('laporans')
@@ -37,15 +37,21 @@ class BnpbController extends Controller
                 ->select('laporans.created_at','laporans.id','laporans.jenis_laporan', 'laporans.status_id' , 'laporans.alamat','laporans.kode_laporan', 'users.namaDepan')
                 ->where('laporans.status_id', '2')
                 ->get();
-        return view('dashboard.bnpb.table', compact('data','data2'));
+        $data3 = DB::table('laporans')
+                ->join('users', 'laporans.user_id','=','users.id')
+                ->select('laporans.created_at','laporans.id','laporans.jenis_laporan', 'laporans.status_id' , 'laporans.alamat','laporans.kode_laporan', 'users.namaDepan')
+                ->where('laporans.status_id', '3')
+                ->get();        
+        return view('dashboard.bnpb.table', compact('data','data2','data3'));
     }
     public function showMap()
     {
+        $count0 = laporan::all()->count();
         $count1 = laporan::where('status_id', 1)->count();
         $count2 = laporan::where('status_id', 2)->count();
         $count3 = laporan::where('status_id', 3)->count();
         $map = laporan::all();
-        return view('dashboard.bnpb.maps',compact('map','count1','count2','count3'));
+        return view('dashboard.bnpb.maps',compact('map','count0','count1','count2','count3'));
     }
 
     public function verif(Request $request, $id)

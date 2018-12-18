@@ -102,15 +102,15 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="card">
-                            <div class="header">
+                            <div class="header" style="background-color: #FF9D00;"> 
                                 <h4 class="title"><b>Laporan Masuk</b></h4>
                             </div>
                             <div class="content table-responsive table-full-width">
                                 <table class="table table-hover table-striped">
                                     <thead>
-										<th style="width:100px;">Kode Laporan</th>
+										<th style="width:80px;">Kode Laporan</th>
 										<th style="width:95px;">Nama Pelapor</th>
-										<th style="width:100px;">Tanggal</th>
+										<th style="width:150px;">Tanggal</th>
 										<th style="width:120px;">Jenis Bencana</th>
 										<th style="width:250px;">Lokasi Bencana</th>
                                         <th style="width:5px;">Tolak</th>
@@ -125,12 +125,12 @@
 											<td>{{$tol->jenis_laporan}}</td>
 											<td>{{$tol->alamat}}</td>
 											<td>
-												<form action="{{url('/lapor/'.$tol->id)}}" method="POST">
+												<form action="{{url('/bnpb/dashboard/table/'.$tol->id)}}" method="POST">
 													{{csrf_field()}} {{method_field('PUT')}}
 													<button value="3" name="status" type="submit" rel="tooltip" title="Tidak Diterima" class="btn btn-danger btn-simple btn-md">
 													<i class="fa fa-times"></i>
 													</button>
-													</form>
+												</form>
 											</td>
 											<td>
     											<form action="{{url('/bnpb/dashboard/table/'.$tol->id)}}" method="POST">
@@ -146,8 +146,8 @@
                                 </table>
                             </div>
                         </div>
-												<div class="card">
-                            <div class="header">
+						<div class="card">
+                            <div class="header" style="background-color: #14E80B ;">
                                 <h4 class="title"> <b>Laporan Terverifikasi</b> </h4>
                             </div>
                             <div class="content table-responsive table-full-width">
@@ -166,11 +166,49 @@
                                         <tr>
 	                                      	<td>{{$tol->kode_laporan}}</td>
 											<td>{{$tol->namaDepan}}</td>
-	                                      	<td>10/23/2018</td>
+	                                      	<td>{{$tol->created_at}}</td>
 	                                      	<td>{{$tol->jenis_laporan}}</td>
 	                                      	<td>{{$tol->alamat}}</td>
                                         </tr>
 										@endforeach
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="header" style="background-color: #D81E06 ;">
+                                <h4 class="title"> <b>Laporan Ditolak</b> </h4>
+                            </div>
+                            <div class="content table-responsive table-full-width">
+                                <table class="table table-hover table-striped ">
+                                    <thead >
+                                        <tr>
+                                            <th style="width:95px;">Kode Laporan</th>
+                                            <th style="width:90px;">Nama Pelapor</th>
+                                            <th style="width:100px;">Tanggal</th>
+                                            <th style="width:120px;">Jenis Bencana</th>
+                                            <th style="width:150px;">Lokasi Bencana</th>
+                                            <th style="width:5px;">Hapus</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach($data3 as $tol)
+                                        <tr>
+                                            <td>{{$tol->kode_laporan}}</td>
+                                            <td>{{$tol->namaDepan}}</td>
+                                            <td>{{$tol->created_at}}</td>
+                                            <td>{{$tol->jenis_laporan}}</td>
+                                            <td>{{$tol->alamat}}</td>
+                                            <td>
+                                                <form action="{{url('/bnpb/dashboard/table/'.$tol->id)}}" method="POST">
+                                                    {{csrf_field()}} {{method_field('PUT')}}
+                                                    <button value="3" name="status" type="submit" rel="tooltip" title="Hapus Laporan" class="btn btn-danger btn-simple btn-md">
+                                                    <i class="fa fa-times"></i>
+                                                    </button>
+                                                </form>
+                                            </td>
+                                        </tr>
+                                        @endforeach
                                     </tbody>
                                 </table>
                             </div>

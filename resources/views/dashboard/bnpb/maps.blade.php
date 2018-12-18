@@ -169,45 +169,60 @@ label {
         <div class="content">
             <div class="container-fluid">
               <div class="row" >
-                <div class="col-lg-4" >
+                <div class="col-lg-3" >
                   <div class="card card-user" ">
                       <div class="content">
                         <div class="row">
-                          <div class="col-xs-6 pl-3">
-                             Laporan Diterima : <br>
-                             <label class="hitungan" style="font-size: 40px; font-weight: bold; color: #1D262D;">{{$count1}}</label>
+                          <div class="col-xs-7 pl-3">
+                             Total Laporan<br>
+                             <label class="hitungan" style="font-size: 40px; font-weight: bold; color: #1D262D;">{{$count0}}</label>
                           </div>
-                          <div class="col-xs-6 pl-3">
+                          <div class="col-xs-5 pl-3">
                              <img src="{{asset('dashboard/img/checked.png')}}">
                           </div>
                         </div>                        
                       </div>
                   </div>
                 </div>
-                <div class="col-lg-4">
+                <div class="col-lg-3" >
                   <div class="card card-user" ">
                       <div class="content">
                         <div class="row">
-                          <div class="col-xs-6 pl-3">
-                             Laporan Diproses : <br>
+                          <div class="col-xs-8 pl-3">
+                             Laporan Diterima<br>
+                             <label class="hitungan" style="font-size: 40px; font-weight: bold; color: #1D262D;">{{$count1}}</label>
+                          </div>
+                          <div class="col-xs-4 pl-3">
+                             <img src="{{asset('dashboard/img/checked.png')}}">
+                          </div>
+                        </div>                        
+                      </div>
+                  </div>
+                </div>
+                <div class="col-lg-3">
+                  <div class="card card-user" ">
+                      <div class="content">
+                        <div class="row">
+                          <div class="col-xs-8 pl-3">
+                             Laporan Diproses <br>
                              <label class="hitungan" style="font-size: 40px; font-weight: bold; color: #1D262D;">{{$count2}}</label>
                           </div>
-                          <div class="col-xs-6 pl-3">
+                          <div class="col-xs-4 pl-3">
                              <img src="{{asset('dashboard/img/wait.png')}}">
                           </div>
                         </div>                        
                       </div>
                   </div>
                 </div>            
-                <div class="col-lg-4">
+                <div class="col-lg-3">
                   <div class="card card-user" ">
                       <div class="content">
                         <div class="row">
-                          <div class="col-xs-6 pl-3">
-                             Laporan Ditolak : <br>
+                          <div class="col-xs-8 pl-3">
+                             Laporan Ditolak<br>
                              <label class="hitungan" style="font-size: 40px; font-weight: bold; color: #1D262D;">{{$count3}}</label>
                           </div>
-                          <div class="col-xs-6 pl-3">
+                          <div class="col-xs-4 pl-3">
                              <img src="{{asset('dashboard/img/cancel.png')}}">
                           </div>
                         </div>                        
