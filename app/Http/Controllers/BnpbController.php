@@ -47,4 +47,12 @@ class BnpbController extends Controller
         $map = laporan::all();
         return view('dashboard.bnpb.maps',compact('map','count1','count2','count3'));
     }
+
+    public function verif(Request $request, $id)
+    {
+      $data = laporan::find($id);
+      $data->status_id = $request->status;
+      $data->save();
+      return redirect()->back();
+    }
 }

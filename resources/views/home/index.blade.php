@@ -55,8 +55,11 @@
           <a class="nav-item nav-link page-scroll" href="#contact">Contact</a>
           @guest
           <a class="nav-item btn btn-primary" href="{{URL::to('/pilihan')}}">Masuk</a>
+          
           @if (Route::has('register'))         
+          
           @endif
+
           @else
 
           <li class="nav-item dropdown">
