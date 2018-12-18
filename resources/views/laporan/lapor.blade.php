@@ -10,15 +10,17 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- iki Bootstrap CSS -->
-    <!-- <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"> -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+
+    <link rel="shortcut icon" type="image/png" href="{{asset('perubahan/home/img/favicon.png')}}">
+
+   <!-- iki Bootstrap CSS -->
+    <link href="{{asset('perubahan/home/css/bootstrap.min.css')}}" rel="stylesheet">
 
     <!-- iki icon -->
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
 
     <!-- iki font -->
-    <link href="https://fonts.googleapis.com/css?family=Viga" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Viga|Roboto|Poppin|Lato" rel="stylesheet">
 
     <!-- iki CSS -->
     <link rel="stylesheet" type="text/css" href="{{asset('perubahan/laporan/css/laporan.css')}}">
@@ -28,8 +30,7 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBOYROYFc-XcfFCMmw5MVlOZc1Tuh_HC2U"
     type="text/javascript"></script>
 
-    <!-- sweat alert -->
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    
 
 
     <script>
@@ -198,10 +199,11 @@
             </div>
             </div>
             <div class="form-group col-lg-12">
-              <button type="submit" id="tombollapor" class="btn btn-primary" onclick="Swal('Berhasil',
-              'bismillah',
-              'Sweatalert',
-              'success')">Laporkan</button>
+              <button type="submit" id="tombollapor" onclick="Swal(
+  'Good job!',
+  'You clicked the button!',
+  'success'
+)" class="btn btn-primary">Laporkan</button>
               <button type="reset" class="btn btn-danger">Reset</button>
             </div>
       </div>
@@ -327,10 +329,13 @@
 
 
 
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+    <!-- jquery dan kawan kawan -->
+    <script src="{{asset('perubahan/home/js/jquery-3.3.1.min.js')}}"></script>
+    <!-- <script src="{{asset('perubahan/home/js/bootstrap.bundle.min.js')}}"></script> -->
+    <!-- <script src="{{asset('perubahan/home/js/popper.min.js')}}"></script> -->
+    <script src="{{asset('perubahan/home/js/bootstrap.min.js')}}"></script>
+    <script src="{{asset('perubahan/home/js/script.js')}}"></script>
+    <script src="{{asset('perubahan/home/js/sweetalert.min.js')}}"></script>
 
 
   </body>

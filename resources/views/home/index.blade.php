@@ -91,7 +91,7 @@
     <!-- iki Jumbotron -->
     <div class="jumbotron jumbotron-fluid bg-white">
       <div class="container">
-        <h1 class="display-4"><span>Laporkan</span><br> Lokasi Rawan Bencana <br>Di Sekitar <span>Anda</span> </h1>
+        <h1 class="display-4 muncul"><span>Laporkan</span><br> Lokasi Rawan Bencana <br>Di Sekitar <span>Anda</span> </h1>
         <a href="{{URL::to('/lapor')}}" class="btn btn-primary tombol">LAPORKAN</a>
         <!-- <a href="{{URL::to('/lacak')}}" class="btn btn-secondary tombol">LACAK LAPORAN</a>  -->
       </div>
@@ -104,7 +104,7 @@
     <div class="container">
       <div class="row">
         <div class="col">
-          <div class="card">            
+          <div class="card muncul">            
            <div class="card-body">
             <img src="{{asset('perubahan/home/img/notepad.png')}}" class="card-img float-left">
             <h4>Lapor</h4>
@@ -113,7 +113,7 @@
           </div>          
         </div>
          <div class="col">
-          <div class="card ">
+          <div class="card muncul">
             <div class="card-body">
             <img src="{{asset('perubahan/home/img/verif.png')}}" class="card-img float-left">
             <h4>Verifikasi</h4>
@@ -122,7 +122,7 @@
           </div>
         </div>
          <div class="col">
-          <div class="card ">
+          <div class="card muncul">
             <div class="card-body">       
             <img src="{{asset('perubahan/home/img/lacak.png')}}" class="card-img float-left">
             <h4>Lacak</h4>
@@ -131,7 +131,7 @@
           </div>
         </div>
          <div class="col">
-          <div class="card ">
+          <div class="card muncul">
             <div class="card-body">  
             <img src="{{asset('perubahan/home/img/map.png')}}" class="card-img float-left">
             <h4>Map</h4>
