@@ -1,12 +1,7 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" id="mainNav">
   <head>
 
-  <style>
-    html {
-      scroll-behavior: smooth;
-    }
-  </style>
 
 
     <!-- Required meta tags -->
@@ -17,14 +12,13 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gmaps.js/0.4.24/gmaps.js"></script>
 
     <!-- iki Bootstrap CSS -->
-    <!-- <link href="{{asset('perubahan/home/vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet"> -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <link href="{{asset('perubahan/home/css/bootstrap.min.css')}}" rel="stylesheet">
 
     <!-- iki icon -->
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
 
     <!-- iki font -->
-    <link href="https://fonts.googleapis.com/css?family=Viga|Roboto|Poppin" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Viga|Roboto|Poppin|Lato" rel="stylesheet">
 
 
 
@@ -33,29 +27,30 @@
 
     <title>SIPLORA</title>
 
+   
+    
+
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBOYROYFc-XcfFCMmw5MVlOZc1Tuh_HC2U"
     type="text/javascript"></script>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+    
 
   </head>
   <body>    
 
     <!-- iki Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top bg-white" id="mainNav">
       <div class="container">
-      <a class="navbar-brand" href="{{URL::to('/')}}">SIPLORA</a>
+      <a class="navbar-brand page-scroll" href="#mainNav">SIPLORA</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav ml-auto">
-          <a class="nav-item nav-link" href="">Home<span class="sr-only">(current)</span></a>
-          <a class="nav-item nav-link" href="#about">About</a>
-          <a class="nav-item nav-link" href="#map">Map</a>
-          <a class="nav-item nav-link" href="#contact">Contact</a>
+          <a class="nav-item nav-link page-scroll" href="#mainNav">Home<span class="sr-only">(current)</span></a>
+          <a class="nav-item nav-link page-scroll" href="#about">About</a>
+          <a class="nav-item nav-link page-scroll" href="#map">Map</a>
+          <a class="nav-item nav-link page-scroll" href="#contact">Contact</a>
           @guest
           <a class="nav-item btn btn-primary" href="{{URL::to('/pilihan')}}">Masuk</a>
           
@@ -94,7 +89,7 @@
     <!-- iki Jumbotron -->
     <div class="jumbotron jumbotron-fluid bg-white">
       <div class="container">
-        <h1 class="display-4">Laporkan Lokasi Rawan Bencana</h1>
+        <h1 class="display-4"><span>Laporkan</span><br> Lokasi Rawan Bencana <br>Di Sekitar <span>Anda</span> </h1>
         <a href="{{URL::to('/lapor')}}" class="btn btn-primary tombol">LAPORKAN</a>
         <!-- <a href="{{URL::to('/lacak')}}" class="btn btn-secondary tombol">LACAK LAPORAN</a>  -->
       </div>
@@ -148,7 +143,7 @@
 
 
     <!-- about Siplora -->
-    <section class="section about pt-5" id="about">
+    <section class="section about mt-5 pt-3 bg-light" id="about">
       <div class="container">
       <div class="row" >
         <div class="col-lg-6">
@@ -235,13 +230,13 @@
             <div class="col-lg-3 pt-3">
               <h4>SIPLORA</h4>
                 <div class="footer-links">
-                  <a class="" href="#mainNav">Home</a>
+                  <a class="page-scroll" href="#mainNav">Home</a>
                   ·
-                  <a href="#about">About</a>
+                  <a class="page-scroll" href="#about">About</a>
                   ·
-                  <a href="#map">Map</a>
+                  <a class="page-scroll" href="#map">Map</a>
                   ·
-                  <a href="#contact">Contact</a>
+                  <a class="page-scroll" href="#contact">Contact</a>
                 </div>
             </div>
             <div class="col-lg-3 pt-3">
@@ -280,11 +275,15 @@
 
 
 
-    <!-- Optional JavaScript -->
-<!--     <script type="text/javascript" src="{{asset('js/new-age.min.js')}}"></script>
- -->
-<!--  <script type="text/javascript" src="{{asset('css/')}}"></script>
- -->    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+   
+    <!-- jquery dan kawan kawan -->
+    <script src="{{asset('perubahan/home/js/jquery-3.3.1.min.js')}}"></script>
+    <!-- <script src="{{asset('perubahan/home/js/bootstrap.bundle.min.js')}}"></script> -->
+    <!-- <script src="{{asset('perubahan/home/js/popper.min.js')}}"></script> -->
+    <script src="{{asset('perubahan/home/js/bootstrap.min.js')}}"></script>
+    <script src="{{asset('perubahan/home/js/script.js')}}"></script>
+
+
 
   </body>
 
