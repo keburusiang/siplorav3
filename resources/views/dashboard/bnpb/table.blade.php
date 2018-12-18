@@ -133,7 +133,7 @@
 													</form>
 											</td>
 											<td>
-    											<form action="{{url('/lapor/'.$tol->id)}}" method="POST">
+    											<form action="{{url('/bnpb/dashboard/table/'.$tol->id)}}" method="POST">
     												{{csrf_field()}} {{method_field('PUT')}}
     												<button value="1" name="status" type="submit" rel="tooltip" title="Verifikasi" class="btn btn-success btn-simple btn-md">
     													<i class="fa fa-check"></i>

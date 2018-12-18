@@ -4,7 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 
-class CekRole
+class CekRole extends Middleware
 {
     /**
      * Handle an incoming request.
@@ -13,8 +13,10 @@ class CekRole
      * @param  \Closure  $next
      * @return mixed
      */
-    public function handle($request, Closure $next)
+    protected function redirectTo($request)
     {
-        return $next($request);
+        if (! $request->expectsJson()) {
+            return route('bnpb.login');
+        }
     }
 }

@@ -18,7 +18,7 @@ class LaporController extends Controller
 
     public function __construct()
     {
-        $this->middleware('auth:bnpb');
+        $this->middleware('auth');
     }
 
     public function index()
@@ -87,13 +87,13 @@ class LaporController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
-    {
-      $data = laporan::find($id);
-      $data->status_id = $request->status;
-      $data->save();
-      return redirect()->back();
-    }
+    // public function update(Request $request, $id)
+    // {
+    //   $data = laporan::find($id);
+    //   $data->status_id = $request->status;
+    //   $data->save();
+    //   return redirect()->back();
+    // }
 
     /**
      * Remove the specified resource from storage.
