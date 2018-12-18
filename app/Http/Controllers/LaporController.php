@@ -18,7 +18,7 @@ class LaporController extends Controller
 
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware('auth:bnpb');
     }
 
     public function index()
