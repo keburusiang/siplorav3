@@ -64,3 +64,5 @@ Route::get('/bnpb/dashboard/','BnpbController@show');
 Route::get('/bnpb/dashboard/table/','BnpbController@showTable');
 Route::get('/bnpb/dashboard/map/','BnpbController@showMap');
 Route::put('/bnpb/dashboard/table/{lapor}','BnpbController@verif')->name('verif');
+Route::put('/bnpb/dashboard/table/{lapor}','BnpbController@drop')->name('delete');
+
