@@ -277,49 +277,50 @@
 
 
     <!-- contact -->
-  <div class="contact" id="contact">
+ <section class="contact" id="contact">
       <div class="container">
-        <div class="row contact">         
+        <div class="row contact">
             <div class="col-lg-3 pt-3">
               <h4>SIPLORA</h4>
-                <p class="footer-links">
-                  <a class="" href="#mainNav">Home</a>
+                <div class="footer-links">
+                  <a class="page-scroll" href="#mainNav">Home</a>
                   ·
-                  <a href="#about">About</a>
+                  <a class="page-scroll" href="#about">About</a>
                   ·
-                  <a href="#map">Map</a>
-                  ·                  
-                  <a href="#contact">Contact</a>
-                </p>
-            </div>    
+                  <a class="page-scroll" href="#map">Map</a>
+                  ·
+                  <a class="page-scroll" href="#contact">Contact</a>
+                </div>
+            </div>
             <div class="col-lg-3 pt-3">
-             
-            </div>  
+
+            </div>
             <div class="col-lg-3 pt-3">
-             
-            </div>           
+
+            </div>
             <div class="col-lg-3 pt-3">
-              <h4>Contact Us</h4>
+              <h4 class="kontak">Contact Us</h4>
               <div class="footer-icons">
                 <a href="https://facebook.com/amiinmnugroho"><i class="fa fa-facebook"></i></a>
                 <a href="https://twitter.com/amiinmn"><i class="fa fa-twitter"></i></a>
-                <a href="https://linkedin.com/in/amiinmn"><i class="fa fa-linkedin"></i></a> 
-                <a href="https://instagram.com/amiinmn"><i class="fa fa-instagram"></i></a>         
-              </div>              
-            </div>       
+                <a href="https://linkedin.com/in/amiinmn"><i class="fa fa-linkedin"></i></a>
+                <a href="https://instagram.com/amiinmn"><i class="fa fa-instagram"></i></a>
+              </div>
+            </div>
         </div>
       </div>
-    </div>   
+      </section>
+  
     <!-- akhir contact -->
 
     <!-- footer -->
     <footer>
       <div class="container-fluid">
-      <div class="row copyright pt-3">        
+      <div class="row copyright pt-3">
         <div class="col text-center">
          <p>2018. Sistem Pelaporan Lokasi Rawan Bencana By Shabaka</p>
         </div>
-        </div>        
+        </div>
       </div>
     </footer>
 

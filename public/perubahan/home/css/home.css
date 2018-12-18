@@ -239,12 +239,12 @@ footer .copyright{
 	font-size: 20px;	
 	border-radius:;	
 	font-family: 'Roboto', sans-serif;
-	font-weight: 200;
+	font-weight: 400;
 	width: 200px;
 	height: 50px;
 	padding-top: 10px ;
 	text-align: center;	
-	transition: 0.3s;
+	
 }
 
 /*.tombol:hover{

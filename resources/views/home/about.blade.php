@@ -6,19 +6,20 @@
       scroll-behavior: smooth;
     }
   </style>    
-    <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- iki Bootstrap CSS -->
-    <!-- <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"> -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
 
-    <!-- iki icon -->    
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">    
+    <link rel="shortcut icon" type="image/png" href="{{asset('perubahan/home/img/favicon.png')}}">   
+
+   <!-- iki Bootstrap CSS -->
+    <link href="{{asset('perubahan/home/css/bootstrap.min.css')}}" rel="stylesheet">
+
+    <!-- iki icon -->
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
 
     <!-- iki font -->
-    <link href="https://fonts.googleapis.com/css?family=Viga" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Viga|Roboto|Poppin|Lato" rel="stylesheet">
 
     <!-- iki CSS -->
     <link rel="stylesheet" type="text/css" href="{{asset('perubahan/home/css/about.css')}}">
@@ -32,7 +33,7 @@
   <body>
 
     <!-- iki Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+     <nav class="navbar navbar-expand-lg navbar-light fixed-top bg-white" id="mainNav">
       <div class="container">
       <a class="navbar-brand" href="{{URL::to('/')}}">SIPLORA</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -41,7 +42,7 @@
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav ml-auto">
           <a class="nav-item nav-link" href="{{URL::to('/')}}">Home<span class="sr-only">(current)</span></a>          
-          <a class="nav-item nav-link" href="#contact">Contact</a>
+          <a class="nav-item nav-link" href="{{URL::to('/lapor')}}">Lapor</a>
           @guest
           <a class="nav-item btn btn-primary" href="{{URL::to('/pilihan')}}">Login</a>
           @if (Route::has('register'))
@@ -54,7 +55,9 @@
                     <span class="caret"></span>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                   <a class="dropdown-item" href="{{URL::to('/pelapor/dashboard')}}">Dashboard</a>
+                    <a class="dropdown-item" href="{{URL::to('/pelapor/dashboard')}}">Lacak Laporan</a>
+                    <a class="dropdown-item" href="{{URL::to('/pelapor/dashboard/profile/')}}">Profil</a>
+                    <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="{{ route('logout') }}"
                         onclick="event.preventDefault();
                         document.getElementById('logout-form').submit();">
@@ -88,20 +91,20 @@
 
 
     <!-- contact -->
-    <div class="contact" id="contact">
+    <section class="contact" id="contact">
       <div class="container">
         <div class="row contact">
             <div class="col-lg-3 pt-3">
               <h4>SIPLORA</h4>
-                <p class="footer-links">
-                  <a class="" href="#mainNav">Home</a>
+                <div class="footer-links">
+                  <a class="page-scroll" href="#mainNav">Home</a>
                   ·
-                  <a href="{URL::to('/about')}}">About</a>
+                  <a class="page-scroll" href="#about">About</a>
                   ·
-                  <a href="#map">Map</a>
+                  <a class="page-scroll" href="#map">Map</a>
                   ·
-                  <a href="#contact">Contact</a>
-                </p>
+                  <a class="page-scroll" href="#contact">Contact</a>
+                </div>
             </div>
             <div class="col-lg-3 pt-3">
 
@@ -110,7 +113,7 @@
 
             </div>
             <div class="col-lg-3 pt-3">
-              <h4>Contact Us</h4>
+              <h4 class="kontak">Contact Us</h4>
               <div class="footer-icons">
                 <a href="https://facebook.com/amiinmnugroho"><i class="fa fa-facebook"></i></a>
                 <a href="https://twitter.com/amiinmn"><i class="fa fa-twitter"></i></a>
@@ -120,14 +123,14 @@
             </div>
         </div>
       </div>
-    </div>
+      </section>
+  
     <!-- akhir contact -->
 
     <!-- footer -->
     <footer>
       <div class="container-fluid">
       <div class="row copyright pt-3">
-
         <div class="col text-center">
          <p>2018. Sistem Pelaporan Lokasi Rawan Bencana By Shabaka</p>
         </div>

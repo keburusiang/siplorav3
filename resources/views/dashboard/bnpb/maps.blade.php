@@ -2,11 +2,13 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <link rel="icon" type="image/png" href="{{asset('dashboards/img/favicon.ico')}}">
+  
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <title>BNPB Siplora</title>
+
   <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
   <meta name="viewport" content="width=device-width" />
+   <link rel="shortcut icon" type="image/png" href="{{asset('perubahan/home/img/favicon.png')}}">
   <!-- Bootstrap CSS     -->
   <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"> -->
 
@@ -66,12 +68,12 @@
 }
 
 .card:hover{    
-  transform: translateY(-10px);
+  transform: translateY(-5px);
 }
 
 
 .card img{
-  width: 80px;
+  width: 50px;
   float: right;
 
 }
@@ -125,7 +127,7 @@ label {
                 <li>
                     <a href="{{URL::to('/bnpb/dashboard/table')}}">
                         <i class="pe-7s-note2"></i>
-                        <p>Table List</p>
+                        <p>Daftar Laporan</p>
                     </a>
                 </li>
                 <li class="active">
@@ -178,7 +180,7 @@ label {
                              <label class="hitungan" style="font-size: 40px; font-weight: bold; color: #1D262D;">{{$count0}}</label>
                           </div>
                           <div class="col-xs-5 pl-3">
-                             <img src="{{asset('dashboard/img/checked.png')}}">
+                             <img src="{{asset('dashboard/img/total.png')}}">
                           </div>
                         </div>                        
                       </div>
