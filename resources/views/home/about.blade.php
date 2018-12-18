@@ -118,7 +118,7 @@
                 <a href="https://facebook.com/amiinmnugroho"><i class="fa fa-facebook"></i></a>
                 <a href="https://twitter.com/amiinmn"><i class="fa fa-twitter"></i></a>
                 <a href="https://linkedin.com/in/amiinmn"><i class="fa fa-linkedin"></i></a>
-                <a href="https://instagram.com/amiinmn"><i class="fa fa-instagram"></i></a>
+                <a href="https://github.com/keburusiang/siplorav3"><i class="fa fa-github"></i></a>
               </div>
             </div>
         </div>
