@@ -174,7 +174,7 @@
             <div class="form-control" id="googleMap" style="height: 430px;" frameborder="0" scrolling="no" marginheight="0" marginwidth="0">
               <script type="text/javascript">
                 var locations = @json($map);
-                var map = new google.maps.Map(document.getElementById('googleMap'), {
+                var map = new google.maps.Map(document.getElementById('googlesMap'), {
                    zoom: 6,
                    center: new google.maps.LatLng(-3.495488, 111.821524),
                    mapTypeControl: false,
@@ -198,6 +198,61 @@
                     map: map,
                   });
                 }
+
+
+              google.maps.event.addListener(marker, 'click', (function(marker, i) {
+                  return function() {
+
+                    infowindow.setContent(locations[i].jenis_laporan +"  <br> "+ locations[i].alamat);
+                    infowindow.open(map, marker);
+                  }
+                })(marker, i));
+              }
+               //  $.each( locations, function( index, value ){
+               //    mymap.addMarker({
+               //      lat: value.latitude,
+               //      lng: value.longitude,
+               //    });
+               // });
+              </script>
+              <script type="text/javascript">
+
+                var locations = @json($map);
+                console.log(map);
+                var map = new google.maps.Map(document.getElementById('googleMap'), {
+                   zoom: 6,
+                   center: new google.maps.LatLng(-3.236001, 111.039169),
+                   mapTypeControl: false,
+                   mapTypeId: google.maps.MapTypeId.TERRAIN,
+                 });
+
+                // lat: -7.543037,
+                // lng: 110.485844,
+
+              var icons = {
+                  1 :{
+                    icon: '/img/diterima.png'
+                  },
+                  2 :{
+                    icon: '/img/disproses.png'
+                  },
+                  3 :{
+                    icon: '/img/ditowlak.png'
+                  }
+              };
+              var infowindow = new google.maps.InfoWindow();
+
+              var marker, i;
+
+              for (i = 0; i < locations.length; i++) {
+
+                var id = locations[i].status_id;
+                  marker = new google.maps.Marker({
+                    position: new google.maps.LatLng(locations[i].latitude, locations[i].longitude),
+                    icon: icons[locations[i].status_id].icon,
+                    map: map
+                  });
+
 
 
               google.maps.event.addListener(marker, 'click', (function(marker, i) {
