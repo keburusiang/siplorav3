@@ -201,7 +201,7 @@
                                             <td>{{$tol->alamat}}</td>
                                             <td>
                                                 <form action="{{url('/bnpb/dashboard/table/'.$tol->id)}}" method="POST">
-                                                    {{csrf_field()}} {{method_field('PUT')}}
+                                                    {{csrf_field()}} {{method_field('DELETE')}}
                                                     <button value="3" name="status" type="submit" rel="tooltip" title="Hapus Laporan" class="btn btn-danger btn-simple btn-md">
                                                     <i class="fa fa-times"></i>
                                                     </button>
