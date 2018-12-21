@@ -126,7 +126,7 @@
 											<td>{{$tol->alamat}}</td>
 											<td>
 												<form action="{{url('/bnpb/dashboard/table/'.$tol->id)}}" method="POST">
-													{{csrf_field()}} {{method_field('DELETE')}}
+													{{csrf_field()}} {{method_field('PUT')}}
 													<button value="3" name="status" type="submit" rel="tooltip" title="Tidak Diterima" class="btn btn-danger btn-simple btn-md">
 													<i class="fa fa-times"></i>
 													</button>
@@ -188,7 +188,6 @@
                                             <th style="width:100px;">Tanggal</th>
                                             <th style="width:120px;">Jenis Bencana</th>
                                             <th style="width:150px;">Lokasi Bencana</th>
-                                            <th style="width:5px;">Hapus</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -199,14 +198,6 @@
                                             <td>{{$tol->created_at}}</td>
                                             <td>{{$tol->jenis_laporan}}</td>
                                             <td>{{$tol->alamat}}</td>
-                                            <td>
-                                                <form action="{{url('/bnpb/dashboard/table/'.$tol->id)}}" method="POST">
-                                                    {{csrf_field()}} {{method_field('PUT')}}
-                                                    <button value="3" name="status" type="submit" rel="tooltip" title="Hapus Laporan" class="btn btn-danger btn-simple btn-md">
-                                                    <i class="fa fa-times"></i>
-                                                    </button>
-                                                </form>
-                                            </td>
                                         </tr>
                                         @endforeach
                                     </tbody>

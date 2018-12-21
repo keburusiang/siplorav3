@@ -197,7 +197,7 @@
                   <span> <b>Contoh:</b> Banjir </span>
                 </div>
                   <div class="form-group col-lg-12">
-                    <label for="deskripsi">Deskripsi Lokasi</label>
+                    <label for="deskripsi">Deskripsi</label>
                     <textarea class="form-control" id="deskripsi" name="deskripsi" rows="7" required></textarea>
                     <span> <b>Contoh:</b> Tanggul jebol dikhawatirkan terjadi banjir. </span>
                   </div>
