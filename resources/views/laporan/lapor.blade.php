@@ -29,16 +29,10 @@
 
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBOYROYFc-XcfFCMmw5MVlOZc1Tuh_HC2U"
     type="text/javascript"></script>
-
-    
-
-
     <script>
       // variabel global marker
       var marker,infoWindow;
-
       function taruhMarker(peta, posisiTitik){
-
           if( marker ){
             // pindahkan marker
             marker.setPosition(posisiTitik);
@@ -50,93 +44,42 @@
             });
           }
               convert_latlng(posisiTitik);
-
            // isi nilai koordinat ke form
           document.getElementById("lat").value = posisiTitik.lat();
           document.getElementById("lng").value = posisiTitik.lng();
-
-          // convert_latlng(posisiTitik);
-
       }
-
       // merubah geotag menjadi alamat
       function convert_latlng(pos) {
-
        // membuat geocoder
-       var geocoder = new google.maps.Geocoder();
+      var geocoder = new google.maps.Geocoder();
        geocoder.geocode({'latLng': pos}, function(r) {
-
         if (r && r.length > 0) {
          document.getElementById('alamat').value = r[0].formatted_address;
         } else {
          document.getElementById('alamat').value = 'Alamat tidak di temukan di lokasi !!';
         }
-
        });
       }
-
       function initialize() {
-        // Create the search box and link it to the UI element.
-        
-
         var propertiPeta = {
-
           center:new google.maps.LatLng(-7.687739,110.413222),
           zoom:9,
           mapTypeId:google.maps.MapTypeId.ROADMAP,
           mapTypeControl: false,
           streetViewControl: false,
         };
-
-        
-        
-
-
-
-
         var peta = new google.maps.Map(document.getElementById("googleMap"), propertiPeta);
-
-        // if (navigator.geolocation) {
-        //   navigator.geolocation.getCurrentPosition(function(position) {
-        //     var pos = {
-        //       lat: position.coords.latitude,
-        //       lng: position.coords.longitude
-        //     };
-
-        //     infoWindow.setPosition(pos);
-        //     infoWindow.setContent('Location found.');
-        //     infoWindow.open(peta);
-        //     peta.setCenter(pos);
-        //   }, function() {
-        //     handleLocationError(true, infoWindow, peta.getCenter());
-        //   });
-        // } else {
-        //   // Browser doesn't support Geolocation
-        //   handleLocationError(false, infoWindow, peta.getCenter());
-        // }
-
-
         // even listner ketika peta diklik
         google.maps.event.addListener(peta, 'click', function(event) {
           taruhMarker(this, event.latLng);
         });
-
       }
-
-
-
-
       // event jendela di-load
       google.maps.event.addDomListener(window, 'load', initialize);
-
-
       </script>
-
-
   <title>SIPLORA</title>
   </head>
   <body>
-
     <!-- iki Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top bg-white" id="mainNav">
       <div class="container">
@@ -179,10 +122,7 @@
       </div>
     </nav>
     <!-- Navbar entek -->
-
-
     <!-- ISINE -->
-
     <div class="container lapor" id="lapor">
       <form action="/lapor" method="POST">
       <h4 class=" text-center pt-3">Laporkan Lokasi</h4>
@@ -218,14 +158,6 @@
                 <label for="googleMap">Pilih Maps</label>
                   <div class="form-control" id="googleMap" style="width:100%;height:350px;"></div>
               </div>
-            <!-- <div class="form-group col-lg-12">
-              <div class="file-field">
-                <div class="custom-file">
-                  <input type="file" class="custom-file-input" data-multiple-target="{target} files selected" multiple="">
-                  <a class="custom-file-label" for="customFile">Pilih Gambar</a>
-                </div>
-              </div>
-            </div> -->
            <div class="form-group">
             <div class="container">
             <div class="custom-control custom-checkbox mb-3">
@@ -235,10 +167,11 @@
             </div>
             <div class="form-group col-lg-12">
               <button type="submit" id="tombollapor" onclick="Swal(
-  'Good job!',
-  'You clicked the button!',
-  'success'
-)" class="btn btn-primary">Laporkan</button>
+                'Good job!',
+                'You clicked the button!',
+                'success'
+              )" class="btn btn-primary">Laporkan
+              </button>
               <button type="reset" class="btn btn-danger">Reset</button>
             </div>
       </div>
@@ -248,69 +181,6 @@
     </div>
     </form>
     </div>
-
-
-
- <!--    <div class="container lapor" id="lapor">
-      <div class="row">
-        <div class="col-md-8 pt-5 mx-auto">
-          <h4 class="text-center">Laporkan Kejadian</h4>
-          <form action="/lapor" method="POST">
-            @csrf
-            <div class="form-group col-lg-12">
-              <label for="jenisBencana">Jenis Bencana</label>
-              <input type="text" class="form-control" id="jenisBencana"  name="jenisBencana" required>
-              <span> <b>Contoh:</b> Banjir </span>
-            </div>
-              <div class="form-group col-lg-12">
-                <label for="deskripsi">Deskripsi Lokasi</label>
-                <textarea class="form-control" id="deskripsi" name="deskripsi" rows="5" required></textarea>
-                <span> <b>Contoh:</b> Tanggul jebol dikhawatirkan terjadi banjir. </span>
-              </div>
-
-      
-
-                <div class="form-group col-lg-12">
-                  <label for="alamat">Alamat</label>
-                  <input type="text" class="form-control" name="alamat" id="alamat" required>
-                </div>
-
-                <div class="form-row-fluid">
-                 <div class="form-group col-lg-6">
-                  <label for="latitude">Latitude</label>
-                  <input type="text" class="form-control" name="latitude" id="lat" >
-                 </div>
-                 <div class="form-group col-lg-6">
-                   <label for="longitude">Longitude</label>
-                   <input type="text" class="form-control" name="longitude" id="lng" >
-                 </div>
-               </div>
-
-        
-              <div class="form-group col-lg-12">
-                <label for="googleMap">Pilih Maps</label>
-                  <div class="form-control" id="googleMap" style="width:100%;height:450px;"></div>
-              </div>
-         
-
-            <div class="form-group col-lg-12">
-              <div class="file-field">
-                <div class="custom-file">
-                  <input type="file" class="custom-file-input" data-multiple-target="{target} files selected" multiple="">
-                  <label class="custom-file-label" for="customFile">Pilih Gambar</label>
-                </div>
-              </div>
-            </div>
-            <div class="form-group col-lg-12">
-              <button type="submit" class="btn btn-primary">Laporkan</button>
-              <button type="reset" class="btn btn-danger">Reset</button>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div> -->
-
-
     <!-- contact -->
  <section class="contact" id="contact">
       <div class="container">
@@ -328,10 +198,8 @@
                 </div>
             </div>
             <div class="col-lg-3 pt-3">
-
             </div>
             <div class="col-lg-3 pt-3">
-
             </div>
             <div class="col-lg-3 pt-3">
               <h4 class="kontak">Contact Us</h4>
@@ -345,9 +213,7 @@
         </div>
       </div>
       </section>
-  
     <!-- akhir contact -->
-
     <!-- footer -->
     <footer>
       <div class="container-fluid">
@@ -358,21 +224,12 @@
         </div>
       </div>
     </footer>
-
     <!-- akhir footer -->
-
-
-    <!-- JS MAPS -->
-
-   
-
     <!-- jquery dan kawan kawan -->
     <script src="{{asset('perubahan/home/js/jquery-3.3.1.min.js')}}"></script>
     <!-- <script src="{{asset('perubahan/home/js/bootstrap.bundle.min.js')}}"></script> -->
     <!-- <script src="{{asset('perubahan/home/js/popper.min.js')}}"></script> -->
     <script src="{{asset('perubahan/home/js/bootstrap.min.js')}}"></script>
     <script src="{{asset('perubahan/home/js/sweetalert.min.js')}}"></script>
-
-
   </body>
 </html>

@@ -24,10 +24,6 @@
     <!-- iki CSS -->
     <link rel="stylesheet" type="text/css" href="{{asset('perubahan/home/css/about.css')}}">
 
-   
-
-    
-
   <title>SIPLORA</title>
   </head>
   <body>

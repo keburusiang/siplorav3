@@ -9,8 +9,6 @@ use DB;
 
 class BnpbController extends Controller
 {
-    //
-
     public function __construct()
     {
         $this->middleware('auth:bnpb');
@@ -22,11 +20,7 @@ class BnpbController extends Controller
     }
     public function showTable()
     {
-        // $data = laporan::all();
-        // $data = DB::table('laporans')
-        //         ->join('users', 'laporans.user_id','=','users.id')
-        //         ->select('laporans.jenis_laporan', 'laporans.alamat','laporans.kode_laporan', 'users.namaDepan')
-        //         ->get();
+        
         $data = DB::table('laporans')
                 ->join('users', 'laporans.user_id','=','users.id')
                 ->select('laporans.created_at','laporans.jenis_laporan', 'laporans.status_id' , 'laporans.alamat','laporans.kode_laporan', 'users.namaDepan')
